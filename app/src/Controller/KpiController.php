@@ -42,11 +42,7 @@ final class KpiController
         {
             $kpi_entity = new Entity\Kpi();
             $kpitype_comparative_entity = $this->em->getRepository('App\Entity\KpiType')->findOneById('1'); //--> Kpi type "Comparative"
-            $groupbenner_entity = new Entity\GroupBenner();
-            $healthoperators_entity = new Entity\HealthOperators();
-            $hospital_entity = new Entity\Hospital();
-            $ominousmanagement_entity = new Entity\OminousManagement();
-            $systems_entity = new Entity\Systems();
+            $kpitype_budgeted_entity = $this->em->getRepository('App\Entity\KpiType')->findOneById('2'); //--> Kpi type "Budgeted"
 
 //--> Data for entity KPI
             $data_kpi = array(
@@ -59,48 +55,60 @@ final class KpiController
 
             (new ClassMethods())->hydrate($data_kpi, $kpi_entity);
 
+            $groupbenner_comparative_entity = new Entity\GroupBenner();
+            $healthoperators_comparative_entity = new Entity\HealthOperators();
+            $hospital_comparative_entity = new Entity\Hospital();
+            $ominousmanagement_comparative_entity = new Entity\OminousManagement();
+            $systems_comparative_entity = new Entity\Systems();
+
+            $groupbenner_budgeted_entity = new Entity\GroupBenner();
+            $healthoperators_budgeted_entity = new Entity\HealthOperators();
+            $hospital_budgeted_entity = new Entity\Hospital();
+            $ominousmanagement_budgeted_entity = new Entity\OminousManagement();
+            $systems_budgeted_entity = new Entity\Systems();
+
 //--> Data for entity GroupBenner - Comparativo
-            $data_groupbenner = array(
+            $data_comparative_groupbenner = array(
                 'revenues_initial' => $request->getParam('groupbenner')[1]['revenues']['initial'],
                 'revenues_end' => $request->getParam('groupbenner')[1]['revenues']['end'],
                 'revenues_target' => $request->getParam('groupbenner')[1]['revenues']['target'],
                 'revenues_percentage' => $request->getParam('groupbenner')[1]['revenues']['percentage'],
 
-                'ebtida_initial' => $request->getParam('groupbenner')[1]['revenues']['initial'],
-                'ebtida_end' => $request->getParam('groupbenner')[1]['revenues']['end'],
-                'ebtida_target' => $request->getParam('groupbenner')[1]['revenues']['target'],
-                'ebtida_percentage' => $request->getParam('groupbenner')[1]['revenues']['percentage'],
+                'ebtida_initial' => $request->getParam('groupbenner')[1]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('groupbenner')[1]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('groupbenner')[1]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('groupbenner')[1]['ebtida']['percentage'],
 
-                'net_profit_initial' => $request->getParam('groupbenner')[1]['revenues']['initial'],
-                'net_profit_end' => $request->getParam('groupbenner')[1]['revenues']['end'],
-                'net_profit_target' => $request->getParam('groupbenner')[1]['revenues']['target'],
-                'net_profit_percentage' => $request->getParam('groupbenner')[1]['revenues']['percentage'],
+                'net_profit_initial' => $request->getParam('groupbenner')[1]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('groupbenner')[1]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('groupbenner')[1]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('groupbenner')[1]['net_profit']['percentage'],
 
                 'kpi_type' => $kpitype_comparative_entity,
                 'kpi' => $kpi_entity
             );
 
-            (new ClassMethods())->hydrate($data_groupbenner, $groupbenner_entity);
+            (new ClassMethods())->hydrate($data_comparative_groupbenner, $groupbenner_comparative_entity);
 
-            $this->em->persist($groupbenner_entity); //--> Persist entity GroupBenner
+            $this->em->persist($groupbenner_comparative_entity);
             $this->em->flush();
 
 //--> Data for entity HealthOperators - Comparativo
-            $data_healthoperators = array(
+            $data_comparative_healthoperators = array(
                 'revenues_initial' => $request->getParam('healthoperators')[1]['revenues']['initial'],
                 'revenues_end' => $request->getParam('healthoperators')[1]['revenues']['end'],
                 'revenues_target' => $request->getParam('healthoperators')[1]['revenues']['target'],
                 'revenues_percentage' => $request->getParam('healthoperators')[1]['revenues']['percentage'],
 
-                'ebtida_initial' => $request->getParam('healthoperators')[1]['revenues']['initial'],
-                'ebtida_end' => $request->getParam('healthoperators')[1]['revenues']['end'],
-                'ebtida_target' => $request->getParam('healthoperators')[1]['revenues']['target'],
-                'ebtida_percentage' => $request->getParam('healthoperators')[1]['revenues']['percentage'],
+                'ebtida_initial' => $request->getParam('healthoperators')[1]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('healthoperators')[1]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('healthoperators')[1]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('healthoperators')[1]['ebtida']['percentage'],
 
-                'net_profit_initial' => $request->getParam('healthoperators')[1]['revenues']['initial'],
-                'net_profit_end' => $request->getParam('healthoperators')[1]['revenues']['end'],
-                'net_profit_target' => $request->getParam('healthoperators')[1]['revenues']['target'],
-                'net_profit_percentage' => $request->getParam('healthoperators')[1]['revenues']['percentage'],
+                'net_profit_initial' => $request->getParam('healthoperators')[1]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('healthoperators')[1]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('healthoperators')[1]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('healthoperators')[1]['net_profit']['percentage'],
 
                 'lu_value' => $request->getParam('healthoperators')[1]['lu']['value'],
                 'lu_percentage' => $request->getParam('healthoperators')[1]['lu']['percentage'],
@@ -124,28 +132,28 @@ final class KpiController
                 'kpi' => $kpi_entity
             );
 
-            (new ClassMethods())->hydrate($data_healthoperators, $healthoperators_entity);
+            (new ClassMethods())->hydrate($data_comparative_healthoperators, $healthoperators_comparative_entity);
 
-            $this->em->persist($healthoperators_entity); //--> Persist entity HealthOperators
+            $this->em->persist($healthoperators_comparative_entity);
             $this->em->flush();
 
 
 //--> Data for entity Hospital - Comparativo
-            $data_hospital = array(
+            $data_comparative_hospital = array(
                 'revenues_initial' => $request->getParam('hospital')[1]['revenues']['initial'],
                 'revenues_end' => $request->getParam('hospital')[1]['revenues']['end'],
                 'revenues_target' => $request->getParam('hospital')[1]['revenues']['target'],
                 'revenues_percentage' => $request->getParam('hospital')[1]['revenues']['percentage'],
 
-                'ebtida_initial' => $request->getParam('hospital')[1]['revenues']['initial'],
-                'ebtida_end' => $request->getParam('hospital')[1]['revenues']['end'],
-                'ebtida_target' => $request->getParam('hospital')[1]['revenues']['target'],
-                'ebtida_percentage' => $request->getParam('hospital')[1]['revenues']['percentage'],
+                'ebtida_initial' => $request->getParam('hospital')[1]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('hospital')[1]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('hospital')[1]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('hospital')[1]['ebtida']['percentage'],
 
-                'net_profit_initial' => $request->getParam('hospital')[1]['revenues']['initial'],
-                'net_profit_end' => $request->getParam('hospital')[1]['revenues']['end'],
-                'net_profit_target' => $request->getParam('hospital')[1]['revenues']['target'],
-                'net_profit_percentage' => $request->getParam('hospital')[1]['revenues']['percentage'],
+                'net_profit_initial' => $request->getParam('hospital')[1]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('hospital')[1]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('hospital')[1]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('hospital')[1]['net_profit']['percentage'],
 
                 'lu_value' => $request->getParam('hospital')[1]['lu']['value'],
                 'lu_percentage' => $request->getParam('hospital')[1]['lu']['percentage'],
@@ -160,27 +168,27 @@ final class KpiController
                 'kpi' => $kpi_entity
             );
 
-            (new ClassMethods())->hydrate($data_hospital, $hospital_entity);
+            (new ClassMethods())->hydrate($data_comparative_hospital, $hospital_comparative_entity);
 
-            $this->em->persist($hospital_entity); //--> Persist entity Hospital
+            $this->em->persist($hospital_comparative_entity);
             $this->em->flush();
 
 //--> Data for entity OminousManagement - Comparativo
-            $ominousmanagement = array(
+            $data_comparative_ominousmanagement = array(
                 'revenues_initial' => $request->getParam('ominousmanagement')[1]['revenues']['initial'],
                 'revenues_end' => $request->getParam('ominousmanagement')[1]['revenues']['end'],
                 'revenues_target' => $request->getParam('ominousmanagement')[1]['revenues']['target'],
                 'revenues_percentage' => $request->getParam('ominousmanagement')[1]['revenues']['percentage'],
 
-                'ebtida_initial' => $request->getParam('ominousmanagement')[1]['revenues']['initial'],
-                'ebtida_end' => $request->getParam('ominousmanagement')[1]['revenues']['end'],
-                'ebtida_target' => $request->getParam('ominousmanagement')[1]['revenues']['target'],
-                'ebtida_percentage' => $request->getParam('ominousmanagement')[1]['revenues']['percentage'],
+                'ebtida_initial' => $request->getParam('ominousmanagement')[1]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('ominousmanagement')[1]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('ominousmanagement')[1]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('ominousmanagement')[1]['ebtida']['percentage'],
 
-                'net_profit_initial' => $request->getParam('ominousmanagement')[1]['revenues']['initial'],
-                'net_profit_end' => $request->getParam('ominousmanagement')[1]['revenues']['end'],
-                'net_profit_target' => $request->getParam('ominousmanagement')[1]['revenues']['target'],
-                'net_profit_percentage' => $request->getParam('ominousmanagement')[1]['revenues']['percentage'],
+                'net_profit_initial' => $request->getParam('ominousmanagement')[1]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('ominousmanagement')[1]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('ominousmanagement')[1]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('ominousmanagement')[1]['net_profit']['percentage'],
 
                 'services_value' => $request->getParam('ominousmanagement')[1]['services']['value'],
                 'services_percentage' => $request->getParam('ominousmanagement')[1]['services']['percentage'],
@@ -189,27 +197,27 @@ final class KpiController
                 'kpi' => $kpi_entity
             );
 
-            (new ClassMethods())->hydrate($ominousmanagement, $ominousmanagement_entity);
+            (new ClassMethods())->hydrate($data_comparative_ominousmanagement, $ominousmanagement_comparative_entity);
 
-            $this->em->persist($ominousmanagement_entity); //--> Persist entity Hospital
+            $this->em->persist($ominousmanagement_comparative_entity);
             $this->em->flush();
 
 //--> Data for entity Systems - Comparativo
-            $data_systems = array(
+            $data_comparative_systems = array(
                 'revenues_initial' => $request->getParam('systems')[1]['revenues']['initial'],
                 'revenues_end' => $request->getParam('systems')[1]['revenues']['end'],
                 'revenues_target' => $request->getParam('systems')[1]['revenues']['target'],
                 'revenues_percentage' => $request->getParam('systems')[1]['revenues']['percentage'],
 
-                'ebtida_initial' => $request->getParam('systems')[1]['revenues']['initial'],
-                'ebtida_end' => $request->getParam('systems')[1]['revenues']['end'],
-                'ebtida_target' => $request->getParam('systems')[1]['revenues']['target'],
-                'ebtida_percentage' => $request->getParam('systems')[1]['revenues']['percentage'],
+                'ebtida_initial' => $request->getParam('systems')[1]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('systems')[1]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('systems')[1]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('systems')[1]['ebtida']['percentage'],
 
-                'net_profit_initial' => $request->getParam('systems')[1]['revenues']['initial'],
-                'net_profit_end' => $request->getParam('systems')[1]['revenues']['end'],
-                'net_profit_target' => $request->getParam('systems')[1]['revenues']['target'],
-                'net_profit_percentage' => $request->getParam('systems')[1]['revenues']['percentage'],
+                'net_profit_initial' => $request->getParam('systems')[1]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('systems')[1]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('systems')[1]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('systems')[1]['net_profit']['percentage'],
 
                 'lu_value' => $request->getParam('systems')[1]['lu']['value'],
                 'lu_percentage' => $request->getParam('systems')[1]['lu']['percentage'],
@@ -239,9 +247,195 @@ final class KpiController
                 'kpi' => $kpi_entity
             );
 
-            (new ClassMethods())->hydrate($data_systems, $systems_entity);
+            (new ClassMethods())->hydrate($data_comparative_systems, $systems_comparative_entity);
 
-            $this->em->persist($systems_entity); //--> Persist entity Systems
+            $this->em->persist($systems_comparative_entity);
+            $this->em->flush();
+
+
+//--> Data for entity GroupBenner - Orçado X Realizado
+            $data_budgeted_groupbenner = array(
+                'revenues_initial' => $request->getParam('groupbenner')[2]['revenues']['initial'],
+                'revenues_end' => $request->getParam('groupbenner')[2]['revenues']['end'],
+                'revenues_target' => $request->getParam('groupbenner')[2]['revenues']['target'],
+                'revenues_percentage' => $request->getParam('groupbenner')[2]['revenues']['percentage'],
+
+                'ebtida_initial' => $request->getParam('groupbenner')[2]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('groupbenner')[2]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('groupbenner')[2]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('groupbenner')[2]['ebtida']['percentage'],
+
+                'net_profit_initial' => $request->getParam('groupbenner')[2]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('groupbenner')[2]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('groupbenner')[2]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('groupbenner')[2]['net_profit']['percentage'],
+
+                'kpi_type' => $kpitype_budgeted_entity,
+                'kpi' => $kpi_entity
+            );
+
+            (new ClassMethods())->hydrate($data_budgeted_groupbenner, $groupbenner_budgeted_entity);
+
+            $this->em->persist($groupbenner_budgeted_entity);
+            $this->em->flush();
+
+//--> Data for entity HealthOperators - Orçado X Realizado
+            $data_budgeted_healthoperators = array(
+                'revenues_initial' => $request->getParam('healthoperators')[2]['revenues']['initial'],
+                'revenues_end' => $request->getParam('healthoperators')[2]['revenues']['end'],
+                'revenues_target' => $request->getParam('healthoperators')[2]['revenues']['target'],
+                'revenues_percentage' => $request->getParam('healthoperators')[2]['revenues']['percentage'],
+
+                'ebtida_initial' => $request->getParam('healthoperators')[2]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('healthoperators')[2]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('healthoperators')[2]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('healthoperators')[2]['ebtida']['percentage'],
+
+                'net_profit_initial' => $request->getParam('healthoperators')[2]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('healthoperators')[2]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('healthoperators')[2]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('healthoperators')[2]['net_profit']['percentage'],
+
+                'lu_value' => '',
+                'lu_percentage' => '',
+
+                'lum_value' => '',
+                'lum_percentage' => '',
+
+                'implantation_value' => '',
+                'implantation_percentage' => '',
+
+                'sms_value' => '',
+                'sms_percentage' => '',
+
+                'medical_services_value' => '',
+                'medical_services_percentage' => '',
+
+                'workout_value' => '',
+                'workout_percentage' => '',
+
+                'kpi_type' => $kpitype_budgeted_entity,
+                'kpi' => $kpi_entity
+            );
+
+            (new ClassMethods())->hydrate($data_budgeted_healthoperators, $healthoperators_budgeted_entity);
+
+            $this->em->persist($healthoperators_budgeted_entity);
+            $this->em->flush();
+
+
+//--> Data for entity Hospital - Orçado X Realizado
+            $data_budgeted_hospital = array(
+                'revenues_initial' => $request->getParam('hospital')[2]['revenues']['initial'],
+                'revenues_end' => $request->getParam('hospital')[2]['revenues']['end'],
+                'revenues_target' => $request->getParam('hospital')[2]['revenues']['target'],
+                'revenues_percentage' => $request->getParam('hospital')[2]['revenues']['percentage'],
+
+                'ebtida_initial' => $request->getParam('hospital')[2]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('hospital')[2]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('hospital')[2]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('hospital')[2]['ebtida']['percentage'],
+
+                'net_profit_initial' => $request->getParam('hospital')[2]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('hospital')[2]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('hospital')[2]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('hospital')[2]['net_profit']['percentage'],
+
+                'lu_value' => '',
+                'lu_percentage' => '',
+
+                'lum_value' => '',
+                'lum_percentage' => '',
+
+                'implantation_value' => '',
+                'implantation_percentage' => '',
+
+                'kpi_type' => $kpitype_budgeted_entity,
+                'kpi' => $kpi_entity
+            );
+
+            (new ClassMethods())->hydrate($data_budgeted_hospital, $hospital_budgeted_entity);
+
+            $this->em->persist($hospital_budgeted_entity);
+            $this->em->flush();
+
+//--> Data for entity OminousManagement - Orçado X Realizado
+            $data_budgeted_ominousmanagement = array(
+                'revenues_initial' => $request->getParam('ominousmanagement')[2]['revenues']['initial'],
+                'revenues_end' => $request->getParam('ominousmanagement')[2]['revenues']['end'],
+                'revenues_target' => $request->getParam('ominousmanagement')[2]['revenues']['target'],
+                'revenues_percentage' => $request->getParam('ominousmanagement')[2]['revenues']['percentage'],
+
+                'ebtida_initial' => $request->getParam('ominousmanagement')[2]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('ominousmanagement')[2]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('ominousmanagement')[2]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('ominousmanagement')[2]['ebtida']['percentage'],
+
+                'net_profit_initial' => $request->getParam('ominousmanagement')[2]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('ominousmanagement')[2]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('ominousmanagement')[2]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('ominousmanagement')[2]['net_profit']['percentage'],
+
+                'services_value' => '',
+                'services_percentage' => '',
+
+                'kpi_type' => $kpitype_budgeted_entity,
+                'kpi' => $kpi_entity
+            );
+
+            (new ClassMethods())->hydrate($data_budgeted_ominousmanagement, $ominousmanagement_budgeted_entity);
+
+            $this->em->persist($ominousmanagement_budgeted_entity);
+            $this->em->flush();
+
+//--> Data for entity Systems - Orçado X Realizado
+            $data_budgeted_systems = array(
+                'revenues_initial' => $request->getParam('systems')[2]['revenues']['initial'],
+                'revenues_end' => $request->getParam('systems')[2]['revenues']['end'],
+                'revenues_target' => $request->getParam('systems')[2]['revenues']['target'],
+                'revenues_percentage' => $request->getParam('systems')[2]['revenues']['percentage'],
+
+                'ebtida_initial' => $request->getParam('systems')[2]['ebtida']['initial'],
+                'ebtida_end' => $request->getParam('systems')[2]['ebtida']['end'],
+                'ebtida_target' => $request->getParam('systems')[2]['ebtida']['target'],
+                'ebtida_percentage' => $request->getParam('systems')[2]['ebtida']['percentage'],
+
+                'net_profit_initial' => $request->getParam('systems')[2]['net_profit']['initial'],
+                'net_profit_end' => $request->getParam('systems')[2]['net_profit']['end'],
+                'net_profit_target' => $request->getParam('systems')[2]['net_profit']['target'],
+                'net_profit_percentage' => $request->getParam('systems')[2]['net_profit']['percentage'],
+
+                'lu_value' => '',
+                'lu_percentage' => '',
+
+                'lum_value' => '',
+                'lum_percentage' => '',
+
+                'implantation_value' => '',
+                'implantation_percentage' => '',
+
+                'sms_value' => '',
+                'sms_percentage' => '',
+
+                'royaltes_value' => '',
+                'royaltes_percentage' => '',
+
+                'maintenance_pc_value' => '',
+                'maintenance_pc_percentage' => '',
+
+                'outsourcing_value' => '',
+                'outsourcing_percentage' => '',
+
+                'bpo_value' => '',
+                'bpo_percentage' => '',
+
+                'kpi_type' => $kpitype_budgeted_entity,
+                'kpi' => $kpi_entity
+            );
+
+            (new ClassMethods())->hydrate($data_budgeted_systems, $systems_budgeted_entity);
+
+            $this->em->persist($systems_budgeted_entity);
             $this->em->flush();
 
             return $response->withRedirect($this->router->pathFor('kpi'));

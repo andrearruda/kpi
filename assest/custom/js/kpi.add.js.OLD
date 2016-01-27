@@ -1,0 +1,178 @@
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('#wizard_comparativo').bootstrapWizard();
+    $('#wizard_orcado_realizado').bootstrapWizard();
+    window.prettyPrint && prettyPrint();
+});
+
+$(document).ready(function() {
+
+    <!-- BEGIN / Grupo Benner / Comparativo -->
+    $('#groupbenner_comparative_period_initial, #groupbenner_comparative_period_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#groupbenner_comparative_revenues_target, #groupbenner_comparative_revenues_initial, #groupbenner_comparative_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#groupbenner_comparative_revenues_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    <!-- END / Grupo Benner / Comparativo -->
+
+    <!-- BEGIN / Divisão Operadoras de Saúde / Comparativo -->
+    $('#divisao_operadoras_de_saude_comparativo_periodo_initial, #divisao_operadoras_de_saude_comparativo_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_operadoras_de_saude_comparativo_revenues_initial, #divisao_operadoras_de_saude_comparativo_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_operadoras_de_saude_comparativo_revenues_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+
+    <!-- BEGIN / Divisão Operadoras de Saúde / Distribuição por Receita -->
+    $('#divisao_operadoras_de_saude_comparativo_distribuicao_lu_percentage, #divisao_operadoras_de_saude_comparativo_distribuicao_lum_percentage, #divisao_operadoras_de_saude_comparativo_distribuicao_servico_de_implatacao_percentage, #divisao_operadoras_de_saude_comparativo_distribuicao_sms_percentage, #divisao_operadoras_de_saude_comparativo_distribuicao_servicos_medicos_percentage, #divisao_operadoras_de_saude_comparativo_distribuicao_treinamentos_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    $('#divisao_operadoras_de_saude_comparativo_distribuicao_lu_valor, #divisao_operadoras_de_saude_comparativo_distribuicao_lum_valor, #divisao_operadoras_de_saude_comparativo_distribuicao_servico_de_implatacao_valor, #divisao_operadoras_de_saude_comparativo_distribuicao_sms_valor, #divisao_operadoras_de_saude_comparativo_distribuicao_servicos_medicos_valor, #divisao_operadoras_de_saude_comparativo_distribuicao_treinamentos_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Operadoras de Saúde / Distribuição por Receita -->
+
+    <!-- END / Divisão Operadoras de Saúde / Comparativo -->
+    <!-- BEGIN / Divisão Hospitalar / Comparativo -->
+    $('#divisao_hospitalar_comparativo_periodo_initial, #divisao_hospitalar_comparativo_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_hospitalar_comparativo_revenues_initial, #divisao_hospitalar_comparativo_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_hospitalar_comparativo_revenues_percentage').mask("#");
+    <!-- BEGIN / Divisão Hospitalar / Distribuição por Receita -->
+    $('#divisao_hospitalar_comparativo_distribuicao_lu_percentage, #divisao_hospitalar_comparativo_distribuicao_lum_percentage, #divisao_hospitalar_comparativo_distribuicao_servico_de_implatacao_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    $('#divisao_hospitalar_comparativo_distribuicao_lu_valor, #divisao_hospitalar_comparativo_distribuicao_lum_valor, #divisao_hospitalar_comparativo_distribuicao_servico_de_implatacao_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Hospitalar / Distribuição por Receita -->
+    <!-- END / Divisão Hospitalar / Comparativo -->
+
+    <!-- BEGIN / Divisão Gestão de Sinistro / Comparativo -->
+    $('#divisao_gestao_sinistro_comparativo_periodo_initial, #divisao_gestao_sinistro_comparativo_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_gestao_sinistro_comparativo_revenues_initial, #divisao_gestao_sinistro_comparativo_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_gestao_sinistro_comparativo_revenues_percentage').mask("#");
+    <!-- BEGIN / Divisão Gestão de Sinistro / Distribuição por Receita -->
+    $('#divisao_gestao_sinistro_comparativo_distribuicao_servicos_percentage').mask("#");
+    $('#divisao_gestao_sinistro_comparativo_distribuicao_servicos_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Gestão de Sinistro / Distribuição por Receita -->
+    <!-- END / Divisão Gestão de Sinistro / Comparativo -->
+
+    <!-- BEGIN / Divisão Sistemas / Comparativo -->
+    $('#divisao_sistema_comparativo_periodo_initial, #divisao_sistema_comparativo_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_sistema_comparativo_revenues_initial, #divisao_sistema_comparativo_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_sistema_comparativo_revenues_percentage').mask("#");
+    <!-- BEGIN / Divisão Sistemas / Distribuição por Receita -->
+    $('#divisao_sistema_comparativo_distribuicao_lu_percentage, #divisao_sistema_comparativo_distribuicao_lum_percentage, #divisao_sistema_comparativo_distribuicao_servico_de_implatacao_percentage, #divisao_sistema_comparativo_distribuicao_sms_percentage, #divisao_sistema_comparativo_distribuicao_revenda_royaltes_percentage, #divisao_sistema_comparativo_distribuicao_manutencao_linha_pc_percentage, #divisao_sistema_comparativo_distribuicao_receita_de_outsourcing_percentage, #divisao_sistema_comparativo_distribuicao_bpo_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    $('#divisao_sistema_comparativo_distribuicao_lu_valor, #divisao_sistema_comparativo_distribuicao_lum_valor, #divisao_sistema_comparativo_distribuicao_servico_de_implatacao_valor, #divisao_sistema_comparativo_distribuicao_sms_valor, #divisao_sistema_comparativo_distribuicao_revenda_royaltes_valor, #divisao_sistema_comparativo_distribuicao_manutencao_linha_pc_valor, #divisao_sistema_comparativo_distribuicao_receita_de_outsourcing_valor, #divisao_sistema_comparativo_distribuicao_bpo_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Sistemas / Distribuição por Receita -->
+    <!-- END / Divisão Sistemas / Comparativo -->
+
+
+
+    <!-- BEGIN / Grupo Benner / Orçado x Realizado -->
+    $('#grupo_benner_orcado_realizado_periodo_initial, #grupo_benner_orcado_realizado_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#grupo_benner_orcado_realizado_revenues_initial, #grupo_benner_orcado_realizado_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#grupo_benner_orcado_realizado_revenues_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    <!-- END / Grupo Benner / Orçado x Realizado -->
+
+    <!-- BEGIN / Divisão Operadoras de Saúde / Orçado x Realizado -->
+    $('#divisao_operadoras_de_saude_orcado_realizado_periodo_initial, #divisao_operadoras_de_saude_orcado_realizado_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_operadoras_de_saude_orcado_realizado_revenues_initial, #divisao_operadoras_de_saude_orcado_realizado_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_operadoras_de_saude_orcado_realizado_revenues_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+
+    <!-- BEGIN / Divisão Operadoras de Saúde / Distribuição por Receita -->
+    $('#divisao_operadoras_de_saude_orcado_realizado_distribuicao_lu_percentage, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_lum_percentage, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_servico_de_implatacao_percentage, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_sms_percentage, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_servicos_medicos_percentage, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_treinamentos_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    $('#divisao_operadoras_de_saude_orcado_realizado_distribuicao_lu_valor, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_lum_valor, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_servico_de_implatacao_valor, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_sms_valor, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_servicos_medicos_valor, #divisao_operadoras_de_saude_orcado_realizado_distribuicao_treinamentos_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Operadoras de Saúde / Distribuição por Receita -->
+
+    <!-- END / Divisão Operadoras de Saúde / Orçado x Realizado -->
+    <!-- BEGIN / Divisão Hospitalar / Orçado x Realizado -->
+    $('#divisao_hospitalar_orcado_realizado_periodo_initial, #divisao_hospitalar_orcado_realizado_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_hospitalar_orcado_realizado_revenues_initial, #divisao_hospitalar_orcado_realizado_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_hospitalar_orcado_realizado_revenues_percentage').mask("#");
+    <!-- BEGIN / Divisão Hospitalar / Distribuição por Receita -->
+    $('#divisao_hospitalar_orcado_realizado_distribuicao_lu_percentage, #divisao_hospitalar_orcado_realizado_distribuicao_lum_percentage, #divisao_hospitalar_orcado_realizado_distribuicao_servico_de_implatacao_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    $('#divisao_hospitalar_orcado_realizado_distribuicao_lu_valor, #divisao_hospitalar_orcado_realizado_distribuicao_lum_valor, #divisao_hospitalar_orcado_realizado_distribuicao_servico_de_implatacao_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Hospitalar / Distribuição por Receita -->
+    <!-- END / Divisão Hospitalar / Orçado x Realizado -->
+
+    <!-- BEGIN / Divisão Gestão de Sinistro / Orçado x Realizado -->
+    $('#divisao_gestao_sinistro_orcado_realizado_periodo_initial, #divisao_gestao_sinistro_orcado_realizado_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_gestao_sinistro_orcado_realizado_revenues_initial, #divisao_gestao_sinistro_orcado_realizado_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_gestao_sinistro_orcado_realizado_revenues_percentage').mask("#");
+    <!-- BEGIN / Divisão Gestão de Sinistro / Distribuição por Receita -->
+    $('#divisao_gestao_sinistro_orcado_realizado_distribuicao_servicos_percentage').mask("#");
+    $('#divisao_gestao_sinistro_orcado_realizado_distribuicao_servicos_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Gestão de Sinistro / Distribuição por Receita -->
+    <!-- END / Divisão Gestão de Sinistro / Orçado x Realizado -->
+
+    <!-- BEGIN / Divisão Sistemas / Orçado x Realizado -->
+    $('#divisao_sistema_orcado_realizado_periodo_initial, #divisao_sistema_orcado_realizado_periodo_end').mask("00/0000", {placeholder: "mm/aaaa"});
+    $('#divisao_sistema_orcado_realizado_revenues_initial, #divisao_sistema_orcado_realizado_revenues_end').mask("#.##0,00", {reverse: true});
+    $('#divisao_sistema_orcado_realizado_revenues_percentage').mask("#");
+    <!-- BEGIN / Divisão Sistemas / Distribuição por Receita -->
+    $('#divisao_sistema_orcado_realizado_distribuicao_lu_percentage, #divisao_sistema_orcado_realizado_distribuicao_lum_percentage, #divisao_sistema_orcado_realizado_distribuicao_servico_de_implatacao_percentage, #divisao_sistema_orcado_realizado_distribuicao_sms_percentage, #divisao_sistema_orcado_realizado_distribuicao_revenda_royaltes_percentage, #divisao_sistema_orcado_realizado_distribuicao_manutencao_linha_pc_percentage, #divisao_sistema_orcado_realizado_distribuicao_receita_de_outsourcing_percentage, #divisao_sistema_orcado_realizado_distribuicao_bpo_percentage').mask("S#", {
+        translation: {
+            'S': {
+                pattern: /-/,
+                optional: true
+            }
+        }
+    });
+    $('#divisao_sistema_orcado_realizado_distribuicao_lu_valor, #divisao_sistema_orcado_realizado_distribuicao_lum_valor, #divisao_sistema_orcado_realizado_distribuicao_servico_de_implatacao_valor, #divisao_sistema_orcado_realizado_distribuicao_sms_valor, #divisao_sistema_orcado_realizado_distribuicao_revenda_royaltes_valor, #divisao_sistema_orcado_realizado_distribuicao_manutencao_linha_pc_valor, #divisao_sistema_orcado_realizado_distribuicao_receita_de_outsourcing_valor, #divisao_sistema_orcado_realizado_distribuicao_bpo_valor').mask("#.##0,00", {reverse: true});
+    <!-- END / Divisão Sistemas / Distribuição por Receita -->
+    <!-- END / Divisão Sistemas / Orçado x Realizado -->
+
+
+});
