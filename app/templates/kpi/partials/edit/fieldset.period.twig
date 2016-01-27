@@ -1,0 +1,43 @@
+<fieldset>
+    <legend>Período</legend>
+    <div class="row">
+        <div class="col-md-3">
+            <fieldset>
+                <legend>1º Ano</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="period_first_initial">Início</label>
+                            <input type="text" class="form-control  input-mask-period" id="period_first_initial" name="period[first][initial]"{% if kpi.getPeriodFirstInitial() %} value="{{ kpi.getPeriodFirstInitial()|date("m/Y", false) }}"{% endif %}>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="period_first_end">Fim</label>
+                            <input type="text" class="form-control  input-mask-period" id="period_first_end" name="period[first][end]"{% if kpi.getPeriodFirstEnd() %} value="{{ kpi.getPeriodFirstEnd()|date("m/Y", false) }}"{% endif %}>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-md-3">
+            <fieldset>
+                <legend>2º Ano</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="period_second_initial">Início</label>
+                            <input type="text" class="form-control  input-mask-period" id="period_second_initial" name="period[second][initial]"{% if kpi.getPeriodSecondInitial() %} value="{{ kpi.getPeriodSecondInitial()|date("m/Y", false) }}"{% endif %}>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="period_second_end">Fim</label>
+                            <input type="text" class="form-control  input-mask-period" id="period_second_end" name="period[second][end]"{% if kpi.getPeriodSecondEnd() %} value="{{ kpi.getPeriodSecondEnd()|date("m/Y", false) }}"{% endif %}>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</fieldset>

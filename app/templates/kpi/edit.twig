@@ -1,0 +1,864 @@
+{% extends "base.twig" %}
+
+{% set title = ["Adicionar", "Kpi"]|join(' / ') %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{{ parent() }}
+        <link href="/assest/libs/twitter-bootstrap-wizard/prettify.css" rel="stylesheet">
+        <script src="/assest/libs/twitter-bootstrap-wizard/prettify.js"></script>
+
+        <script src="/assest/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+        <script src="/assest/libs/jQuery-Mask-Plugin/dist/jquery.mask.min.js"></script>
+
+        <!-- CUSTOM -->
+        <link href="/assest/custom/css/kpi.add.css" rel="stylesheet">
+        <script src="/assest/custom/js/kpi.add.js"></script>
+{% endblock %}
+
+{% block content %}
+
+    {% include 'title.partial.twig' %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ path_for('kpi.add') }}" method="post">
+
+<!-- BEGIN / FIELDSET - Informações -->
+                <fieldset>
+                    <legend>INFORMAÇÕES</legend>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="information_date">Data</label>
+                                <input type="text" class="form-control" id="information_date" name="information[date]" readonly="readonly" value="{{ "now"|date("d/m/Y") }}">
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label for="information_responsible">Responsável</label>
+                                <input type="text" class="form-control" id="information_responsible" name="information[responsible]">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+<!-- END / FIELDSET - Informações -->
+
+<!-- BEGIN / FIELDSET - Período -->
+                <fieldset>
+                    <legend>Período</legend>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <fieldset>
+                                <legend>1º Ano</legend>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="period_first_initial">Início</label>
+                                            <input type="text" class="form-control  input-mask-period" id="period_first_initial" name="period[first][initial]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="period_first_end">Fim</label>
+                                            <input type="text" class="form-control  input-mask-period" id="period_first_end" name="period[first][end]">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-3">
+                            <fieldset>
+                                <legend>2º Ano</legend>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="period_second_initial">Início</label>
+                                            <input type="text" class="form-control  input-mask-period" id="period_second_initial" name="period[second][initial]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="period_second_end">Fim</label>
+                                            <input type="text" class="form-control  input-mask-period" id="period_second_end" name="period[second][end]">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </fieldset>
+<!-- END / FIELDSET - Período -->
+
+<!-- BEGIN / FIELDSET - Comparativo -->
+                <fieldset>
+                    <legend>COMPARATIVO</legend>
+                    <div id="wizard_comparativo">
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <div>
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation"><a href="#tab_a_1" role="tab" data-toggle="tab">Grupo Benner</a></li>
+                                        <li role="presentation"><a href="#tab_a_2" role="tab" data-toggle="tab">Operadoras de Saúde</a></li>
+                                        <li role="presentation"><a href="#tab_a_3" role="tab" data-toggle="tab">Hospitalar</a></li>
+                                        <li role="presentation"><a href="#tab_a_4" role="tab" data-toggle="tab">Gestão de Sinistro</a></li>
+                                        <li role="presentation"><a href="#tab_a_5" role="tab" data-toggle="tab">Sistemas</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab_a_1">
+                                <!-- BEGIN / FIELDSET - Comparativo / Grupo Benner -->
+                                <fieldset>
+                                    <legend>Grupo Benner</legend>
+                                    <div class="row">
+
+                                        <!-- BEGIN / Faturamento Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Faturamento</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_revenues_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_revenues_target" name="groupbenner[1][revenues][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_revenues_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_revenues_initial" name="groupbenner[1][revenues][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_revenues_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_revenues_end" name="groupbenner[1][revenues][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_revenues_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="groupbenner_comparative_revenues_percentage" name="groupbenner[1][revenues][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Faturamento Acumulado -->
+
+                                        <!-- BEGIN / Ebtida Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Ebtida</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_ebtida_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_ebtida_target" name="groupbenner[1][ebtida][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_ebtida_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_ebtida_initial" name="groupbenner[1][ebtida][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_ebtida_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_ebtida_end" name="groupbenner[1][ebtida][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_ebtida_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="groupbenner_comparative_ebtida_percentage" name="groupbenner[1][ebtida][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Ebtida Acumulado -->
+
+                                        <!-- BEGIN / Lucro Liquído Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Lucro Liquído</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_net_profit_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_net_profit_target" name="groupbenner[1][net_profit][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_net_profit_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_net_profit_initial" name="groupbenner[1][net_profit][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_net_profit_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="groupbenner_comparative_net_profit_end" name="groupbenner[1][net_profit][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="groupbenner_comparative_net_profit_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="groupbenner_comparative_net_profit_percentage" name="groupbenner[1][net_profit][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Lucro Liquído Acumulado -->
+
+                                    </div>
+                                </fieldset>
+                                <!-- END / FIELDSET - Comparativo / Grupo Benner -->
+                            </div>
+
+                            <div class="tab-pane" id="tab_a_2">
+                                <!-- BEGIN / FIELDSET - Comparativo / Operadoras de Saúde -->
+                                <fieldset>
+                                    <legend>Operadoras de Saúde</legend>
+                                    <div class="row">
+
+                                        <!-- BEGIN / Faturamento Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Faturamento</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_revenues_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_revenues_target" name="healthoperators[1][revenues][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_revenues_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_revenues_initial" name="healthoperators[1][revenues][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_revenues_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_revenues_end" name="healthoperators[1][revenues][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_revenues_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_revenues_percentage" name="healthoperators[1][revenues][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Faturamento Acumulado -->
+
+                                        <!-- BEGIN / Ebtida Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Ebtida</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_ebtida_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_ebtida_target" name="healthoperators[1][ebtida][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_ebtida_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_ebtida_initial" name="healthoperators[1][ebtida][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_ebtida_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_ebtida_end" name="healthoperators[1][ebtida][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_ebtida_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_ebtida_percentage" name="healthoperators[1][ebtida][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Ebtida Acumulado -->
+
+                                        <!-- BEGIN / Lucro Liquído Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Lucro Liquído</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_net_profit_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_net_profit_target" name="healthoperators[1][net_profit][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_net_profit_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_net_profit_initial" name="healthoperators[1][net_profit][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_net_profit_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_net_profit_end" name="healthoperators[1][net_profit][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="healthoperators_comparative_net_profit_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_net_profit_percentage" name="healthoperators[1][net_profit][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Lucro Liquído Acumulado -->
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <!-- BEGIN / Distribuição por Receita -->
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <hr />
+                                                    <h4>Distribuição por Receita</h4>
+                                                    <hr />
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+
+                                                        <!-- BEGIN / Distribuição por Receita / LU -->
+                                                        <div class="col-md-2">
+                                                            <h4>LU</h4>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_lu_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_lu_value" name="healthoperators[1][lu][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_lu_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_lu_percentage" name="healthoperators[1][lu][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / LU -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / LUM -->
+                                                        <div class="col-md-2">
+                                                            <h4>LUM</h4>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_lum_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_lum_value" name="healthoperators[1][lum][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_lum_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_lum_percentage" name="healthoperators[1][lum][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / LUM -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Implatação -->
+                                                        <div class="col-md-2">
+                                                            <h4>Implatação</h4>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_implantation_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_implantation_value" name="healthoperators[1][implantation][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_implantation_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_implantation_percentage" name="healthoperators[1][implantation][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Implatação -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / SMS -->
+                                                        <div class="col-md-2">
+                                                            <h4>SMS</h4>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_sms_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_sms_value" name="healthoperators[1][sms][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_sms_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_sms_percentage" name="healthoperators[1][sms][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / SMS -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Serviços Médicos -->
+                                                        <div class="col-md-2">
+                                                            <h4>Serviços Médicos</h4>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_medical_services_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_medical_services_value" name="healthoperators[1][medical_services][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_medical_services_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_medical_services_percentage" name="healthoperators[1][medical_services][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Serviços Médicos -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Treinamentos -->
+                                                        <div class="col-md-2">
+                                                            <h4>Treinamentos</h4>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_workout_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_workout_value" name="healthoperators[1][workout][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="healthoperators_comparative_workout_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="healthoperators_comparative_workout_percentage" name="healthoperators[1][workout][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Treinamentos -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END / Distribuição por Receita -->
+
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <!-- END / FIELDSET - Comparativo / Operadoras de Saúde -->
+                            </div>
+
+                            <div class="tab-pane" id="tab_a_3">
+                                <!-- BEGIN / FIELDSET - Comparativo / Hospitalar -->
+                                <fieldset>
+                                    <legend>Hospitalar</legend>
+                                    <div class="row">
+
+                                        <!-- BEGIN / Faturamento Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Faturamento</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_revenues_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_revenues_target" name="hospital[1][revenues][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_revenues_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_revenues_initial" name="hospital[1][revenues][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_revenues_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_revenues_end" name="hospital[1][revenues][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_revenues_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="hospital_comparative_revenues_percentage" name="hospital[1][revenues][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Faturamento Acumulado -->
+
+                                        <!-- BEGIN / Ebtida Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Ebtida</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_ebtida_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_ebtida_target" name="hospital[1][ebtida][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_ebtida_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_ebtida_initial" name="hospital[1][ebtida][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_ebtida_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_ebtida_end" name="hospital[1][ebtida][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_ebtida_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="hospital_comparative_ebtida_percentage" name="hospital[1][ebtida][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Ebtida Acumulado -->
+
+                                        <!-- BEGIN / Lucro Liquído Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Lucro Liquído</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_net_profit_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_net_profit_target" name="hospital[1][net_profit][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_net_profit_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_net_profit_initial" name="hospital[1][net_profit][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_net_profit_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_net_profit_end" name="hospital[1][net_profit][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hospital_comparative_net_profit_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="hospital_comparative_net_profit_percentage" name="hospital[1][net_profit][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Lucro Liquído Acumulado -->
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <!-- BEGIN / Distribuição por Receita -->
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <hr />
+                                                    <h4>Distribuição por Receita</h4>
+                                                    <hr />
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+
+                                                        <!-- BEGIN / Distribuição por Receita / LU -->
+                                                        <div class="col-md-2">
+                                                            <h4>LU</h4>
+                                                            <div class="form-group">
+                                                                <label for="hospital_comparative_lu_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_lu_value" name="hospital[1][lu][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="hospital_comparative_lu_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="hospital_comparative_lu_percentage" name="hospital[1][lu][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / LU -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / LUM -->
+                                                        <div class="col-md-2">
+                                                            <h4>LUM</h4>
+                                                            <div class="form-group">
+                                                                <label for="hospital_comparative_lum_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_lum_value" name="hospital[1][lum][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="hospital_comparative_lum_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="hospital_comparative_lum_percentage" name="hospital[1][lum][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / LUM -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Implatação -->
+                                                        <div class="col-md-2">
+                                                            <h4>Implatação</h4>
+                                                            <div class="form-group">
+                                                                <label for="hospital_comparative_implantation_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="hospital_comparative_implantation_value" name="hospital[1][implantation][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="hospital_comparative_implantation_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="hospital_comparative_implantation_percentage" name="hospital[1][implantation][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Implatação -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END / Distribuição por Receita -->
+
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <!-- END / FIELDSET - Comparativo / Hospitalar -->
+                            </div>
+
+                            <div class="tab-pane" id="tab_a_4">
+                                <!-- BEGIN / FIELDSET - Comparativo / Gestão de Sinistro -->
+                                <fieldset>
+                                    <legend>Gestão de Sinistro</legend>
+                                    <div class="row">
+
+                                        <!-- BEGIN / Faturamento Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Faturamento</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_revenues_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_revenues_target" name="ominousmanagement[1][revenues][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_revenues_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_revenues_initial" name="ominousmanagement[1][revenues][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_revenues_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_revenues_end" name="ominousmanagement[1][revenues][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_revenues_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_revenues_percentage" name="ominousmanagement[1][revenues][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Faturamento Acumulado -->
+
+                                        <!-- BEGIN / Ebtida Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Ebtida</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_ebtida_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_ebtida_target" name="ominousmanagement[1][ebtida][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_ebtida_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_ebtida_initial" name="ominousmanagement[1][ebtida][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_ebtida_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_ebtida_end" name="ominousmanagement[1][ebtida][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_ebtida_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_ebtida_percentage" name="ominousmanagement[1][ebtida][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Ebtida Acumulado -->
+
+                                        <!-- BEGIN / Lucro Liquído Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Lucro Liquído</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_net_profit_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_net_profit_target" name="ominousmanagement[1][net_profit][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_net_profit_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_net_profit_initial" name="ominousmanagement[1][net_profit][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_net_profit_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_net_profit_end" name="ominousmanagement[1][net_profit][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ominousmanagement_comparative_net_profit_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_net_profit_percentage" name="ominousmanagement[1][net_profit][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Lucro Liquído Acumulado -->
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <!-- BEGIN / Distribuição por Receita -->
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <hr />
+                                                    <h4>Distribuição por Receita</h4>
+                                                    <hr />
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+
+                                                        <!-- BEGIN / Distribuição por Receita / Serviços -->
+                                                        <div class="col-md-2">
+                                                            <h4>Serviços</h4>
+                                                            <div class="form-group">
+                                                                <label for="ominousmanagement_comparative_services_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_services_value" name="ominousmanagement[1][services][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ominousmanagement_comparative_services_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_services_percentage" name="ominousmanagement[1][services][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Serviços -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END / Distribuição por Receita -->
+
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <!-- END / FIELDSET - Comparativo / Gestão de Sinistro -->
+                            </div>
+
+                            <div class="tab-pane" id="tab_a_5">
+                                <!-- BEGIN / FIELDSET - Comparativo / Sistemas -->
+                                <fieldset>
+                                    <legend>Sistemas</legend>
+                                    <div class="row">
+
+                                        <!-- BEGIN / Faturamento Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Faturamento</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_revenues_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_revenues_target" name="systems[1][revenues][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_revenues_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_revenues_initial" name="systems[1][revenues][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_revenues_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_revenues_end" name="systems[1][revenues][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_revenues_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_revenues_percentage" name="systems[1][revenues][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Faturamento Acumulado -->
+
+                                        <!-- BEGIN / Ebtida Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Ebtida</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_ebtida_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_ebtida_target" name="systems[1][ebtida][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_ebtida_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_ebtida_initial" name="systems[1][ebtida][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_ebtida_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_ebtida_end" name="systems[1][ebtida][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_ebtida_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_ebtida_percentage" name="systems[1][ebtida][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Ebtida Acumulado -->
+
+                                        <!-- BEGIN / Lucro Liquído Acumulado -->
+                                        <div class="col-md-2">
+                                            <h5>Lucro Liquído</h5>
+                                            <h4>Acumulado</h4>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_net_profit_target">Meta</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_net_profit_target" name="systems[1][net_profit][target]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_net_profit_initial">Início</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_net_profit_initial" name="systems[1][net_profit][initial]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_net_profit_end">Final</label>
+                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_net_profit_end" name="systems[1][net_profit][end]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="systems_comparative_net_profit_percentage">Porcentagem</label>
+                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_net_profit_percentage" name="systems[1][net_profit][percentage]">
+                                            </div>
+                                        </div>
+                                        <!-- END / Lucro Liquído Acumulado -->
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <!-- BEGIN / Distribuição por Receita -->
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <hr />
+                                                    <h4>Distribuição por Receita</h4>
+                                                    <hr />
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+
+                                                        <!-- BEGIN / Distribuição por Receita / LU -->
+                                                        <div class="col-md-2">
+                                                            <h4>LU</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_lu_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_lu_value" name="systems[1][lu][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_lu_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_lu_percentage" name="systems[1][lu][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / LU -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / LUM -->
+                                                        <div class="col-md-2">
+                                                            <h4>LUM</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_lum_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_lum_value" name="systems[1][lum][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_lum_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_lum_percentage" name="systems[1][lum][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / LUM -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Implatação -->
+                                                        <div class="col-md-2">
+                                                            <h4>Implatação</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_implantation_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_implantation_value" name="systems[1][implantation][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_implantation_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_implantation_percentage" name="systems[1][implantation][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Implatação -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / SMS -->
+                                                        <div class="col-md-2">
+                                                            <h4>SMS</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_sms_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_sms_value" name="systems[1][sms][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_sms_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_sms_percentage" name="systems[1][sms][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / SMS -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Royaltes -->
+                                                        <div class="col-md-2">
+                                                            <h4>Royaltes</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_royaltes_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_royaltes_value" name="systems[1][royaltes][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_royaltes_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_royaltes_percentage" name="systems[1][royaltes][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Royaltes -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Manutenção PC -->
+                                                        <div class="col-md-2">
+                                                            <h4>Manutenção PC</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_maintenance_pc_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_maintenance_pc_value" name="systems[1][maintenance_pc][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_maintenance_pc_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_maintenance_pc_percentage" name="systems[1][maintenance_pc][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Manutenção PC -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / Outsourcing -->
+                                                        <div class="col-md-2">
+                                                            <h4>Outsourcing</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_outsourcing_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_outsourcing_value" name="systems[1][outsourcing][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_outsourcing_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_outsourcing_percentage" name="systems[1][outsourcing][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / Outsourcing -->
+
+                                                        <!-- BEGIN / Distribuição por Receita / BPO -->
+                                                        <div class="col-md-2">
+                                                            <h4>BPO</h4>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_bpo_value">Valor</label>
+                                                                <input type="text" class="form-control input-mask-money" id="systems_comparative_bpo_value" name="systems[1][bpo][value]">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="systems_comparative_bpo_percentage">Porcentagem</label>
+                                                                <input type="text" class="form-control input-mask-percentage" id="systems_comparative_bpo_percentage" name="systems[1][bpo][percentage]">
+                                                            </div>
+                                                        </div>
+                                                        <!-- END / Distribuição por Receita / BPO -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END / Distribuição por Receita -->
+
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <!-- END / FIELDSET - Comparativo / Sistemas -->
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+<!-- END / FIELDSET - Comparativo -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-default" value="Salvar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

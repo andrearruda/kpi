@@ -1,0 +1,17 @@
+<fieldset>
+    <legend>INFORMAÇÕES</legend>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="information_date">Data</label>
+                <input type="text" class="form-control" id="information_date" name="information[date]" readonly="readonly" value="{{ kpi.getCreatedAt()|date("d/m/Y", false) }}">
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="form-group">
+                <label for="information_responsible">Responsável</label>
+                <input type="text" class="form-control" id="information_responsible" name="information[responsible]" value="{{ kpi.getResponsible() }}">
+            </div>
+        </div>
+    </div>
+</fieldset>

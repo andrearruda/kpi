@@ -1,0 +1,111 @@
+<fieldset>
+    <legend>Gestão de Sinistro</legend>
+    <div class="row">
+
+        <!-- BEGIN / Faturamento Acumulado -->
+        <div class="col-md-2">
+            <h5>Faturamento</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_revenues_target">Meta</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_revenues_target" name="ominousmanagement[1][revenues][target]" value="{{ entities.comparative.ominousmanagement.getRevenuesTarget()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_revenues_initial">Início</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_revenues_initial" name="ominousmanagement[1][revenues][initial]" value="{{ entities.comparative.ominousmanagement.getRevenuesInitial()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_revenues_end">Final</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_revenues_end" name="ominousmanagement[1][revenues][end]" value="{{ entities.comparative.ominousmanagement.getRevenuesEnd()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_revenues_percentage">Porcentagem</label>
+                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_revenues_percentage" name="ominousmanagement[1][revenues][percentage]" value="{{ entities.comparative.ominousmanagement.getRevenuesPercentage()|number_format(2, '.', '') }}">
+            </div>
+        </div>
+        <!-- END / Faturamento Acumulado -->
+
+        <!-- BEGIN / Ebtida Acumulado -->
+        <div class="col-md-2">
+            <h5>Ebtida</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_ebtida_target">Meta</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_ebtida_target" name="ominousmanagement[1][ebtida][target]" value="{{ entities.comparative.ominousmanagement.getEbtidaTarget()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_ebtida_initial">Início</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_ebtida_initial" name="ominousmanagement[1][ebtida][initial]" value="{{ entities.comparative.ominousmanagement.getEbtidaInitial()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_ebtida_end">Final</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_ebtida_end" name="ominousmanagement[1][ebtida][end]" value="{{ entities.comparative.ominousmanagement.getEbtidaEnd()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_ebtida_percentage">Porcentagem</label>
+                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_ebtida_percentage" name="ominousmanagement[1][ebtida][percentage]" value="{{ entities.comparative.ominousmanagement.getEbtidaPercentage()|number_format(2, '.', '') }}">
+            </div>
+        </div>
+        <!-- END / Ebtida Acumulado -->
+
+        <!-- BEGIN / Lucro Liquído Acumulado -->
+        <div class="col-md-2">
+            <h5>Lucro Liquído</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_net_profit_target">Meta</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_net_profit_target" name="ominousmanagement[1][net_profit][target]" value="{{ entities.comparative.ominousmanagement.getNetProfitTarget()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_net_profit_initial">Início</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_net_profit_initial" name="ominousmanagement[1][net_profit][initial]" value="{{ entities.comparative.ominousmanagement.getNetProfitInitial()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_net_profit_end">Final</label>
+                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_net_profit_end" name="ominousmanagement[1][net_profit][end]" value="{{ entities.comparative.ominousmanagement.getNetProfitEnd()|number_format(2, '.', '') }}">
+            </div>
+            <div class="form-group">
+                <label for="ominousmanagement_comparative_net_profit_percentage">Porcentagem</label>
+                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_net_profit_percentage" name="ominousmanagement[1][net_profit][percentage]" value="{{ entities.comparative.ominousmanagement.getNetProfitPercentage()|number_format(2, '.', '') }}">
+            </div>
+        </div>
+        <!-- END / Lucro Liquído Acumulado -->
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- BEGIN / Distribuição por Receita -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <hr />
+                    <h4>Distribuição por Receita</h4>
+                    <hr />
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <!-- BEGIN / Distribuição por Receita / Serviços -->
+                        <div class="col-md-2">
+                            <h4>Serviços</h4>
+                            <div class="form-group">
+                                <label for="ominousmanagement_comparative_services_value">Valor</label>
+                                <input type="text" class="form-control input-mask-money" id="ominousmanagement_comparative_services_value" name="ominousmanagement[1][services][value]" value="{{ entities.comparative.ominousmanagement.getServicesValue()|number_format(2, '.', '') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="ominousmanagement_comparative_services_percentage">Porcentagem</label>
+                                <input type="text" class="form-control input-mask-percentage" id="ominousmanagement_comparative_services_percentage" name="ominousmanagement[1][services][percentage]" value="{{ entities.comparative.ominousmanagement.getServicesPercentage()|number_format(2, '.', '') }}">
+                            </div>
+                        </div>
+                        <!-- END / Distribuição por Receita / Serviços -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- END / Distribuição por Receita -->
+
+        </div>
+    </div>
+
+</fieldset>

@@ -1,0 +1,6 @@
+.idea
+/cache/tmp/*
+/cache/twig/*
+/log/*
+/vendor/*
+/composer.lock
