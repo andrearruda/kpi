@@ -448,40 +448,25 @@ final class KpiController
     public function edit(Request $request, Response $response, $args)
     {
         $kpi_repository = new \App\Repository\KpiRepository($this->em);
-
         $kpi_entity = $kpi_repository->findId($args['id']);
-
-        $kpi_repository->findTabs($kpi_entity, 'App\Entity\GroupBenner', 2);
-
-        $budgeted_groupbenner_entity = $kpi_repository->findBudgetedGroupBenner($kpi_entity);
-        $budgeted_healthoperators_entity = $kpi_repository->findBudgetedHealthOperators($kpi_entity);
-        $budgeted_hospital_entity = $kpi_repository->findBudgetedHospital($kpi_entity);
-        $budgeted_ominousmanagement_entity = $kpi_repository->findBudgetedOminousManagement($kpi_entity);
-        $budgeted_systems_entity = $kpi_repository->findBudgetedSystems($kpi_entity);
-
-        $comparative_groupbenner_entity = $kpi_repository->findComparativeGroupBenner($kpi_entity);
-        $comparative_healthoperators_entity = $kpi_repository->findComparativeHealthOperators($kpi_entity);
-        $comparative_hospital_entity = $kpi_repository->findComparativeHospital($kpi_entity);
-        $comparative_ominousmanagement_entity = $kpi_repository->findComparativeOminousManagement($kpi_entity);
-        $comparative_systems_entity = $kpi_repository->findComparativeSystems($kpi_entity);
 
 
         $this->view->render($response, 'kpi/edit.twig', [
             'kpi' => $kpi_entity,
             'entities' => array(
-                'budgeted' => array(
-                    'groupbenner' => $budgeted_groupbenner_entity,
-                    'healthoperators' => $budgeted_healthoperators_entity,
-                    'hospital' => $budgeted_hospital_entity,
-                    'ominousmanagement' => $budgeted_ominousmanagement_entity,
-                    'systems' => $budgeted_systems_entity
-                ),
                 'comparative' => array(
-                    'groupbenner' => $comparative_groupbenner_entity,
-                    'healthoperators' => $comparative_healthoperators_entity,
-                    'hospital' => $comparative_hospital_entity,
-                    'ominousmanagement' => $comparative_ominousmanagement_entity,
-                    'systems' => $comparative_systems_entity
+                    'groupbenner' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\GroupBenner', 1),
+                    'healthoperators' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\HealthOperators', 1),
+                    'hospital' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Hospital', 2),
+                    'ominousmanagement' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\OminousManagement', 1),
+                    'systems' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Systems', 1)
+                ),
+                'budgeted' => array(
+                    'groupbenner' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\GroupBenner', 2),
+                    'healthoperators' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\HealthOperators', 2),
+                    'hospital' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Hospital', 2),
+                    'ominousmanagement' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\OminousManagement', 2),
+                    'systems' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Systems', 2)
                 )
             )
         ]);

@@ -26,7 +26,7 @@ return [
                 'entity_path' => [
                     'app/src/Entity'
                 ],
-                'auto_generate_proxies' => false,
+                'auto_generate_proxies' => true,
                 'proxy_dir' =>  __DIR__.'/../cache/proxies',
                 'cache' => null,
             ],
