@@ -6,4 +6,5 @@ $app->group('/kpi', function(){
     $this->any('/add', 'App\Controller\KpiController:add')->setName('kpi.add');
     $this->any('/edit/{id}', 'App\Controller\KpiController:edit')->setName('kpi.edit');
     $this->any('/delete/{id}', 'App\Controller\KpiController:delete')->setName('kpi.delete');
+    $this->any('/active/{id}', 'App\Controller\KpiController:active')->setName('kpi.active');
 });

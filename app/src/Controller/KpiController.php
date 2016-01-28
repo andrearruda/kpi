@@ -445,13 +445,72 @@ final class KpiController
         return $response;
     }
 
+    public function edit(Request $request, Response $response, $args)
+    {
+        $kpi_repository = new \App\Repository\KpiRepository($this->em);
+
+        $kpi_entity = $kpi_repository->findId($args['id']);
+
+        $kpi_repository->findTabs($kpi_entity, 'App\Entity\GroupBenner', 2);
+
+        $budgeted_groupbenner_entity = $kpi_repository->findBudgetedGroupBenner($kpi_entity);
+        $budgeted_healthoperators_entity = $kpi_repository->findBudgetedHealthOperators($kpi_entity);
+        $budgeted_hospital_entity = $kpi_repository->findBudgetedHospital($kpi_entity);
+        $budgeted_ominousmanagement_entity = $kpi_repository->findBudgetedOminousManagement($kpi_entity);
+        $budgeted_systems_entity = $kpi_repository->findBudgetedSystems($kpi_entity);
+
+        $comparative_groupbenner_entity = $kpi_repository->findComparativeGroupBenner($kpi_entity);
+        $comparative_healthoperators_entity = $kpi_repository->findComparativeHealthOperators($kpi_entity);
+        $comparative_hospital_entity = $kpi_repository->findComparativeHospital($kpi_entity);
+        $comparative_ominousmanagement_entity = $kpi_repository->findComparativeOminousManagement($kpi_entity);
+        $comparative_systems_entity = $kpi_repository->findComparativeSystems($kpi_entity);
+
+
+        $this->view->render($response, 'kpi/edit.twig', [
+            'kpi' => $kpi_entity,
+            'entities' => array(
+                'budgeted' => array(
+                    'groupbenner' => $budgeted_groupbenner_entity,
+                    'healthoperators' => $budgeted_healthoperators_entity,
+                    'hospital' => $budgeted_hospital_entity,
+                    'ominousmanagement' => $budgeted_ominousmanagement_entity,
+                    'systems' => $budgeted_systems_entity
+                ),
+                'comparative' => array(
+                    'groupbenner' => $comparative_groupbenner_entity,
+                    'healthoperators' => $comparative_healthoperators_entity,
+                    'hospital' => $comparative_hospital_entity,
+                    'ominousmanagement' => $comparative_ominousmanagement_entity,
+                    'systems' => $comparative_systems_entity
+                )
+            )
+        ]);
+        return $response;
+    }
+
     public function delete(Request $request, Response $response, $args)
     {
-        $kpi = $this->em->getRepository('App\Entity\Kpi')->findOneById('1');
+        $kpi = $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']);
 
         $this->em->remove($kpi); //--> Remove entity Kpi
         $this->em->flush();
 
         return $response->withRedirect($this->router->pathFor('kpi'));
+    }
+
+    public function active(Request $request, Response $response, $args){
+
+        $data_post = array(
+            'active' =>   $request->getParam('active') == 'true' ? '1' : '0'
+        );
+
+        $kpi = $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']);
+
+        (new ClassMethods())->hydrate($data_post, $kpi);
+
+        $this->em->persist($kpi);
+        $this->em->flush();
+
+        return $response->withJson((new ClassMethods())->extract($kpi));
     }
 }
