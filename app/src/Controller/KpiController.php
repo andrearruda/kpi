@@ -485,17 +485,12 @@ final class KpiController
 
     public function active(Request $request, Response $response, $args){
 
-        $data_post = array(
-            'active' =>   $request->getParam('active') == 'true' ? '1' : '0'
-        );
+        $kpi_repository = new \App\Repository\KpiRepository($this->em);
 
-        $kpi = $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']);
+        $kpi_entity = $kpi_repository->findId($args['id']);
 
-        (new ClassMethods())->hydrate($data_post, $kpi);
+        $kpi_repository->active($kpi_entity);
 
-        $this->em->persist($kpi);
-        $this->em->flush();
-
-        return $response->withJson((new ClassMethods())->extract($kpi));
+        return $response->withJson((new ClassMethods())->extract($kpi_entity));
     }
 }

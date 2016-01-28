@@ -7,10 +7,10 @@
 use \Slim\Middleware\HttpBasicAuthentication\AuthenticatorInterface;
 
 $app->add(new \Slim\Middleware\HttpBasicAuthentication([
-    "path" => ["/kpi"],
+    "path" => ["/"],
     "realm" => "Protected",
     "users" => [
         "farolnet" => "293143",
-        "benner" => "kpi#2016"
+        "benner" => "benner#2016"
     ]
 ]));

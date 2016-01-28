@@ -45,7 +45,7 @@
                     <tr>
                         <td>{{ kpi.getCreatedAt()|date("d/m/Y H:i", false) }}</td>
                         <td>{{ kpi.getResponsible() }}</td>
-                        <td><input type="checkbox" name="my-checkbox-activated" data-size="mini" data-url="{{ path_for('kpi.active', {'id' : kpi.getId()}) }}"{% if kpi.getActive() == '1' %} checked{% endif %} value="{{ kpi.getId() }}"></td>
+                        <td><input type="checkbox" name="my-checkbox-active" class="{% if kpi.getActive() == '1' %}actived{% else %}not_actived{% endif %}" data-size="mini" data-url="{{ path_for('kpi.active', {'id' : kpi.getId()}) }}"{% if kpi.getActive() == '1' %} checked{% endif %} value="{{ kpi.getId() }}"></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="...">
                                 <a href="{{ path_for('kpi.edit', {'id' : kpi.getId()}) }}" class="btn btn-default" data-kpi-id="{{ kpi.getId() }}">

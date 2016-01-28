@@ -29,4 +29,23 @@ class KpiRepository extends \Doctrine\ORM\EntityRepository
 
         return $entity->matching($criteria)->first();
     }
+
+    public function active(\App\Entity\Kpi $kpi_entity)
+    {
+        $this->inactiveAll();
+        $kpi_entity->setActive(1);
+
+        $this->_em->persist($kpi_entity);
+        $this->_em->flush();
+
+        return $kpi_entity;
+    }
+
+    public function inactiveAll()
+    {
+        $query_builder = $this->_em->createQueryBuilder();
+        $query = $query_builder->update($this->_entityName, 'kpi')->set('kpi.active', '0')->getQuery();
+
+        return $query->execute();
+    }
 }

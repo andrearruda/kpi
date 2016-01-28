@@ -1,7 +1,10 @@
 $(function() {
-    $('input[name=\'my-checkbox-activated\'], input[name=\'my-checkbox-automated\']').bootstrapSwitch();
+    $('input[type=\'checkbox\']').bootstrapSwitch();
 
-    $('input[name=\'my-checkbox-activated\']').on('switchChange.bootstrapSwitch init.bootstrapSwitch', function(event,  state) {
+    $('input[type=\'checkbox\']').on('switchChange.bootstrapSwitch', function(event,  state) {
+
+        $('input[type=\'checkbox\'].actived').addClass('not_actived').removeClass('actived');
+        $(this).addClass('actived').removeClass('not_actived');
 
         $.ajax({
             type: "POST",
@@ -9,15 +12,16 @@ $(function() {
             url: $(this).data('url'),
             dataType: "json",
             beforeSend: function(){
-                $(this).attr("disabled", true);
+                $('input[type=\'checkbox\'].not_actived').bootstrapSwitch('state', false);
             },
             complete: function(){
-                $(this).removeAttr("disabled");
             },
             success: function(json) {
-                console.log(json);
+                $('input[type=\'checkbox\'].actived').bootstrapSwitch('state', true);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
             }
-
         });
+
     });
 });
