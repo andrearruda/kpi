@@ -11,6 +11,8 @@ use Psr\Log\LoggerInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use Zend\Hydrator\ClassMethods;
+use Thapp\XmlBuilder\XMLBuilder;
+use Thapp\XmlBuilder\Normalizer;
 
 final class KpiController
 {
@@ -870,5 +872,74 @@ final class KpiController
         $this->em->flush();
 
         return $response->withJson((new ClassMethods())->extract($kpi_entity));
+    }
+
+    public function show(Request $request, Response $response, $args)
+    {
+        $kpi_entity = $this->em->getRepository('App\Entity\Kpi')->findOneByActive(1);
+        $kpi_type_comparative_entity = $this->em->getRepository('App\Entity\KpiType')->findOneById(1);
+        $kpi_type_budgeted_entity = $this->em->getRepository('App\Entity\KpiType')->findOneById(2);
+
+        $criteria_comparative = Criteria::create();
+        $criteria_comparative->where(Criteria::expr()->eq('kpi', $kpi_entity));
+        $criteria_comparative->andWhere(Criteria::expr()->eq('kpiType', $kpi_type_comparative_entity));
+
+        $criteria_budgeted = Criteria::create();
+        $criteria_budgeted->where(Criteria::expr()->eq('kpi', $kpi_entity));
+        $criteria_budgeted->andWhere(Criteria::expr()->eq('kpiType', $kpi_type_budgeted_entity));
+
+        $data = [
+            'kpi' => (new ClassMethods())->extract($kpi_entity),
+            'comparative' => [
+                'groupbenner' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\GroupBenner')->matching($criteria_comparative)->first()),
+                'healthoperators' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\HealthOperators')->matching($criteria_comparative)->first()),
+                'hospital' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\Hospital')->matching($criteria_comparative)->first()),
+                'ominousmanagement' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\OminousManagement')->matching($criteria_comparative)->first()),
+                'systems' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\Systems')->matching($criteria_comparative)->first())
+            ],
+            'budgeted' => [
+                'groupbenner' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\GroupBenner')->matching($criteria_budgeted)->first()),
+                'healthoperators' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\HealthOperators')->matching($criteria_budgeted)->first()),
+                'hospital' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\Hospital')->matching($criteria_budgeted)->first()),
+                'ominousmanagement' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\OminousManagement')->matching($criteria_budgeted)->first()),
+                'systems' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\Systems')->matching($criteria_budgeted)->first())
+            ],
+        ];
+
+        $data['kpi']['period_first_initial'] = $data['kpi']['period_first_initial']->format('Y-m-d');
+        $data['kpi']['period_first_end'] = $data['kpi']['period_first_end']->format('Y-m-d');
+        $data['kpi']['period_second_initial'] = $data['kpi']['period_second_initial']->format('Y-m-d');
+        $data['kpi']['period_second_end'] = $data['kpi']['period_second_end']->format('Y-m-d');
+        unset($data['kpi']['id'], $data['kpi']['created_at'], $data['kpi']['updated_at'], $data['kpi']['deleted_at'], $data['kpi']['active']);
+
+
+        unset($data['comparative']['groupbenner']['id'], $data['comparative']['groupbenner']['created_at'], $data['comparative']['groupbenner']['updated_at'], $data['comparative']['groupbenner']['deleted_at'], $data['comparative']['groupbenner']['kpi_type'], $data['comparative']['groupbenner']['kpi']);
+        unset($data['comparative']['healthoperators']['id'], $data['comparative']['healthoperators']['created_at'], $data['comparative']['healthoperators']['updated_at'], $data['comparative']['healthoperators']['deleted_at'], $data['comparative']['healthoperators']['kpi_type'], $data['comparative']['healthoperators']['kpi']);
+        unset($data['comparative']['hospital']['id'], $data['comparative']['hospital']['created_at'], $data['comparative']['hospital']['updated_at'], $data['comparative']['hospital']['deleted_at'], $data['comparative']['hospital']['kpi_type'], $data['comparative']['hospital']['kpi']);
+        unset($data['comparative']['ominousmanagement']['id'], $data['comparative']['ominousmanagement']['created_at'], $data['comparative']['ominousmanagement']['updated_at'], $data['comparative']['ominousmanagement']['deleted_at'], $data['comparative']['ominousmanagement']['kpi_type'], $data['comparative']['ominousmanagement']['kpi']);
+        unset($data['comparative']['systems']['id'], $data['comparative']['systems']['created_at'], $data['comparative']['systems']['updated_at'], $data['comparative']['systems']['deleted_at'], $data['comparative']['systems']['kpi_type'], $data['comparative']['systems']['kpi']);
+
+        unset($data['budgeted']['groupbenner']['id'], $data['budgeted']['groupbenner']['created_at'], $data['budgeted']['groupbenner']['updated_at'], $data['budgeted']['groupbenner']['deleted_at'], $data['budgeted']['groupbenner']['kpi_type'], $data['budgeted']['groupbenner']['kpi']);
+        unset($data['budgeted']['healthoperators']['id'], $data['budgeted']['healthoperators']['created_at'], $data['budgeted']['healthoperators']['updated_at'], $data['budgeted']['healthoperators']['deleted_at'], $data['budgeted']['healthoperators']['kpi_type'], $data['budgeted']['healthoperators']['kpi']);
+        unset($data['budgeted']['hospital']['id'], $data['budgeted']['hospital']['created_at'], $data['budgeted']['hospital']['updated_at'], $data['budgeted']['hospital']['deleted_at'], $data['budgeted']['hospital']['kpi_type'], $data['budgeted']['hospital']['kpi']);
+        unset($data['budgeted']['ominousmanagement']['id'], $data['budgeted']['ominousmanagement']['created_at'], $data['budgeted']['ominousmanagement']['updated_at'], $data['budgeted']['ominousmanagement']['deleted_at'], $data['budgeted']['ominousmanagement']['kpi_type'], $data['budgeted']['ominousmanagement']['kpi']);
+        unset($data['budgeted']['systems']['id'], $data['budgeted']['systems']['created_at'], $data['budgeted']['systems']['updated_at'], $data['budgeted']['systems']['deleted_at'], $data['budgeted']['systems']['kpi_type'], $data['budgeted']['systems']['kpi']);
+        
+        if($args['type'] == 'xml')
+        {
+            $xmlBuilder = new XmlBuilder('root');
+            $xmlBuilder->load($data);
+            $xml_output = $xmlBuilder->createXML(true);
+
+            $finfo = new \finfo(FILEINFO_MIME_TYPE);
+
+            $response->write($xml_output);
+            $response = $response->withHeader('content-type', $finfo->buffer($xml_output));
+            return $response;
+        }
+        else
+        {
+            return $response->withJson($data);
+        }
     }
 }

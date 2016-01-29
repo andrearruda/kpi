@@ -7,5 +7,5 @@ $app->group('/kpi', function(){
     $this->any('/edit/{id}', 'App\Controller\KpiController:edit')->setName('kpi.edit');
     $this->get('/delete/{id}', 'App\Controller\KpiController:delete')->setName('kpi.delete');
     $this->post('/active/{id}', 'App\Controller\KpiController:active')->setName('kpi.active');
-    $this->get('/output/{type}', 'App\Controller\KpiController:output')->setName('kpi.output');
+    $this->get('/show/{type}', 'App\Controller\KpiController:show')->setName('kpi.show');
 });
