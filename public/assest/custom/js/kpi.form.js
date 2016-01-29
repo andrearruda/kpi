@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
     $('form input').on('keypress', function(e) {
@@ -10,16 +10,8 @@ $(document).ready(function() {
     window.prettyPrint && prettyPrint();
 });
 
-/*
-$(document).ready(function() {
+$(function() {
     $('.input-mask-period').mask("00/0000", {placeholder: "mm/aaaa"});
-    $('.input-mask-money').mask("#.##0,00", {reverse: true});
-    $('.input-mask-percentage').mask("S#", {
-        translation: {
-            'S': {
-                pattern: /-/,
-                optional: true
-            }
-        }
-    });
-});*/
+    $('.input-mask-money').maskMoney({thousands:'', decimal:'.', allowZero:true, suffix: ' milhões', affixesStay: false, allowNegative: true});
+    $('.input-mask-percentage').maskMoney({thousands:'', decimal:'.', allowZero:true, suffix: ' %', affixesStay: false, allowNegative: true});
+});

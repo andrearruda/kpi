@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity;
 use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Collections\Criteria;
 use Slim\Router;
 use Slim\Views\Twig;
 use Psr\Log\LoggerInterface;
@@ -296,23 +297,23 @@ final class KpiController
                 'net_profit_target' => $request->getParam('healthoperators')[2]['net_profit']['target'],
                 'net_profit_percentage' => $request->getParam('healthoperators')[2]['net_profit']['percentage'],
 
-                'lu_value' => '',
-                'lu_percentage' => '',
+                'lu_value' => '0.00',
+                'lu_percentage' => '0.00',
 
-                'lum_value' => '',
-                'lum_percentage' => '',
+                'lum_value' => '0.00',
+                'lum_percentage' => '0.00',
 
-                'implantation_value' => '',
-                'implantation_percentage' => '',
+                'implantation_value' => '0.00',
+                'implantation_percentage' => '0.00',
 
-                'sms_value' => '',
-                'sms_percentage' => '',
+                'sms_value' => '0.00',
+                'sms_percentage' => '0.00',
 
-                'medical_services_value' => '',
-                'medical_services_percentage' => '',
+                'medical_services_value' => '0.00',
+                'medical_services_percentage' => '0.00',
 
-                'workout_value' => '',
-                'workout_percentage' => '',
+                'workout_value' => '0.00',
+                'workout_percentage' => '0.00',
 
                 'kpi_type' => $kpitype_budgeted_entity,
                 'kpi' => $kpi_entity
@@ -341,14 +342,14 @@ final class KpiController
                 'net_profit_target' => $request->getParam('hospital')[2]['net_profit']['target'],
                 'net_profit_percentage' => $request->getParam('hospital')[2]['net_profit']['percentage'],
 
-                'lu_value' => '',
-                'lu_percentage' => '',
+                'lu_value' => '0.00',
+                'lu_percentage' => '0.00',
 
-                'lum_value' => '',
-                'lum_percentage' => '',
+                'lum_value' => '0.00',
+                'lum_percentage' => '0.00',
 
-                'implantation_value' => '',
-                'implantation_percentage' => '',
+                'implantation_value' => '0.00',
+                'implantation_percentage' => '0.00',
 
                 'kpi_type' => $kpitype_budgeted_entity,
                 'kpi' => $kpi_entity
@@ -376,8 +377,8 @@ final class KpiController
                 'net_profit_target' => $request->getParam('ominousmanagement')[2]['net_profit']['target'],
                 'net_profit_percentage' => $request->getParam('ominousmanagement')[2]['net_profit']['percentage'],
 
-                'services_value' => '',
-                'services_percentage' => '',
+                'services_value' => '0.00',
+                'services_percentage' => '0.00',
 
                 'kpi_type' => $kpitype_budgeted_entity,
                 'kpi' => $kpi_entity
@@ -405,29 +406,29 @@ final class KpiController
                 'net_profit_target' => $request->getParam('systems')[2]['net_profit']['target'],
                 'net_profit_percentage' => $request->getParam('systems')[2]['net_profit']['percentage'],
 
-                'lu_value' => '',
-                'lu_percentage' => '',
+                'lu_value' => '0.00',
+                'lu_percentage' => '0.00',
 
-                'lum_value' => '',
-                'lum_percentage' => '',
+                'lum_value' => '0.00',
+                'lum_percentage' => '0.00',
 
-                'implantation_value' => '',
-                'implantation_percentage' => '',
+                'implantation_value' => '0.00',
+                'implantation_percentage' => '0.00',
 
-                'sms_value' => '',
-                'sms_percentage' => '',
+                'sms_value' => '0.00',
+                'sms_percentage' => '0.00',
 
-                'royaltes_value' => '',
-                'royaltes_percentage' => '',
+                'royaltes_value' => '0.00',
+                'royaltes_percentage' => '0.00',
 
-                'maintenance_pc_value' => '',
-                'maintenance_pc_percentage' => '',
+                'maintenance_pc_value' => '0.00',
+                'maintenance_pc_percentage' => '0.00',
 
-                'outsourcing_value' => '',
-                'outsourcing_percentage' => '',
+                'outsourcing_value' => '0.00',
+                'outsourcing_percentage' => '0.00',
 
-                'bpo_value' => '',
-                'bpo_percentage' => '',
+                'bpo_value' => '0.00',
+                'bpo_percentage' => '0.00',
 
                 'kpi_type' => $kpitype_budgeted_entity,
                 'kpi' => $kpi_entity
@@ -447,49 +448,69 @@ final class KpiController
 
     public function edit(Request $request, Response $response, $args)
     {
-        $kpi_repository = new \App\Repository\KpiRepository($this->em);
-        $kpi_entity = $kpi_repository->findId($args['id']);
+        $kpi_entity = $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']);
+        $kpi_type_comparative_entity = $this->em->getRepository('App\Entity\KpiType')->findOneById(1);
+        $kpi_type_budgeted_entity = $this->em->getRepository('App\Entity\KpiType')->findOneById(2);
 
+        $criteria_comparative = Criteria::create();
+        $criteria_comparative->where(Criteria::expr()->eq('kpi', $kpi_entity));
+        $criteria_comparative->andWhere(Criteria::expr()->eq('kpiType', $kpi_type_comparative_entity));
 
-        $this->view->render($response, 'kpi/edit.twig', [
-            'kpi' => $kpi_entity,
+        $criteria_budgeted = Criteria::create();
+        $criteria_budgeted->where(Criteria::expr()->eq('kpi', $kpi_entity));
+        $criteria_budgeted->andWhere(Criteria::expr()->eq('kpiType', $kpi_type_budgeted_entity));
+
+        $groupbenner_entity = $this->em->getRepository('App\Entity\GroupBenner');
+        $healthoperators_entity = $this->em->getRepository('App\Entity\HealthOperators');
+        $hospital_entity = $this->em->getRepository('App\Entity\Hospital');
+        $ominousmanagement_entity = $this->em->getRepository('App\Entity\OminousManagement');
+        $systems_entity = $this->em->getRepository('App\Entity\Systems');
+
+        $data = array(
+            'kpi' => $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']),
             'entities' => array(
                 'comparative' => array(
-                    'groupbenner' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\GroupBenner', 1),
-                    'healthoperators' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\HealthOperators', 1),
-                    'hospital' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Hospital', 2),
-                    'ominousmanagement' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\OminousManagement', 1),
-                    'systems' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Systems', 1)
+                    'groupbenner' => $groupbenner_entity->matching($criteria_comparative)->first(),
+                    'healthoperators' => $healthoperators_entity->matching($criteria_comparative)->first(),
+                    'hospital' => $hospital_entity->matching($criteria_comparative)->first(),
+                    'ominousmanagement' => $ominousmanagement_entity->matching($criteria_comparative)->first(),
+                    'systems' => $systems_entity->matching($criteria_comparative)->first(),
                 ),
                 'budgeted' => array(
-                    'groupbenner' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\GroupBenner', 2),
-                    'healthoperators' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\HealthOperators', 2),
-                    'hospital' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Hospital', 2),
-                    'ominousmanagement' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\OminousManagement', 2),
-                    'systems' => $kpi_repository->findTabsEntities($kpi_entity, 'App\Entity\Systems', 2)
-                )
+                    'groupbenner' => $groupbenner_entity->matching($criteria_budgeted)->first(),
+                    'healthoperators' => $healthoperators_entity->matching($criteria_budgeted)->first(),
+                    'hospital' => $hospital_entity->matching($criteria_budgeted)->first(),
+                    'ominousmanagement' => $ominousmanagement_entity->matching($criteria_budgeted)->first(),
+                    'systems' => $systems_entity->matching($criteria_budgeted)->first(),
+                ),
             )
-        ]);
+        );
+
+        $this->view->render($response, 'kpi/edit.twig', $data);
+
         return $response;
     }
 
     public function delete(Request $request, Response $response, $args)
     {
-        $kpi = $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']);
+        $kpi_entity = $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']);
 
-        $this->em->remove($kpi); //--> Remove entity Kpi
+        $this->em->remove($kpi_entity);
         $this->em->flush();
 
         return $response->withRedirect($this->router->pathFor('kpi'));
     }
 
-    public function active(Request $request, Response $response, $args){
+    public function active(Request $request, Response $response, $args)
+    {
+        $query_builder = $this->em->createQueryBuilder();
+        $query_builder->update('App\Entity\Kpi', 'kpi')->set('kpi.active', '0')->getQuery()->execute();
 
-        $kpi_repository = new \App\Repository\KpiRepository($this->em);
+        $kpi_entity = $this->em->getRepository('App\Entity\Kpi')->findOneById($args['id']);
+        $kpi_entity->setActive(1);
 
-        $kpi_entity = $kpi_repository->findId($args['id']);
-
-        $kpi_repository->active($kpi_entity);
+        $this->em->persist($kpi_entity);
+        $this->em->flush();
 
         return $response->withJson((new ClassMethods())->extract($kpi_entity));
     }

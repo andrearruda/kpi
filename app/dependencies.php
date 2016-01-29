@@ -59,6 +59,8 @@ $container['em'] = function ($c) {
 
 
     $settings = $c->get('settings');
+
+
     $config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(
         $settings['doctrine']['meta']['entity_path'],
         $settings['doctrine']['meta']['auto_generate_proxies'],

@@ -9,7 +9,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Kpi
  *
  * @ORM\Table(name="kpi")
- * @ORM\Entity(repositoryClass="App\Repository\KpiRepository")
+ * @ORM\Entity
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
 class Kpi
