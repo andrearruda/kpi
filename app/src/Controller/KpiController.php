@@ -924,7 +924,329 @@ final class KpiController
         unset($data['budgeted']['hospital']['id'], $data['budgeted']['hospital']['created_at'], $data['budgeted']['hospital']['updated_at'], $data['budgeted']['hospital']['deleted_at'], $data['budgeted']['hospital']['kpi_type'], $data['budgeted']['hospital']['kpi']);
         unset($data['budgeted']['ominousmanagement']['id'], $data['budgeted']['ominousmanagement']['created_at'], $data['budgeted']['ominousmanagement']['updated_at'], $data['budgeted']['ominousmanagement']['deleted_at'], $data['budgeted']['ominousmanagement']['kpi_type'], $data['budgeted']['ominousmanagement']['kpi']);
         unset($data['budgeted']['systems']['id'], $data['budgeted']['systems']['created_at'], $data['budgeted']['systems']['updated_at'], $data['budgeted']['systems']['deleted_at'], $data['budgeted']['systems']['kpi_type'], $data['budgeted']['systems']['kpi']);
-        
+
+
+        $kpi = array(
+            'responsible' => $data['kpi']['responsible'],
+            'period' => array(
+                'first' => array(
+                    'initial' => $data['kpi']['period_first_initial'],
+                    'end' => $data['kpi']['period_first_end']
+                ),
+                'second' => array(
+                    'initial' => $data['kpi']['period_second_initial'],
+                    'end' => $data['kpi']['period_second_end']
+                )
+            )
+        );
+
+        $comparative = array(
+            'groupbenner' => array(
+                'revenues' => array(
+                    'initial' => $data['comparative']['groupbenner']['revenues_initial'],
+                    'end' => $data['comparative']['groupbenner']['revenues_end'],
+                    'target' => $data['comparative']['groupbenner']['revenues_target'],
+                    'percentage' => $data['comparative']['groupbenner']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['comparative']['groupbenner']['ebtida_initial'],
+                    'end' => $data['comparative']['groupbenner']['ebtida_end'],
+                    'target' => $data['comparative']['groupbenner']['ebtida_target'],
+                    'percentage' => $data['comparative']['groupbenner']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['comparative']['groupbenner']['net_profit_initial'],
+                    'end' => $data['comparative']['groupbenner']['net_profit_end'],
+                    'target' => $data['comparative']['groupbenner']['net_profit_target'],
+                    'percentage' => $data['comparative']['groupbenner']['net_profit_percentage']
+                )
+            ),
+            'healthoperators' => array(
+                'revenues' => array(
+                    'initial' => $data['comparative']['healthoperators']['revenues_initial'],
+                    'end' => $data['comparative']['healthoperators']['revenues_end'],
+                    'target' => $data['comparative']['healthoperators']['revenues_target'],
+                    'percentage' => $data['comparative']['healthoperators']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['comparative']['healthoperators']['ebtida_initial'],
+                    'end' => $data['comparative']['healthoperators']['ebtida_end'],
+                    'target' => $data['comparative']['healthoperators']['ebtida_target'],
+                    'percentage' => $data['comparative']['healthoperators']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['comparative']['healthoperators']['net_profit_initial'],
+                    'end' => $data['comparative']['healthoperators']['net_profit_end'],
+                    'target' => $data['comparative']['healthoperators']['net_profit_target'],
+                    'percentage' => $data['comparative']['healthoperators']['net_profit_percentage']
+                ),
+                'distributionrevenue' => array(
+                    'lu' => array(
+                        'value' => $data['comparative']['healthoperators']['lu_value'],
+                        'percentage' => $data['comparative']['healthoperators']['lu_percentage']
+                    ),
+                    'lum' => array(
+                        'value' => $data['comparative']['healthoperators']['lum_value'],
+                        'percentage' => $data['comparative']['healthoperators']['lum_percentage']
+                    ),
+                    'implantation' => array(
+                        'value' => $data['comparative']['healthoperators']['implantation_value'],
+                        'percentage' => $data['comparative']['healthoperators']['implantation_percentage']
+                    ),
+                    'sms' => array(
+                        'value' => $data['comparative']['healthoperators']['sms_value'],
+                        'percentage' => $data['comparative']['healthoperators']['sms_percentage']
+                    ),
+                    'medicalservices' => array(
+                        'value' => $data['comparative']['healthoperators']['medical_services_value'],
+                        'percentage' => $data['comparative']['healthoperators']['medical_services_percentage']
+                    ),
+                    'workout' => array(
+                        'value' => $data['comparative']['healthoperators']['workout_value'],
+                        'percentage' => $data['comparative']['healthoperators']['workout_percentage']
+                    )
+                )
+            ),
+            'hospital' => array(
+                'revenues' => array(
+                    'initial' => $data['comparative']['hospital']['revenues_initial'],
+                    'end' => $data['comparative']['hospital']['revenues_end'],
+                    'target' => $data['comparative']['hospital']['revenues_target'],
+                    'percentage' => $data['comparative']['hospital']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['comparative']['hospital']['ebtida_initial'],
+                    'end' => $data['comparative']['hospital']['ebtida_end'],
+                    'target' => $data['comparative']['hospital']['ebtida_target'],
+                    'percentage' => $data['comparative']['hospital']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['comparative']['hospital']['net_profit_initial'],
+                    'end' => $data['comparative']['hospital']['net_profit_end'],
+                    'target' => $data['comparative']['hospital']['net_profit_target'],
+                    'percentage' => $data['comparative']['hospital']['net_profit_percentage']
+                ),
+                'distributionrevenue' => array(
+                    'lu' => array(
+                        'value' => $data['comparative']['hospital']['lu_value'],
+                        'percentage' => $data['comparative']['hospital']['lu_percentage']
+                    ),
+                    'lum' => array(
+                        'value' => $data['comparative']['hospital']['lum_value'],
+                        'percentage' => $data['comparative']['hospital']['lum_percentage']
+                    ),
+                    'implantation' => array(
+                        'value' => $data['comparative']['hospital']['implantation_value'],
+                        'percentage' => $data['comparative']['hospital']['implantation_percentage']
+                    )
+                )
+            ),
+            'ominousmanagement' => array(
+                'revenues' => array(
+                    'initial' => $data['comparative']['ominousmanagement']['revenues_initial'],
+                    'end' => $data['comparative']['ominousmanagement']['revenues_end'],
+                    'target' => $data['comparative']['ominousmanagement']['revenues_target'],
+                    'percentage' => $data['comparative']['ominousmanagement']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['comparative']['ominousmanagement']['ebtida_initial'],
+                    'end' => $data['comparative']['ominousmanagement']['ebtida_end'],
+                    'target' => $data['comparative']['ominousmanagement']['ebtida_target'],
+                    'percentage' => $data['comparative']['ominousmanagement']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['comparative']['ominousmanagement']['net_profit_initial'],
+                    'end' => $data['comparative']['ominousmanagement']['net_profit_end'],
+                    'target' => $data['comparative']['ominousmanagement']['net_profit_target'],
+                    'percentage' => $data['comparative']['ominousmanagement']['net_profit_percentage']
+                ),
+                'distributionrevenue' => array(
+                    'services' => array(
+                        'value' => $data['comparative']['ominousmanagement']['services_value'],
+                        'percentage' => $data['comparative']['ominousmanagement']['services_percentage']
+                    )
+                )
+            ),
+            'systems' => array(
+                'revenues' => array(
+                    'initial' => $data['comparative']['systems']['revenues_initial'],
+                    'end' => $data['comparative']['systems']['revenues_end'],
+                    'target' => $data['comparative']['systems']['revenues_target'],
+                    'percentage' => $data['comparative']['systems']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['comparative']['systems']['ebtida_initial'],
+                    'end' => $data['comparative']['systems']['ebtida_end'],
+                    'target' => $data['comparative']['systems']['ebtida_target'],
+                    'percentage' => $data['comparative']['systems']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['comparative']['systems']['net_profit_initial'],
+                    'end' => $data['comparative']['systems']['net_profit_end'],
+                    'target' => $data['comparative']['systems']['net_profit_target'],
+                    'percentage' => $data['comparative']['systems']['net_profit_percentage']
+                ),
+                'distributionrevenue' => array(
+                    'lu' => array(
+                        'value' => $data['comparative']['systems']['lu_value'],
+                        'percentage' => $data['comparative']['systems']['lu_percentage']
+                    ),
+                    'lum' => array(
+                        'value' => $data['comparative']['systems']['lum_value'],
+                        'percentage' => $data['comparative']['systems']['lum_percentage']
+                    ),
+                    'implantation' => array(
+                        'value' => $data['comparative']['systems']['implantation_value'],
+                        'percentage' => $data['comparative']['systems']['implantation_percentage']
+                    ),
+                    'sms' => array(
+                        'value' => $data['comparative']['systems']['sms_value'],
+                        'percentage' => $data['comparative']['systems']['sms_percentage']
+                    ),
+                    'royaltes' => array(
+                        'value' => $data['comparative']['systems']['royaltes_value'],
+                        'percentage' => $data['comparative']['systems']['royaltes_percentage']
+                    ),
+                    'maintenance_pc' => array(
+                        'value' => $data['comparative']['systems']['maintenance_pc_value'],
+                        'percentage' => $data['comparative']['systems']['maintenance_pc_percentage']
+                    ),
+                    'outsourcing' => array(
+                        'value' => $data['comparative']['systems']['outsourcing_value'],
+                        'percentage' => $data['comparative']['systems']['outsourcing_percentage']
+                    ),
+                    'bpo' => array(
+                        'value' => $data['comparative']['systems']['bpo_value'],
+                        'percentage' => $data['comparative']['systems']['bpo_percentage']
+                    )
+                )
+            )
+        );
+
+        $budgeted = array(
+            'groupbenner' => array(
+                'revenues' => array(
+                    'initial' => $data['budgeted']['groupbenner']['revenues_initial'],
+                    'end' => $data['budgeted']['groupbenner']['revenues_end'],
+                    'target' => $data['budgeted']['groupbenner']['revenues_target'],
+                    'percentage' => $data['budgeted']['groupbenner']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['budgeted']['groupbenner']['ebtida_initial'],
+                    'end' => $data['budgeted']['groupbenner']['ebtida_end'],
+                    'target' => $data['budgeted']['groupbenner']['ebtida_target'],
+                    'percentage' => $data['budgeted']['groupbenner']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['budgeted']['groupbenner']['net_profit_initial'],
+                    'end' => $data['budgeted']['groupbenner']['net_profit_end'],
+                    'target' => $data['budgeted']['groupbenner']['net_profit_target'],
+                    'percentage' => $data['budgeted']['groupbenner']['net_profit_percentage']
+                )
+            ),
+            'healthoperators' => array(
+                'revenues' => array(
+                    'initial' => $data['budgeted']['healthoperators']['revenues_initial'],
+                    'end' => $data['budgeted']['healthoperators']['revenues_end'],
+                    'target' => $data['budgeted']['healthoperators']['revenues_target'],
+                    'percentage' => $data['budgeted']['healthoperators']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['budgeted']['healthoperators']['ebtida_initial'],
+                    'end' => $data['budgeted']['healthoperators']['ebtida_end'],
+                    'target' => $data['budgeted']['healthoperators']['ebtida_target'],
+                    'percentage' => $data['budgeted']['healthoperators']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['budgeted']['healthoperators']['net_profit_initial'],
+                    'end' => $data['budgeted']['healthoperators']['net_profit_end'],
+                    'target' => $data['budgeted']['healthoperators']['net_profit_target'],
+                    'percentage' => $data['budgeted']['healthoperators']['net_profit_percentage']
+                )
+            ),
+            'hospital' => array(
+                'revenues' => array(
+                    'initial' => $data['budgeted']['hospital']['revenues_initial'],
+                    'end' => $data['budgeted']['hospital']['revenues_end'],
+                    'target' => $data['budgeted']['hospital']['revenues_target'],
+                    'percentage' => $data['budgeted']['hospital']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['budgeted']['hospital']['ebtida_initial'],
+                    'end' => $data['budgeted']['hospital']['ebtida_end'],
+                    'target' => $data['budgeted']['hospital']['ebtida_target'],
+                    'percentage' => $data['budgeted']['hospital']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['budgeted']['hospital']['net_profit_initial'],
+                    'end' => $data['budgeted']['hospital']['net_profit_end'],
+                    'target' => $data['budgeted']['hospital']['net_profit_target'],
+                    'percentage' => $data['budgeted']['hospital']['net_profit_percentage']
+                ),
+                'distributionrevenue' => array(
+                    'lu' => array(
+                        'value' => $data['budgeted']['hospital']['lu_value'],
+                        'percentage' => $data['budgeted']['hospital']['lu_percentage']
+                    ),
+                    'lum' => array(
+                        'value' => $data['budgeted']['hospital']['lum_value'],
+                        'percentage' => $data['budgeted']['hospital']['lum_percentage']
+                    ),
+                    'implantation' => array(
+                        'value' => $data['budgeted']['hospital']['implantation_value'],
+                        'percentage' => $data['budgeted']['hospital']['implantation_percentage']
+                    )
+                )
+            ),
+            'ominousmanagement' => array(
+                'revenues' => array(
+                    'initial' => $data['budgeted']['ominousmanagement']['revenues_initial'],
+                    'end' => $data['budgeted']['ominousmanagement']['revenues_end'],
+                    'target' => $data['budgeted']['ominousmanagement']['revenues_target'],
+                    'percentage' => $data['budgeted']['ominousmanagement']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['budgeted']['ominousmanagement']['ebtida_initial'],
+                    'end' => $data['budgeted']['ominousmanagement']['ebtida_end'],
+                    'target' => $data['budgeted']['ominousmanagement']['ebtida_target'],
+                    'percentage' => $data['budgeted']['ominousmanagement']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['budgeted']['ominousmanagement']['net_profit_initial'],
+                    'end' => $data['budgeted']['ominousmanagement']['net_profit_end'],
+                    'target' => $data['budgeted']['ominousmanagement']['net_profit_target'],
+                    'percentage' => $data['budgeted']['ominousmanagement']['net_profit_percentage']
+                )
+            ),
+            'systems' => array(
+                'revenues' => array(
+                    'initial' => $data['budgeted']['systems']['revenues_initial'],
+                    'end' => $data['budgeted']['systems']['revenues_end'],
+                    'target' => $data['budgeted']['systems']['revenues_target'],
+                    'percentage' => $data['budgeted']['systems']['revenues_percentage']
+                ),
+                'ebtida' => array(
+                    'initial' => $data['budgeted']['systems']['ebtida_initial'],
+                    'end' => $data['budgeted']['systems']['ebtida_end'],
+                    'target' => $data['budgeted']['systems']['ebtida_target'],
+                    'percentage' => $data['budgeted']['systems']['ebtida_percentage']
+                ),
+                'netprofit' => array(
+                    'initial' => $data['budgeted']['systems']['net_profit_initial'],
+                    'end' => $data['budgeted']['systems']['net_profit_end'],
+                    'target' => $data['budgeted']['systems']['net_profit_target'],
+                    'percentage' => $data['budgeted']['systems']['net_profit_percentage']
+                )
+            )
+        );
+
+
+        $data = array(
+            'kpi' => $kpi,
+            'comparative' => $comparative,
+            'budgeted' => $budgeted
+        );
+
         if($args['type'] == 'xml')
         {
             $xmlBuilder = new XmlBuilder('root');
