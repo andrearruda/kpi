@@ -1107,7 +1107,7 @@ final class KpiController
                         'value' => $data['comparative']['systems']['royaltes_value'],
                         'percentage' => $data['comparative']['systems']['royaltes_percentage']
                     ),
-                    'maintenance_pc' => array(
+                    'maintenancepc' => array(
                         'value' => $data['comparative']['systems']['maintenance_pc_value'],
                         'percentage' => $data['comparative']['systems']['maintenance_pc_percentage']
                     ),
