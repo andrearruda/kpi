@@ -31,7 +31,7 @@ final class KpiController
 
     public function index(Request $request, Response $response, $args)
     {
-        $kpis = $this->em->getRepository('App\Entity\Kpi')->findAll();
+        $kpis = $this->em->getRepository('App\Entity\Kpi')->findBy(array(), array('createdAt' => 'DESC'));
 
         $this->view->render($response, 'kpi/index.twig', [
             'kpis' => $kpis
@@ -69,6 +69,8 @@ final class KpiController
             $hospital_budgeted_entity = new Entity\Hospital();
             $ominousmanagement_budgeted_entity = new Entity\OminousManagement();
             $systems_budgeted_entity = new Entity\Systems();
+
+            $employees_enity = new Entity\Employees();
 
 //--> Data for entity GroupBenner - Comparativo
             $data_comparative_groupbenner = array(
@@ -439,6 +441,22 @@ final class KpiController
             (new ClassMethods())->hydrate($data_budgeted_systems, $systems_budgeted_entity);
 
             $this->em->persist($systems_budgeted_entity);
+            $this->em->flush();
+
+//--> Data for entity Systems - Colaboradores
+            $data_contributors = array(
+                'contributors1YearNumberOfEmployees' => $request->getParam('contributors')[1]['number_of_employees'],
+                'contributors2YearNumberOfEmployees' => $request->getParam('contributors')[2]['number_of_employees'],
+                'contributors1YearIcons' => $request->getParam('contributors')[1]['icons'],
+                'contributors2YearIcons' => $request->getParam('contributors')[2]['icons'],
+                'contributors1YearBillingByEmployees' => $request->getParam('contributors')[1]['billing_by_employees'],
+                'contributors2YearBillingByEmployees' => $request->getParam('contributors')[2]['billing_by_employees'],
+                'kpi' => $kpi_entity
+            );
+
+            (new ClassMethods())->hydrate($data_contributors, $employees_enity);
+
+            $this->em->persist($employees_enity);
             $this->em->flush();
 
             return $response->withRedirect($this->router->pathFor('kpi'));

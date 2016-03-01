@@ -12,6 +12,6 @@ $app->add(new \Slim\Middleware\HttpBasicAuthentication([
     "secure" => false,
     "users" => [
         "farolnet" => "293143",
-        "benner" => "benner#2016"
+//        "benner" => "benner#2016"
     ]
 ]));

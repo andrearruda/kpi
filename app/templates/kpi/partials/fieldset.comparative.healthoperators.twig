@@ -8,15 +8,15 @@
             <h4>Acumulado</h4>
             <div class="form-group">
                 <label for="healthoperators_comparative_revenues_target">Meta</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_revenues_target" name="healthoperators[1][revenues][target]" value="{{ entities.comparative.healthoperators.getRevenuesTarget()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_revenues_target" name="healthoperators[1][revenues][target]" value="{{ entities.comparative.healthoperators.getRevenuesTarget()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_revenues_initial">1º Ano</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_revenues_initial" name="healthoperators[1][revenues][initial]" value="{{ entities.comparative.healthoperators.getRevenuesInitial()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_revenues_initial" name="healthoperators[1][revenues][initial]" value="{{ entities.comparative.healthoperators.getRevenuesInitial()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_revenues_end">2º Ano</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_revenues_end" name="healthoperators[1][revenues][end]" value="{{ entities.comparative.healthoperators.getRevenuesEnd()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_revenues_end" name="healthoperators[1][revenues][end]" value="{{ entities.comparative.healthoperators.getRevenuesEnd()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_revenues_percentage">Porcentagem</label>
@@ -31,15 +31,15 @@
             <h4>Acumulado</h4>
             <div class="form-group">
                 <label for="healthoperators_comparative_ebtida_target">Meta</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_ebtida_target" name="healthoperators[1][ebtida][target]" value="{{ entities.comparative.healthoperators.getEbtidaTarget()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_ebtida_target" name="healthoperators[1][ebtida][target]" value="{{ entities.comparative.healthoperators.getEbtidaTarget()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_ebtida_initial">1º Ano</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_ebtida_initial" name="healthoperators[1][ebtida][initial]" value="{{ entities.comparative.healthoperators.getEbtidaInitial()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_ebtida_initial" name="healthoperators[1][ebtida][initial]" value="{{ entities.comparative.healthoperators.getEbtidaInitial()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_ebtida_end">2º Ano</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_ebtida_end" name="healthoperators[1][ebtida][end]" value="{{ entities.comparative.healthoperators.getEbtidaEnd()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_ebtida_end" name="healthoperators[1][ebtida][end]" value="{{ entities.comparative.healthoperators.getEbtidaEnd()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_ebtida_percentage">Porcentagem</label>
@@ -54,15 +54,15 @@
             <h4>Acumulado</h4>
             <div class="form-group">
                 <label for="healthoperators_comparative_net_profit_target">Meta</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_net_profit_target" name="healthoperators[1][net_profit][target]" value="{{ entities.comparative.healthoperators.getNetProfitTarget()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_net_profit_target" name="healthoperators[1][net_profit][target]" value="{{ entities.comparative.healthoperators.getNetProfitTarget()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_net_profit_initial">1º Ano</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_net_profit_initial" name="healthoperators[1][net_profit][initial]" value="{{ entities.comparative.healthoperators.getNetProfitInitial()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_net_profit_initial" name="healthoperators[1][net_profit][initial]" value="{{ entities.comparative.healthoperators.getNetProfitInitial()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_net_profit_end">2º Ano</label>
-                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_net_profit_end" name="healthoperators[1][net_profit][end]" value="{{ entities.comparative.healthoperators.getNetProfitEnd()|number_format(2, '.', '') }}">
+                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_net_profit_end" name="healthoperators[1][net_profit][end]" value="{{ entities.comparative.healthoperators.getNetProfitEnd()|number_format(2, '.', '') }}">
             </div>
             <div class="form-group">
                 <label for="healthoperators_comparative_net_profit_percentage">Porcentagem</label>
@@ -91,7 +91,7 @@
                             <h4>LU</h4>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_lu_value">Valor</label>
-                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_lu_value" name="healthoperators[1][lu][value]" value="{{ entities.comparative.healthoperators.getLuValue()|number_format(2, '.', '') }}">
+                                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_lu_value" name="healthoperators[1][lu][value]" value="{{ entities.comparative.healthoperators.getLuValue()|number_format(2, '.', '') }}">
                             </div>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_lu_percentage">Porcentagem</label>
@@ -105,7 +105,7 @@
                             <h4>LUM</h4>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_lum_value">Valor</label>
-                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_lum_value" name="healthoperators[1][lum][value]" value="{{ entities.comparative.healthoperators.getLumValue()|number_format(2, '.', '') }}">
+                                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_lum_value" name="healthoperators[1][lum][value]" value="{{ entities.comparative.healthoperators.getLumValue()|number_format(2, '.', '') }}">
                             </div>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_lum_percentage">Porcentagem</label>
@@ -119,7 +119,7 @@
                             <h4>Implatação</h4>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_implantation_value">Valor</label>
-                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_implantation_value" name="healthoperators[1][implantation][value]" value="{{ entities.comparative.healthoperators.getImplantationValue()|number_format(2, '.', '') }}">
+                                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_implantation_value" name="healthoperators[1][implantation][value]" value="{{ entities.comparative.healthoperators.getImplantationValue()|number_format(2, '.', '') }}">
                             </div>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_implantation_percentage">Porcentagem</label>
@@ -133,7 +133,7 @@
                             <h4>SMS</h4>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_sms_value">Valor</label>
-                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_sms_value" name="healthoperators[1][sms][value]" value="{{ entities.comparative.healthoperators.getSmsValue()|number_format(2, '.', '') }}">
+                                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_sms_value" name="healthoperators[1][sms][value]" value="{{ entities.comparative.healthoperators.getSmsValue()|number_format(2, '.', '') }}">
                             </div>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_sms_percentage">Porcentagem</label>
@@ -147,7 +147,7 @@
                             <h4>Serviços Médicos</h4>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_medical_services_value">Valor</label>
-                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_medical_services_value" name="healthoperators[1][medical_services][value]" value="{{ entities.comparative.healthoperators.getMedicalServicesValue()|number_format(2, '.', '') }}">
+                                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_medical_services_value" name="healthoperators[1][medical_services][value]" value="{{ entities.comparative.healthoperators.getMedicalServicesValue()|number_format(2, '.', '') }}">
                             </div>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_medical_services_percentage">Porcentagem</label>
@@ -161,7 +161,7 @@
                             <h4>Treinamentos</h4>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_workout_value">Valor</label>
-                                <input type="text" class="form-control input-mask-money" id="healthoperators_comparative_workout_value" name="healthoperators[1][workout][value]" value="{{ entities.comparative.healthoperators.getWorkoutValue()|number_format(2, '.', '') }}">
+                                <input type="text" class="form-control input-mask-money-milhoes" id="healthoperators_comparative_workout_value" name="healthoperators[1][workout][value]" value="{{ entities.comparative.healthoperators.getWorkoutValue()|number_format(2, '.', '') }}">
                             </div>
                             <div class="form-group">
                                 <label for="healthoperators_comparative_workout_percentage">Porcentagem</label>
