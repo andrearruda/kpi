@@ -70,7 +70,7 @@ final class KpiController
             $ominousmanagement_budgeted_entity = new Entity\OminousManagement();
             $systems_budgeted_entity = new Entity\Systems();
 
-            $employees_enity = new Entity\Employees();
+            $employees_entity = new Entity\Employees();
 
 //--> Data for entity GroupBenner - Comparativo
             $data_comparative_groupbenner = array(
@@ -454,9 +454,9 @@ final class KpiController
                 'kpi' => $kpi_entity
             );
 
-            (new ClassMethods())->hydrate($data_contributors, $employees_enity);
+            (new ClassMethods())->hydrate($data_contributors, $employees_entity);
 
-            $this->em->persist($employees_enity);
+            $this->em->persist($employees_entity);
             $this->em->flush();
 
             return $response->withRedirect($this->router->pathFor('kpi'));
@@ -491,6 +491,8 @@ final class KpiController
         $budgeted_hospital_entity = $this->em->getRepository('App\Entity\Hospital')->matching($criteria_budgeted)->first();
         $budgeted_ominousmanagement_entity = $this->em->getRepository('App\Entity\OminousManagement')->matching($criteria_budgeted)->first();
         $budgeted_systems_entity = $this->em->getRepository('App\Entity\Systems')->matching($criteria_budgeted)->first();
+
+        $employees_entity = $this->em->getRepository('App\Entity\Employees')->findOneByKpi($kpi_entity);
 
         if($request->isPost())
         {
@@ -841,6 +843,22 @@ final class KpiController
             $this->em->persist($budgeted_systems_entity);
             $this->em->flush();
 
+            //--> Data for entity Systems - Colaboradores
+            $data_contributors = array(
+                'contributors1YearNumberOfEmployees' => $request->getParam('contributors')[1]['number_of_employees'],
+                'contributors2YearNumberOfEmployees' => $request->getParam('contributors')[2]['number_of_employees'],
+                'contributors1YearIcons' => $request->getParam('contributors')[1]['icons'],
+                'contributors2YearIcons' => $request->getParam('contributors')[2]['icons'],
+                'contributors1YearBillingByEmployees' => $request->getParam('contributors')[1]['billing_by_employees'],
+                'contributors2YearBillingByEmployees' => $request->getParam('contributors')[2]['billing_by_employees'],
+                'kpi' => $kpi_entity
+            );
+
+            (new ClassMethods())->hydrate($data_contributors, $employees_entity);
+
+            $this->em->persist($employees_entity);
+            $this->em->flush();
+
             return $response->withRedirect($this->router->pathFor('kpi'));
         }
 
@@ -860,7 +878,8 @@ final class KpiController
                     'hospital' => $budgeted_hospital_entity,
                     'ominousmanagement' => $budgeted_ominousmanagement_entity,
                     'systems' => $budgeted_systems_entity,
-                ]
+                ],
+                'employees' => $employees_entity
             ]
         ];
 
@@ -922,6 +941,7 @@ final class KpiController
                 'ominousmanagement' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\OminousManagement')->matching($criteria_budgeted)->first()),
                 'systems' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\Systems')->matching($criteria_budgeted)->first())
             ],
+            'employees' => (new ClassMethods())->extract($this->em->getRepository('App\Entity\Employees')->findOneByKpi($kpi_entity))
         ];
 
         $data['kpi']['period_first_initial'] = $data['kpi']['period_first_initial']->format('Y-m-d');
@@ -929,7 +949,6 @@ final class KpiController
         $data['kpi']['period_second_initial'] = $data['kpi']['period_second_initial']->format('Y-m-d');
         $data['kpi']['period_second_end'] = $data['kpi']['period_second_end']->format('Y-m-d');
         unset($data['kpi']['id'], $data['kpi']['created_at'], $data['kpi']['updated_at'], $data['kpi']['deleted_at'], $data['kpi']['active']);
-
 
         unset($data['comparative']['groupbenner']['id'], $data['comparative']['groupbenner']['created_at'], $data['comparative']['groupbenner']['updated_at'], $data['comparative']['groupbenner']['deleted_at'], $data['comparative']['groupbenner']['kpi_type'], $data['comparative']['groupbenner']['kpi']);
         unset($data['comparative']['healthoperators']['id'], $data['comparative']['healthoperators']['created_at'], $data['comparative']['healthoperators']['updated_at'], $data['comparative']['healthoperators']['deleted_at'], $data['comparative']['healthoperators']['kpi_type'], $data['comparative']['healthoperators']['kpi']);
@@ -1258,12 +1277,26 @@ final class KpiController
             )
         );
 
+        $employees = array(
+            'initial' => array(
+                'employees' => $data['employees']['contributors1_year_number_of_employees'],
+                'icons' => $data['employees']['contributors1_year_icons'],
+                'billing' => $data['employees']['contributors1_year_billing_by_employees'],
+            ),
+            'end' => array(
+                'employees' => $data['employees']['contributors2_year_number_of_employees'],
+                'icons' => $data['employees']['contributors2_year_icons'],
+                'billing' => $data['employees']['contributors2_year_billing_by_employees'],
+            ),
+        );
 
         $data = array(
             'kpi' => $kpi,
             'comparative' => $comparative,
-            'budgeted' => $budgeted
+            'budgeted' => $budgeted,
+            'employees' => $employees
         );
+
 
         if($args['type'] == 'xml')
         {

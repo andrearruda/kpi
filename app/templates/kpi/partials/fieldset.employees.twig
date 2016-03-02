@@ -9,22 +9,22 @@
                         <h4>1º Ano</h4>
                         <div class="form-group">
                             <label for="contributors_1_year_number_of_employees">Qtde de colaboradores</label>
-                            <input type="text" class="form-control input-mask-number-int" id="contributors_1_year_number_of_employees" name="contributors[1][number_of_employees]">
+                            <input type="text" class="form-control input-mask-number-int" id="contributors_1_year_number_of_employees" name="contributors[1][number_of_employees]" value="{{ entities.employees.contributors1YearNumberOfEmployees() }}">
                         </div>
                         <div class="form-group">
                             <label for="contributors_1_year_icons">Qtde de icones</label>
-                            <input type="text" class="form-control input-mask-number-int" id="contributors_1_year_icons" name="contributors[1][icons]">
+                            <input type="text" class="form-control input-mask-number-int" id="contributors_1_year_icons" name="contributors[1][icons]" value="{{ entities.employees.contributors1YearIcons() }}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <h4>2º Ano</h4>
                         <div class="form-group">
                             <label for="contributors_2_year_number_of_employees">Qtde de colaboradores</label>
-                            <input type="text" class="form-control input-mask-number-int" id="contributors_2_year_number_of_employees" name="contributors[2][number_of_employees]">
+                            <input type="text" class="form-control input-mask-number-int" id="contributors_2_year_number_of_employees" name="contributors[2][number_of_employees]" value="{{ entities.employees.contributors2YearNumberOfEmployees() }}">
                         </div>
                         <div class="form-group">
                             <label for="contributors_2_year_icons">Qtde de icones</label>
-                            <input type="text" class="form-control input-mask-number-int" id="contributors_2_year_icons" name="contributors[2][icons]">
+                            <input type="text" class="form-control input-mask-number-int" id="contributors_2_year_icons" name="contributors[2][icons]" value="{{ entities.employees.contributors2YearIcons() }}">
                         </div>
                     </div>
                 </div>
@@ -38,14 +38,14 @@
                         <h4>1º Ano</h4>
                         <div class="form-group">
                             <label for="contributors_1_year_billing_by_employees">Faturamento</label>
-                            <input type="text" class="form-control input-mask-money-mil" id="contributors_1_year_billing_by_employees" name="contributors[1][billing_by_employees]">
+                            <input type="text" class="form-control input-mask-money-mil" id="contributors_1_year_billing_by_employees" name="contributors[1][billing_by_employees]" value="{{ entities.employees.contributors1YearBillingByEmployees()|number_format(2, '.', '') }}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <h4>2º Ano</h4>
                         <div class="form-group">
                             <label for="contributors_2_year_billing_by_employees">Faturamento</label>
-                            <input type="text" class="form-control input-mask-money-mil" id="contributors_2_year_billing_by_employees" name="contributors[2][billing_by_employees]">
+                            <input type="text" class="form-control input-mask-money-mil" id="contributors_2_year_billing_by_employees" name="contributors[2][billing_by_employees]" value="{{ entities.employees.contributors2YearBillingByEmployees()|number_format(2, '.', '') }}">
                         </div>
                     </div>
                 </div>
