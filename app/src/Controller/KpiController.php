@@ -980,181 +980,181 @@ final class KpiController
         $comparative = array(
             'groupbenner' => array(
                 'revenues' => array(
-                    'initial' => $data['comparative']['groupbenner']['revenues_initial'],
-                    'end' => $data['comparative']['groupbenner']['revenues_end'],
-                    'target' => $data['comparative']['groupbenner']['revenues_target'],
-                    'percentage' => $data['comparative']['groupbenner']['revenues_percentage']
+                    'initial' => number_format($data['comparative']['groupbenner']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['groupbenner']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['groupbenner']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['groupbenner']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['comparative']['groupbenner']['ebtida_initial'],
-                    'end' => $data['comparative']['groupbenner']['ebtida_end'],
-                    'target' => $data['comparative']['groupbenner']['ebtida_target'],
-                    'percentage' => $data['comparative']['groupbenner']['ebtida_percentage']
+                    'initial' => number_format($data['comparative']['groupbenner']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['groupbenner']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['groupbenner']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['groupbenner']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['comparative']['groupbenner']['net_profit_initial'],
-                    'end' => $data['comparative']['groupbenner']['net_profit_end'],
-                    'target' => $data['comparative']['groupbenner']['net_profit_target'],
-                    'percentage' => $data['comparative']['groupbenner']['net_profit_percentage']
+                    'initial' => number_format($data['comparative']['groupbenner']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['groupbenner']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['groupbenner']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['groupbenner']['net_profit_percentage'], 1, '.', ''),
                 )
             ),
             'healthoperators' => array(
                 'revenues' => array(
-                    'initial' => $data['comparative']['healthoperators']['revenues_initial'],
-                    'end' => $data['comparative']['healthoperators']['revenues_end'],
-                    'target' => $data['comparative']['healthoperators']['revenues_target'],
-                    'percentage' => $data['comparative']['healthoperators']['revenues_percentage']
+                    'initial' => number_format($data['comparative']['healthoperators']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['healthoperators']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['healthoperators']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['healthoperators']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['comparative']['healthoperators']['ebtida_initial'],
-                    'end' => $data['comparative']['healthoperators']['ebtida_end'],
-                    'target' => $data['comparative']['healthoperators']['ebtida_target'],
-                    'percentage' => $data['comparative']['healthoperators']['ebtida_percentage']
+                    'initial' => number_format($data['comparative']['healthoperators']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['healthoperators']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['healthoperators']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['healthoperators']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['comparative']['healthoperators']['net_profit_initial'],
-                    'end' => $data['comparative']['healthoperators']['net_profit_end'],
-                    'target' => $data['comparative']['healthoperators']['net_profit_target'],
-                    'percentage' => $data['comparative']['healthoperators']['net_profit_percentage']
+                    'initial' => number_format($data['comparative']['healthoperators']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['healthoperators']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['healthoperators']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['healthoperators']['net_profit_percentage'], 1, '.', ''),
                 ),
                 'distributionrevenue' => array(
                     'lu' => array(
-                        'value' => $data['comparative']['healthoperators']['lu_value'],
-                        'percentage' => $data['comparative']['healthoperators']['lu_percentage']
+                        'value' => number_format($data['comparative']['healthoperators']['lu_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['healthoperators']['lu_percentage'], 1, '.', ''),
                     ),
                     'lum' => array(
-                        'value' => $data['comparative']['healthoperators']['lum_value'],
-                        'percentage' => $data['comparative']['healthoperators']['lum_percentage']
+                        'value' => number_format($data['comparative']['healthoperators']['lum_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['healthoperators']['lum_percentage'], 1, '.', ''),
                     ),
                     'implantation' => array(
-                        'value' => $data['comparative']['healthoperators']['implantation_value'],
-                        'percentage' => $data['comparative']['healthoperators']['implantation_percentage']
+                        'value' => number_format($data['comparative']['healthoperators']['implantation_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['healthoperators']['implantation_percentage'], 1, '.', ''),
                     ),
                     'sms' => array(
-                        'value' => $data['comparative']['healthoperators']['sms_value'],
-                        'percentage' => $data['comparative']['healthoperators']['sms_percentage']
+                        'value' => number_format($data['comparative']['healthoperators']['sms_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['healthoperators']['sms_percentage'], 1, '.', ''),
                     ),
                     'medicalservices' => array(
-                        'value' => $data['comparative']['healthoperators']['medical_services_value'],
-                        'percentage' => $data['comparative']['healthoperators']['medical_services_percentage']
+                        'value' => number_format($data['comparative']['healthoperators']['medical_services_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['healthoperators']['medical_services_percentage'], 1, '.', ''),
                     ),
                     'workout' => array(
-                        'value' => $data['comparative']['healthoperators']['workout_value'],
-                        'percentage' => $data['comparative']['healthoperators']['workout_percentage']
+                        'value' => number_format($data['comparative']['healthoperators']['workout_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['healthoperators']['workout_percentage'], 1, '.', ''),
                     )
                 )
             ),
             'hospital' => array(
                 'revenues' => array(
-                    'initial' => $data['comparative']['hospital']['revenues_initial'],
-                    'end' => $data['comparative']['hospital']['revenues_end'],
-                    'target' => $data['comparative']['hospital']['revenues_target'],
-                    'percentage' => $data['comparative']['hospital']['revenues_percentage']
+                    'initial' => number_format($data['comparative']['hospital']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['hospital']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['hospital']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['hospital']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['comparative']['hospital']['ebtida_initial'],
-                    'end' => $data['comparative']['hospital']['ebtida_end'],
-                    'target' => $data['comparative']['hospital']['ebtida_target'],
-                    'percentage' => $data['comparative']['hospital']['ebtida_percentage']
+                    'initial' => number_format($data['comparative']['hospital']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['hospital']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['hospital']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['hospital']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['comparative']['hospital']['net_profit_initial'],
-                    'end' => $data['comparative']['hospital']['net_profit_end'],
-                    'target' => $data['comparative']['hospital']['net_profit_target'],
-                    'percentage' => $data['comparative']['hospital']['net_profit_percentage']
+                    'initial' => number_format($data['comparative']['hospital']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['hospital']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['hospital']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['hospital']['net_profit_percentage'], 1, '.', ''),
                 ),
                 'distributionrevenue' => array(
                     'lu' => array(
-                        'value' => $data['comparative']['hospital']['lu_value'],
-                        'percentage' => $data['comparative']['hospital']['lu_percentage']
+                        'value' => number_format($data['comparative']['hospital']['lu_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['hospital']['lu_percentage'], 1, '.', ''),
                     ),
                     'lum' => array(
-                        'value' => $data['comparative']['hospital']['lum_value'],
-                        'percentage' => $data['comparative']['hospital']['lum_percentage']
+                        'value' => number_format($data['comparative']['hospital']['lum_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['hospital']['lum_percentage'], 1, '.', ''),
                     ),
                     'implantation' => array(
-                        'value' => $data['comparative']['hospital']['implantation_value'],
-                        'percentage' => $data['comparative']['hospital']['implantation_percentage']
+                        'value' => number_format($data['comparative']['hospital']['implantation_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['hospital']['implantation_percentage'], 1, '.', ''),
                     )
                 )
             ),
             'ominousmanagement' => array(
                 'revenues' => array(
-                    'initial' => $data['comparative']['ominousmanagement']['revenues_initial'],
-                    'end' => $data['comparative']['ominousmanagement']['revenues_end'],
-                    'target' => $data['comparative']['ominousmanagement']['revenues_target'],
-                    'percentage' => $data['comparative']['ominousmanagement']['revenues_percentage']
+                    'initial' => number_format($data['comparative']['ominousmanagement']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['ominousmanagement']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['ominousmanagement']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['ominousmanagement']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['comparative']['ominousmanagement']['ebtida_initial'],
-                    'end' => $data['comparative']['ominousmanagement']['ebtida_end'],
-                    'target' => $data['comparative']['ominousmanagement']['ebtida_target'],
-                    'percentage' => $data['comparative']['ominousmanagement']['ebtida_percentage']
+                    'initial' => number_format($data['comparative']['ominousmanagement']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['ominousmanagement']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['ominousmanagement']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['ominousmanagement']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['comparative']['ominousmanagement']['net_profit_initial'],
-                    'end' => $data['comparative']['ominousmanagement']['net_profit_end'],
-                    'target' => $data['comparative']['ominousmanagement']['net_profit_target'],
-                    'percentage' => $data['comparative']['ominousmanagement']['net_profit_percentage']
+                    'initial' => number_format($data['comparative']['ominousmanagement']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['ominousmanagement']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['ominousmanagement']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['ominousmanagement']['net_profit_percentage'], 1, '.', ''),
                 ),
                 'distributionrevenue' => array(
                     'services' => array(
-                        'value' => $data['comparative']['ominousmanagement']['services_value'],
-                        'percentage' => $data['comparative']['ominousmanagement']['services_percentage']
+                        'value' => number_format($data['comparative']['ominousmanagement']['services_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['ominousmanagement']['services_percentage'], 1, '.', ''),
                     )
                 )
             ),
             'systems' => array(
                 'revenues' => array(
-                    'initial' => $data['comparative']['systems']['revenues_initial'],
-                    'end' => $data['comparative']['systems']['revenues_end'],
-                    'target' => $data['comparative']['systems']['revenues_target'],
-                    'percentage' => $data['comparative']['systems']['revenues_percentage']
+                    'initial' => number_format($data['comparative']['systems']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['systems']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['systems']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['systems']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['comparative']['systems']['ebtida_initial'],
-                    'end' => $data['comparative']['systems']['ebtida_end'],
-                    'target' => $data['comparative']['systems']['ebtida_target'],
-                    'percentage' => $data['comparative']['systems']['ebtida_percentage']
+                    'initial' => number_format($data['comparative']['systems']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['systems']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['systems']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['systems']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['comparative']['systems']['net_profit_initial'],
-                    'end' => $data['comparative']['systems']['net_profit_end'],
-                    'target' => $data['comparative']['systems']['net_profit_target'],
-                    'percentage' => $data['comparative']['systems']['net_profit_percentage']
+                    'initial' => number_format($data['comparative']['systems']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['comparative']['systems']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['comparative']['systems']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['comparative']['systems']['net_profit_percentage'], 1, '.', ''),
                 ),
                 'distributionrevenue' => array(
                     'lu' => array(
-                        'value' => $data['comparative']['systems']['lu_value'],
-                        'percentage' => $data['comparative']['systems']['lu_percentage']
+                        'value' => number_format($data['comparative']['systems']['lu_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['lu_percentage'], 1, '.', ''),
                     ),
                     'lum' => array(
-                        'value' => $data['comparative']['systems']['lum_value'],
-                        'percentage' => $data['comparative']['systems']['lum_percentage']
+                        'value' => number_format($data['comparative']['systems']['lum_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['lum_percentage'], 1, '.', ''),
                     ),
                     'implantation' => array(
-                        'value' => $data['comparative']['systems']['implantation_value'],
-                        'percentage' => $data['comparative']['systems']['implantation_percentage']
+                        'value' => number_format($data['comparative']['systems']['implantation_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['implantation_percentage'], 1, '.', ''),
                     ),
                     'sms' => array(
-                        'value' => $data['comparative']['systems']['sms_value'],
-                        'percentage' => $data['comparative']['systems']['sms_percentage']
+                        'value' => number_format($data['comparative']['systems']['sms_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['sms_percentage'], 1, '.', ''),
                     ),
                     'royaltes' => array(
-                        'value' => $data['comparative']['systems']['royaltes_value'],
-                        'percentage' => $data['comparative']['systems']['royaltes_percentage']
+                        'value' => number_format($data['comparative']['systems']['royaltes_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['royaltes_percentage'], 1, '.', ''),
                     ),
                     'maintenancepc' => array(
-                        'value' => $data['comparative']['systems']['maintenance_pc_value'],
-                        'percentage' => $data['comparative']['systems']['maintenance_pc_percentage']
+                        'value' => number_format($data['comparative']['systems']['maintenance_pc_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['maintenance_pc_percentage'], 1, '.', ''),
                     ),
                     'outsourcing' => array(
-                        'value' => $data['comparative']['systems']['outsourcing_value'],
-                        'percentage' => $data['comparative']['systems']['outsourcing_percentage']
+                        'value' => number_format($data['comparative']['systems']['outsourcing_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['outsourcing_percentage'], 1, '.', ''),
                     ),
                     'bpo' => array(
-                        'value' => $data['comparative']['systems']['bpo_value'],
-                        'percentage' => $data['comparative']['systems']['bpo_percentage']
+                        'value' => number_format($data['comparative']['systems']['bpo_value'], 1, '.', ''),
+                        'percentage' => number_format($data['comparative']['systems']['bpo_percentage'], 1, '.', ''),
                     )
                 )
             )
@@ -1163,116 +1163,116 @@ final class KpiController
         $budgeted = array(
             'groupbenner' => array(
                 'revenues' => array(
-                    'initial' => $data['budgeted']['groupbenner']['revenues_initial'],
-                    'end' => $data['budgeted']['groupbenner']['revenues_end'],
-                    'target' => $data['budgeted']['groupbenner']['revenues_target'],
-                    'percentage' => $data['budgeted']['groupbenner']['revenues_percentage']
+                    'initial' => number_format($data['budgeted']['groupbenner']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['groupbenner']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['groupbenner']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['groupbenner']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['budgeted']['groupbenner']['ebtida_initial'],
-                    'end' => $data['budgeted']['groupbenner']['ebtida_end'],
-                    'target' => $data['budgeted']['groupbenner']['ebtida_target'],
-                    'percentage' => $data['budgeted']['groupbenner']['ebtida_percentage']
+                    'initial' => number_format($data['budgeted']['groupbenner']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['groupbenner']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['groupbenner']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['groupbenner']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['budgeted']['groupbenner']['net_profit_initial'],
-                    'end' => $data['budgeted']['groupbenner']['net_profit_end'],
-                    'target' => $data['budgeted']['groupbenner']['net_profit_target'],
-                    'percentage' => $data['budgeted']['groupbenner']['net_profit_percentage']
+                    'initial' => number_format($data['budgeted']['groupbenner']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['groupbenner']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['groupbenner']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['groupbenner']['net_profit_percentage'], 1, '.', ''),
                 )
             ),
             'healthoperators' => array(
                 'revenues' => array(
-                    'initial' => $data['budgeted']['healthoperators']['revenues_initial'],
-                    'end' => $data['budgeted']['healthoperators']['revenues_end'],
-                    'target' => $data['budgeted']['healthoperators']['revenues_target'],
-                    'percentage' => $data['budgeted']['healthoperators']['revenues_percentage']
+                    'initial' => number_format($data['budgeted']['healthoperators']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['healthoperators']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['healthoperators']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['healthoperators']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['budgeted']['healthoperators']['ebtida_initial'],
-                    'end' => $data['budgeted']['healthoperators']['ebtida_end'],
-                    'target' => $data['budgeted']['healthoperators']['ebtida_target'],
-                    'percentage' => $data['budgeted']['healthoperators']['ebtida_percentage']
+                    'initial' => number_format($data['budgeted']['healthoperators']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['healthoperators']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['healthoperators']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['healthoperators']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['budgeted']['healthoperators']['net_profit_initial'],
-                    'end' => $data['budgeted']['healthoperators']['net_profit_end'],
-                    'target' => $data['budgeted']['healthoperators']['net_profit_target'],
-                    'percentage' => $data['budgeted']['healthoperators']['net_profit_percentage']
+                    'initial' => number_format($data['budgeted']['healthoperators']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['healthoperators']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['healthoperators']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['healthoperators']['net_profit_percentage'], 1, '.', ''),
                 )
             ),
             'hospital' => array(
                 'revenues' => array(
-                    'initial' => $data['budgeted']['hospital']['revenues_initial'],
-                    'end' => $data['budgeted']['hospital']['revenues_end'],
-                    'target' => $data['budgeted']['hospital']['revenues_target'],
-                    'percentage' => $data['budgeted']['hospital']['revenues_percentage']
+                    'initial' => number_format($data['budgeted']['hospital']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['hospital']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['hospital']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['hospital']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['budgeted']['hospital']['ebtida_initial'],
-                    'end' => $data['budgeted']['hospital']['ebtida_end'],
-                    'target' => $data['budgeted']['hospital']['ebtida_target'],
-                    'percentage' => $data['budgeted']['hospital']['ebtida_percentage']
+                    'initial' => number_format($data['budgeted']['hospital']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['hospital']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['hospital']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['hospital']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['budgeted']['hospital']['net_profit_initial'],
-                    'end' => $data['budgeted']['hospital']['net_profit_end'],
-                    'target' => $data['budgeted']['hospital']['net_profit_target'],
-                    'percentage' => $data['budgeted']['hospital']['net_profit_percentage']
+                    'initial' => number_format($data['budgeted']['hospital']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['hospital']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['hospital']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['hospital']['net_profit_percentage'], 1, '.', ''),
                 ),
                 'distributionrevenue' => array(
                     'lu' => array(
-                        'value' => $data['budgeted']['hospital']['lu_value'],
-                        'percentage' => $data['budgeted']['hospital']['lu_percentage']
+                        'value' => number_format($data['budgeted']['hospital']['lu_value'], 1, '.', ''),
+                        'percentage' => number_format($data['budgeted']['hospital']['lu_percentage'], 1, '.', ''),
                     ),
                     'lum' => array(
-                        'value' => $data['budgeted']['hospital']['lum_value'],
-                        'percentage' => $data['budgeted']['hospital']['lum_percentage']
+                        'value' => number_format($data['budgeted']['hospital']['lum_value'], 1, '.', ''),
+                        'percentage' => number_format($data['budgeted']['hospital']['lum_percentage'], 1, '.', ''),
                     ),
                     'implantation' => array(
-                        'value' => $data['budgeted']['hospital']['implantation_value'],
-                        'percentage' => $data['budgeted']['hospital']['implantation_percentage']
+                        'value' => number_format($data['budgeted']['hospital']['implantation_value'], 1, '.', ''),
+                        'percentage' => number_format($data['budgeted']['hospital']['implantation_percentage'], 1, '.', ''),
                     )
                 )
             ),
             'ominousmanagement' => array(
                 'revenues' => array(
-                    'initial' => $data['budgeted']['ominousmanagement']['revenues_initial'],
-                    'end' => $data['budgeted']['ominousmanagement']['revenues_end'],
-                    'target' => $data['budgeted']['ominousmanagement']['revenues_target'],
-                    'percentage' => $data['budgeted']['ominousmanagement']['revenues_percentage']
+                    'initial' => number_format($data['budgeted']['ominousmanagement']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['ominousmanagement']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['ominousmanagement']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['ominousmanagement']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['budgeted']['ominousmanagement']['ebtida_initial'],
-                    'end' => $data['budgeted']['ominousmanagement']['ebtida_end'],
-                    'target' => $data['budgeted']['ominousmanagement']['ebtida_target'],
-                    'percentage' => $data['budgeted']['ominousmanagement']['ebtida_percentage']
+                    'initial' => number_format($data['budgeted']['ominousmanagement']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['ominousmanagement']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['ominousmanagement']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['ominousmanagement']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['budgeted']['ominousmanagement']['net_profit_initial'],
-                    'end' => $data['budgeted']['ominousmanagement']['net_profit_end'],
-                    'target' => $data['budgeted']['ominousmanagement']['net_profit_target'],
-                    'percentage' => $data['budgeted']['ominousmanagement']['net_profit_percentage']
+                    'initial' => number_format($data['budgeted']['ominousmanagement']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['ominousmanagement']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['ominousmanagement']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['ominousmanagement']['net_profit_percentage'], 1, '.', ''),
                 )
             ),
             'systems' => array(
                 'revenues' => array(
-                    'initial' => $data['budgeted']['systems']['revenues_initial'],
-                    'end' => $data['budgeted']['systems']['revenues_end'],
-                    'target' => $data['budgeted']['systems']['revenues_target'],
-                    'percentage' => $data['budgeted']['systems']['revenues_percentage']
+                    'initial' => number_format($data['budgeted']['systems']['revenues_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['systems']['revenues_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['systems']['revenues_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['systems']['revenues_percentage'], 1, '.', ''),
                 ),
                 'ebtida' => array(
-                    'initial' => $data['budgeted']['systems']['ebtida_initial'],
-                    'end' => $data['budgeted']['systems']['ebtida_end'],
-                    'target' => $data['budgeted']['systems']['ebtida_target'],
-                    'percentage' => $data['budgeted']['systems']['ebtida_percentage']
+                    'initial' => number_format($data['budgeted']['systems']['ebtida_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['systems']['ebtida_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['systems']['ebtida_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['systems']['ebtida_percentage'], 1, '.', ''),
                 ),
                 'netprofit' => array(
-                    'initial' => $data['budgeted']['systems']['net_profit_initial'],
-                    'end' => $data['budgeted']['systems']['net_profit_end'],
-                    'target' => $data['budgeted']['systems']['net_profit_target'],
-                    'percentage' => $data['budgeted']['systems']['net_profit_percentage']
+                    'initial' => number_format($data['budgeted']['systems']['net_profit_initial'], 1, '.', ''),
+                    'end' => number_format($data['budgeted']['systems']['net_profit_end'], 1, '.', ''),
+                    'target' => number_format($data['budgeted']['systems']['net_profit_target'], 1, '.', ''),
+                    'percentage' => number_format($data['budgeted']['systems']['net_profit_percentage'], 1, '.', ''),
                 )
             )
         );
