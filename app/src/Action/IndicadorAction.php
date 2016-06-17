@@ -35,8 +35,6 @@ class IndicadorAction
 
         if($request->isPost())
         {
-            $data_form = $request->getParsedBody();
-
             $data_form = array(
                 'fieldset_informacoes' => array(
                     'date' => $request->getParam('date'),
@@ -63,6 +61,22 @@ class IndicadorAction
                     'groupbenner_netprofit_initial' => $request->getParam('groupbenner_netprofit_initial'),
                     'groupbenner_netprofit_end' => $request->getParam('groupbenner_netprofit_end'),
                     'groupbenner_netprofit_percentage' => $request->getParam('groupbenner_netprofit_percentage'),
+                ),
+                'fieldset_comparativo_operadorasdesaude' => array(
+                    'healthoperators_revenues_target' => $request->getParam('healthoperators_revenues_target'),
+                    'healthoperators_revenues_initial' => $request->getParam('healthoperators_revenues_initial'),
+                    'healthoperators_revenues_end' => $request->getParam('healthoperators_revenues_end'),
+                    'healthoperators_revenues_percentage' => $request->getParam('healthoperators_revenues_percentage'),
+
+                    'healthoperators_ebtida_target' => $request->getParam('healthoperators_ebtida_target'),
+                    'healthoperators_ebtida_initial' => $request->getParam('healthoperators_ebtida_initial'),
+                    'healthoperators_ebtida_end' => $request->getParam('healthoperators_ebtida_end'),
+                    'healthoperators_ebtida_percentage' => $request->getParam('healthoperators_ebtida_percentage'),
+
+                    'healthoperators_netprofit_target' => $request->getParam('healthoperators_netprofit_target'),
+                    'healthoperators_netprofit_initial' => $request->getParam('healthoperators_netprofit_initial'),
+                    'healthoperators_netprofit_end' => $request->getParam('healthoperators_netprofit_end'),
+                    'healthoperators_netprofit_percentage' => $request->getParam('healthoperators_netprofit_percentage'),
                 )
             );
 
