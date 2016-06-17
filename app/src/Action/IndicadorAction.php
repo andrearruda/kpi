@@ -47,6 +47,22 @@ class IndicadorAction
                     'period_first_end' => '01/' . $request->getParam('period_first_end'),
                     'period_second_initial' => '01/' . $request->getParam('period_second_initial'),
                     'period_second_end' => '01/' . $request->getParam('period_second_end'),
+                ),
+                'fieldset_comparativo_grupobenner' => array(
+                    'groupbenner_revenues_target' => $request->getParam('groupbenner_revenues_target'),
+                    'groupbenner_revenues_initial' => $request->getParam('groupbenner_revenues_initial'),
+                    'groupbenner_revenues_end' => $request->getParam('groupbenner_revenues_end'),
+                    'groupbenner_revenues_percentage' => $request->getParam('groupbenner_revenues_percentage'),
+
+                    'groupbenner_ebtida_target' => $request->getParam('groupbenner_ebtida_target'),
+                    'groupbenner_ebtida_initial' => $request->getParam('groupbenner_ebtida_initial'),
+                    'groupbenner_ebtida_end' => $request->getParam('groupbenner_ebtida_end'),
+                    'groupbenner_ebtida_percentage' => $request->getParam('groupbenner_ebtida_percentage'),
+
+                    'groupbenner_netprofit_target' => $request->getParam('groupbenner_netprofit_target'),
+                    'groupbenner_netprofit_initial' => $request->getParam('groupbenner_netprofit_initial'),
+                    'groupbenner_netprofit_end' => $request->getParam('groupbenner_netprofit_end'),
+                    'groupbenner_netprofit_percentage' => $request->getParam('groupbenner_netprofit_percentage'),
                 )
             );
 

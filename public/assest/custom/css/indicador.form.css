@@ -1,0 +1,65 @@
+body{
+    overflow: scroll;
+}
+
+form fieldset fieldset{
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: dotted 1px #c2ccd1;
+}
+
+form fieldset fieldset h5{
+    margin-bottom: 0px;
+}
+
+form fieldset fieldset h4{
+    margin-top: 0px;
+}
+
+form fieldset legend{
+    border: none;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #cc0000;
+    text-transform: uppercase;
+}
+
+form fieldset fieldset legend{
+    font-size: 17px !important;
+    color: #000000;
+}
+
+form fieldset h3, form fieldset h4{
+    color: #666666;
+}
+
+form fieldset label{
+    color: #999999;
+}
+
+form fieldset a[data-toggle="tooltip"]{
+    color: #f0b2b2;
+}
+
+form fieldset a[data-toggle="tooltip"]:hover
+{
+    color: #cc0000;
+}
+
+.navbar ul li a{
+    background-color: #dddddd;
+    border-radius: 0px;
+    color: #666666;
+}
+
+.navbar ul li.active a, .navbar ul li.active a:focus, .navbar ul li.active a:active, .navbar ul li.active a:hover{
+    background-color: #cc0000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.pager li > a, .pager li > span {
+    border-radius: 0px;
+    background-color: #dddddd;
+    color: #666666;
+}
