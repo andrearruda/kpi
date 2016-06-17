@@ -1,6 +1,9 @@
 <?php
 // DIC configuration
 
+/**
+ * @var $container \Slim\Container
+ */
 $container = $app->getContainer();
 
 // -----------------------------------------------------------------------------
@@ -18,6 +21,8 @@ $container['view'] = function ($c) {
 
     return $view;
 };
+
+$container->register(new RKA\Form\FormProvider);
 
 // Flash messages
 $container['flash'] = function ($c) {
@@ -82,10 +87,18 @@ $container['em'] = function ($c) {
 // Action factories
 // -----------------------------------------------------------------------------
 
-$container['App\Controller\KpiController'] = function ($c) {
-    return new App\Controller\KpiController($c->get('view'), $c->get('logger'), $c->get('em'), $c->get('router'));
+$container['App\Action\HomeAction'] = function ($c) {
+    return new App\Action\HomeAction($c->get('router'));
 };
 
-$container['App\Controller\HomeController'] = function ($c) {
-    return new App\Controller\HomeController($c->get('view'), $c->get('logger'));
+$container['App\Action\IndicadorAction'] = function ($c) {
+
+    $indicador_service = new App\Service\IndicadorService($c->get('em'));
+    $indicador_form = new App\Form\IndicadorForm();
+
+    return new App\Action\IndicadorAction($c->get('view'), $c->get('router'), $indicador_service, $indicador_form);
+};
+
+$container['App\Controller\KpiController'] = function ($c) {
+    return new App\Controller\KpiController($c->get('view'), $c->get('logger'), $c->get('em'), $c->get('router'));
 };

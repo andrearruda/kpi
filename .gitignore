@@ -2,5 +2,5 @@
 /cache/tmp/*
 /cache/twig/*
 /log/*
-/vendor/*
+/vendor
 /composer.lock

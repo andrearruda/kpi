@@ -1,0 +1,54 @@
+{% extends "base.twig" %}
+
+{% set title = ["Adicionar", "Kpi"]|join(' / ') %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <link href="/assest/libs/twitter-bootstrap-wizard/prettify.css" rel="stylesheet">
+    <script src="/assest/libs/twitter-bootstrap-wizard/prettify.js"></script>
+
+    <script src="/assest/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <script src="/assest/libs/jQuery-Mask-Plugin/dist/jquery.mask.min.js"></script>
+    <script src="/assest/libs/plentz-jquery-maskmoney/dist/jquery.maskMoney.min.js"></script>
+
+    <script src="/assest/libs/NumericInput/numericInput.min.js"></script>
+
+    <!-- CUSTOM -->
+    <link href="/assest/custom/css/kpi.form.css" rel="stylesheet">
+    <script src="/assest/custom/js/kpi.form.js"></script>
+{% endblock %}
+
+{% block content %}
+
+    {% include 'title.partial.twig' %}
+
+    <div class="row">
+        <div class="col-md-12">
+            {{ form().openTag(form)|raw }}
+
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.informacao.twig' %}
+<!-- END FIELDSET -->
+
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.periodo.twig' %}
+<!-- END FIELDSET -->
+
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.comparativo.twig' %}
+<!-- END FIELDSET -->
+
+<div class="row">
+    <div class="col-md-12">
+        <input class="btn btn-default" value="Salvar" type="submit">
+    </div>
+</div>
+
+
+            {{ form().closeTag(form)|raw }}
+        </div>
+    </div>
+
+{% endblock %}

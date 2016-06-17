@@ -1,0 +1,5 @@
+php vendor/doctrine/orm/bin/doctrine orm:schema-tool:create
+
+php vendor/doctrine/orm/bin/doctrine orm:schema-tool:drop
+
+php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update

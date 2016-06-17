@@ -20,14 +20,16 @@
         "slim/slim": "^3.1",
         "slim/twig-view": "^1.1",
         "slim/flash": "^0.1.0",
+        "slim/csrf": "^0.6.0",
         "monolog/monolog": "^1.13",
         "tuupola/slim-basic-auth": "^2.0",
         "gedmo/doctrine-extensions": "^2.4",
         "doctrine/orm": "~2.5",
-        "slim/csrf": "^0.6.0",
         "zendframework/zend-stdlib": "^2.5",
         "zendframework/zend-servicemanager": "~2.5",
         "zendframework/zend-filter": "~2.5",
-        "thapp/xmlbuilder": "^0.1.4"
+        "zendframework/zend-paginator": "^2.7",
+        "thapp/xmlbuilder": "^0.1.4",
+        "akrabat/rka-slim-zendform": "^1.0"
     }
 }
