@@ -19,8 +19,9 @@ class IndicadorInformacoesFieldset extends Fieldset implements InputFilterProvid
             ),
             'attributes' => array(
                 'id' => 'date',
-                'required' => true,
+                'required' => false,
                 'readonly' => true,
+                'disabled' => true,
                 'class' => 'form-control',
                 'value' => date('d/m/Y')
             ),
@@ -44,26 +45,6 @@ class IndicadorInformacoesFieldset extends Fieldset implements InputFilterProvid
     public function getInputFilterSpecification()
     {
         return array(
-            'date' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Date',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'format' => 'd/m/Y'
-                        )
-                    )
-                )
-            ),
             'responsible' => array(
                 'required' => true,
                 'filters' => array(

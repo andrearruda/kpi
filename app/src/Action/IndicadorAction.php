@@ -39,7 +39,7 @@ class IndicadorAction
 
             foreach($data_form['fieldset_periodo'] as $key => $item)
             {
-                $data_form['fieldset_periodo'][$key] = '01/' . $item;
+                $data_form['fieldset_periodo'][$key] = new \DateTime('01/' . $item);
             }
 
             $form->setData($data_form);
