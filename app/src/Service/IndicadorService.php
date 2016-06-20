@@ -18,6 +18,12 @@ class IndicadorService
         return $this->getEntityManager()->getRepository('App\Entity\Kpi')->findBy(array(), array('createdAt' => 'DESC'));
     }
 
+    public function save($data, $id = null)
+    {
+        var_dump($data);
+        die;
+    }
+
     /**
      * @return \Doctrine\ORM\EntityManager
      */

@@ -45,9 +45,7 @@ class IndicadorAction
             $form->setData($data_form);
             if($form->isValid())
             {
-                echo 'VALID' . PHP_EOL;
-                var_dump($data_form);
-                die;
+                $this->getIndicadorService()->save($data_form);
             }
             else
             {
