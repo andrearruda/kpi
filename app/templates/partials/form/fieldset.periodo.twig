@@ -9,14 +9,14 @@
                     <div class="col-md-6">
                         <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_periodo'].get('period_first_initial')) %} has-error{% endif %}">
                             {{ formLabel(form.getFieldsets()['fieldset_periodo'].get('period_first_initial')) }}
-                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_first_initial')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_first_initial').setAttribute('name', 'fieldset_periodo[' ~ form.getFieldsets()['fieldset_periodo'].get('period_first_initial').getAttribute('name') ~ ']')) }}
                             {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_periodo'].get('period_first_initial'))|raw }}
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_periodo'].get('period_first_end')) %} has-error{% endif %}">
                             {{ formLabel(form.getFieldsets()['fieldset_periodo'].get('period_first_end')) }}
-                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_first_end')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_first_end').setAttribute('name', 'fieldset_periodo[' ~ form.getFieldsets()['fieldset_periodo'].get('period_first_end').getAttribute('name') ~ ']')) }}
                             {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_periodo'].get('period_first_end'))|raw }}
                         </div>
                     </div>
@@ -30,14 +30,14 @@
                     <div class="col-md-6">
                         <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_periodo'].get('period_second_initial')) %} has-error{% endif %}">
                             {{ formLabel(form.getFieldsets()['fieldset_periodo'].get('period_second_initial')) }}
-                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_second_initial')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_second_initial').setAttribute('name', 'fieldset_periodo[' ~ form.getFieldsets()['fieldset_periodo'].get('period_second_initial').getAttribute('name') ~ ']')) }}
                             {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_periodo'].get('period_second_initial'))|raw }}
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_periodo'].get('period_second_end')) %} has-error{% endif %}">
                             {{ formLabel(form.getFieldsets()['fieldset_periodo'].get('period_second_end')) }}
-                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_second_end')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_periodo'].get('period_second_end').setAttribute('name', 'fieldset_periodo[' ~ form.getFieldsets()['fieldset_periodo'].get('period_second_end').getAttribute('name') ~ ']')) }}
                             {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_periodo'].get('period_second_end'))|raw }}
                         </div>
                     </div>

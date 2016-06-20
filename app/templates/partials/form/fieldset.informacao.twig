@@ -5,14 +5,14 @@
         <div class="col-md-2">
             <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_informacoes'].get('date')) %} has-error{% endif %}">
                 {{ formLabel(form.getFieldsets()['fieldset_informacoes'].get('date')) }}
-                {{ formElement(form.getFieldsets()['fieldset_informacoes'].get('date')) }}
+                {{ formElement(form.getFieldsets()['fieldset_informacoes'].get('date').setAttribute('name', 'fieldset_informacoes[' ~ form.getFieldsets()['fieldset_informacoes'].get('date').getAttribute('name') ~ ']')) }}
                 {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_informacoes'].get('date'))|raw }}
             </div>
         </div>
         <div class="col-md-10">
             <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_informacoes'].get('responsible')) %} has-error{% endif %}">
                 {{ formLabel(form.getFieldsets()['fieldset_informacoes'].get('responsible')) }}
-                {{ formElement(form.getFieldsets()['fieldset_informacoes'].get('responsible')) }}
+                {{ formElement(form.getFieldsets()['fieldset_informacoes'].get('responsible').setAttribute('name', 'fieldset_informacoes[' ~ form.getFieldsets()['fieldset_informacoes'].get('responsible').getAttribute('name') ~ ']')) }}
                 {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_informacoes'].get('responsible'))|raw }}
             </div>
         </div>
