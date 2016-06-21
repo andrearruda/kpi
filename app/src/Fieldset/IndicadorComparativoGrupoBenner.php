@@ -13,48 +13,48 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_revenues_target',
+            'name' => 'revenuesTarget',
             'options' => array(
                 'label' => 'Meta',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_revenues_target',
+                'id' => 'revenuesTarget',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_revenues_initial',
+            'name' => 'revenuesInitial',
             'options' => array(
                 'label' => '1º Ano',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_revenues_initial',
+                'id' => 'revenuesInitial',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_revenues_end',
+            'name' => 'revenuesEnd',
             'options' => array(
                 'label' => '2º Ano',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_revenues_end',
+                'id' => 'revenuesEnd',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_revenues_percentage',
+            'name' => 'revenuesPercentage',
             'options' => array(
                 'label' => 'Porcentagem',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_revenues_percentage',
+                'id' => 'revenuesPercentage',
                 'required' => true,
                 'class' => 'form-control input-mask-percentage',
             ),
@@ -62,48 +62,48 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_ebtida_target',
+            'name' => 'ebtidaTarget',
             'options' => array(
                 'label' => 'Meta',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_ebtida_target',
+                'id' => 'ebtidaTarget',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_ebtida_initial',
+            'name' => 'ebtidaInitial',
             'options' => array(
                 'label' => '1º Ano',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_ebtida_initial',
+                'id' => 'ebtidaInitial',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_ebtida_end',
+            'name' => 'ebtidaEnd',
             'options' => array(
                 'label' => '2º Ano',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_ebtida_end',
+                'id' => 'ebtidaEnd',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_ebtida_percentage',
+            'name' => 'ebtidaPercentage',
             'options' => array(
                 'label' => 'Porcentagem',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_ebtida_percentage',
+                'id' => 'ebtidaPercentage',
                 'required' => true,
                 'class' => 'form-control input-mask-percentage',
             ),
@@ -111,48 +111,48 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_netprofit_target',
+            'name' => 'netprofitTarget',
             'options' => array(
                 'label' => 'Meta',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_netprofit_target',
+                'id' => 'netprofitTarget',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_netprofit_initial',
+            'name' => 'netprofitInitial',
             'options' => array(
                 'label' => '1º Ano',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_netprofit_initial',
+                'id' => 'netprofitInitial',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_netprofit_end',
+            'name' => 'netprofitEnd',
             'options' => array(
                 'label' => '2º Ano',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_netprofit_end',
+                'id' => 'netprofitEnd',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'groupbenner_netprofit_percentage',
+            'name' => 'netprofitPercentage',
             'options' => array(
                 'label' => 'Porcentagem',
             ),
             'attributes' => array(
-                'id' => 'groupbenner_netprofit_percentage',
+                'id' => 'netprofitPercentage',
                 'required' => true,
                 'class' => 'form-control input-mask-percentage',
             ),
@@ -162,7 +162,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
     public function getInputFilterSpecification()
     {
         return array(
-            'groupbenner_revenues_target' => array(
+            'revenuesTarget' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -182,7 +182,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
-            'groupbenner_revenues_initial' => array(
+            'revenuesInitial' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -202,7 +202,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
-            'groupbenner_revenues_end' => array(
+            'revenuesEnd' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -222,88 +222,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
-            'groupbenner_revenues_percentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'groupbenner_ebtida_target' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'groupbenner_ebtida_initial' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'groupbenner_ebtida_end' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'groupbenner_ebtida_percentage' => array(
+            'revenuesPercentage' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -324,7 +243,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                 )
             ),
 
-            'groupbenner_netprofit_target' => array(
+            'ebtidaTarget' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -344,7 +263,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
-            'groupbenner_netprofit_initial' => array(
+            'ebtidaInitial' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -364,7 +283,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
-            'groupbenner_netprofit_end' => array(
+            'ebtidaEnd' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -384,7 +303,88 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
-            'groupbenner_netprofit_percentage' => array(
+            'ebtidaPercentage' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+
+            'netprofitTarget' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+            'netprofitInitial' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+            'netprofitEnd' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+            'netprofitPercentage' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),

@@ -5,72 +5,161 @@
         <div class="col-md-2">
             <h5>Faturamento</h5>
             <h4>Acumulado</h4>
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_target')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_target')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_target').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_target').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesTarget').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesTarget').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_initial')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_initial')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_initial').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_initial').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesInitial').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesInitial').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_end')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_end')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_end').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_end').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesEnd').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesEnd').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_percentage')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_percentage')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_percentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_revenues_percentage').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('revenuesPercentage').getAttribute('name') ~ ']')) }}
             </div>
         </div>
 
         <div class="col-md-2">
             <h5>Ebtida</h5>
             <h4>Acumulado</h4>
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_target')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_target')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_target').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_target').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaTarget').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaTarget').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_initial')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_initial')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_initial').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_initial').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaInitial').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaInitial').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_end')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_end')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_end').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_end').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaEnd').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaEnd').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_percentage')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_percentage')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_percentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_ebtida_percentage').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ebtidaPercentage').getAttribute('name') ~ ']')) }}
             </div>
         </div>
 
         <div class="col-md-2">
             <h5>Lucro Liquído</h5>
             <h4>Acumulado</h4>
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_target')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_target')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_target').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_target').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitTarget').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitTarget').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_initial')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_initial')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_initial').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_initial').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitInitial').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitInitial').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_end')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_end')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_end').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_end').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitEnd').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitEnd').getAttribute('name') ~ ']')) }}
             </div>
 
-            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_percentage')) %} has-error{% endif %}">
-                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_percentage')) }}
-                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_percentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('healthoperators_netprofit_percentage').getAttribute('name') ~ ']')) }}
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('netprofitPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <hr>
+            <h4>Distribuição por Receita</h4>
+            <hr>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>LU</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luValue').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('luPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>LUM</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumValue').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('lumPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>Implatação</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationValue').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('ImplantationPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>SMS</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsValue').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('SmsPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>Serviços Médicos</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesValue').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('MedicalServicesPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>Treinamentos</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutValue').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutPercentage').setAttribute('name', 'fieldset_comparativo_operadorasdesaude[' ~ form.getFieldsets()['fieldset_comparativo_operadorasdesaude'].get('WorkoutPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
