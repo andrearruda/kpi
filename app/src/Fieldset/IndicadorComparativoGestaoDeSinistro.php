@@ -5,11 +5,12 @@ namespace App\Fieldset;
 use Zend\Form\Fieldset;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProviderInterface
+
+class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilterProviderInterface
 {
     public function __construct()
     {
-        parent::__construct('fieldset_comparativo_hospitalar');
+        parent::__construct('fieldset_comparativo_gestaodesinistro');
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
@@ -160,74 +161,24 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'luValue',
+            'name' => 'servicesValue',
             'options' => array(
                 'label' => 'Valor',
             ),
             'attributes' => array(
-                'id' => 'luValue',
+                'id' => 'servicesValue',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'luPercentage',
+            'name' => 'servicesPercentage',
             'options' => array(
                 'label' => 'Porcentagem',
             ),
             'attributes' => array(
-                'id' => 'luPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'lumValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'lumValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'lumPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'lumPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'ImplantationValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'ImplantationValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'ImplantationPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'ImplantationPercentage',
+                'id' => 'servicesPercentage',
                 'required' => true,
                 'class' => 'form-control input-mask-percentage',
             ),
@@ -480,7 +431,7 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                 )
             ),
 
-            'luValue' => array(
+            'servicesValue' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -500,89 +451,7 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                     )
                 )
             ),
-            'luPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'lumValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'lumPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'ImplantationValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'ImplantationPercentage' => array(
+            'servicesPercentage' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -604,4 +473,5 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
             ),
         );
     }
+
 }

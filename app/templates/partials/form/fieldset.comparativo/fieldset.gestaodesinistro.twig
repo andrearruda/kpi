@@ -1,0 +1,102 @@
+<fieldset>
+    <legend>Hospitalar</legend>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Faturamento</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesTarget').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesInitial').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesEnd').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesPercentage').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('revenuesPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Ebtida</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaTarget').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaInitial').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaEnd').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaPercentage').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('ebtidaPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Lucro Liquído</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitTarget').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitInitial').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitEnd').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitPercentage').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('netprofitPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <hr>
+            <h4>Distribuição por Receita</h4>
+            <hr>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Serviços</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesValue').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesPercentage').setAttribute('name', 'fieldset_comparativo_gestaodesinistro[' ~ form.getFieldsets()['fieldset_comparativo_gestaodesinistro'].get('servicesPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</fieldset>

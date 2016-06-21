@@ -677,6 +677,47 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
                 )
             ),
 
+            'SmsValue' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+            'SmsPercentage' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+
             'MedicalServicesValue' => array(
                 'required' => true,
                 'filters' => array(

@@ -1,0 +1,128 @@
+<fieldset>
+    <legend>Hospitalar</legend>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Faturamento</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesTarget').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesInitial').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesEnd').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('revenuesPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Ebtida</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaTarget').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaInitial').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaEnd').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ebtidaPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Lucro Liquído</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitTarget').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitInitial').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitEnd').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('netprofitPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <hr>
+            <h4>Distribuição por Receita</h4>
+            <hr>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>LU</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luValue').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('luPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>LUM</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumValue').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('lumPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>Implatação</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</fieldset>
