@@ -1,0 +1,49 @@
+<fieldset>
+    <legend>ORÇADO X REALIZADO</legend>
+    <div id="wizard_orcadorealizado">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#tab_b_1" role="tab" data-toggle="tab">Grupo Benner</a></li>
+                        <li role="presentation"><a href="#tab_b_2" role="tab" data-toggle="tab">Operadoras de Saúde</a></li>
+                        <li role="presentation"><a href="#tab_b_3" role="tab" data-toggle="tab">Hospitalar</a></li>
+                        <li role="presentation"><a href="#tab_b_4" role="tab" data-toggle="tab">Gestão de Sinistro</a></li>
+                        <li role="presentation"><a href="#tab_b_5" role="tab" data-toggle="tab">Sistemas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane" id="tab_b_1">
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.orcadorealizado/fieldset.grupobenner.twig' %}
+<!-- END FIELDSET -->
+            </div>
+
+            <div class="tab-pane" id="tab_b_2">
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.orcadorealizado/fieldset.operadorasdesaude.twig' %}
+<!-- END FIELDSET -->
+            </div>
+
+            <div class="tab-pane" id="tab_b_3">
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.orcadorealizado/fieldset.hospitalar.twig' %}
+<!-- END FIELDSET -->
+            </div>
+
+            <div class="tab-pane" id="tab_b_4">
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.orcadorealizado/fieldset.gestaodesinistro.twig' %}
+<!-- END FIELDSET -->
+            </div>
+
+            <div class="tab-pane" id="tab_b_5">
+<!-- BEGIN FIELDSET -->
+{% include 'partials/form/fieldset.orcadorealizado/fieldset.sistemas.twig' %}
+<!-- END FIELDSET -->
+            </div>
+        </div>
+    </div>
+</fieldset>

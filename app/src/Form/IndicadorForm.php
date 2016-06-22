@@ -12,13 +12,14 @@ class IndicadorForm extends Form implements InputFilterProviderInterface
         parent::__construct('form_indicador');
 
         $this->add(array(
-            'type' => 'App\Fieldset\IndicadorInformacoesFieldset'
+            'type' => 'App\Fieldset\IndicadorInformacoes'
         ));
 
         $this->add(array(
-            'type' => 'App\Fieldset\IndicadorPeriodoFieldset'
+            'type' => 'App\Fieldset\IndicadorPeriodo'
         ));
 
+//<editor-fold desc="Fieldsets de Comparativo">
         $this->add(array(
             'type' => 'App\Fieldset\IndicadorComparativoGrupoBenner'
         ));
@@ -38,6 +39,29 @@ class IndicadorForm extends Form implements InputFilterProviderInterface
         $this->add(array(
             'type' => 'App\Fieldset\IndicadorComparativoSistemas'
         ));
+//</editor-fold>
+
+//<editor-fold desc="Fieldsets de Orçamento X Realizado">
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorOrcadoRealizadoGrupoBenner'
+        ));
+
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorOrcadoRealizadoOperadorasDeSaude'
+        ));
+
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorOrcadoRealizadoHospitalar'
+        ));
+
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorOrcadoRealizadoGestaoDeSinistro'
+        ));
+
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorOrcadoRealizadoSistemas'
+        ));
+//</editor-fold>
     }
 
     public function getInputFilterSpecification()

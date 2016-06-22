@@ -1,14 +1,15 @@
 <?php
+
 namespace App\Fieldset;
 
 use Zend\Form\Fieldset;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFilterProviderInterface
+class IndicadorOrcadoRealizadoGestaoDeSinistro extends Fieldset implements InputFilterProviderInterface
 {
     public function __construct()
     {
-        parent::__construct('fieldset_comparativo_operadorasdesaude');
+        parent::__construct('fieldset_orcadorealizado_gestaodesinistro');
 
 //<editor-fold desc="Fields do item Faturamento">
         $this->add(array(
@@ -162,158 +163,6 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
             ),
         ));
 //</editor-fold>
-
-//<editor-fold desc="Fields do subitem Distribuição por Receita">
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'luValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'luValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'luPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'luPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'lumValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'lumValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'lumPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'lumPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'implantationValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'implantationValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'implantationPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'implantationPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'smsValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'smsValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'smsPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'smsPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'medicalServicesValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'medicalServicesValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'medicalServicesPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'medicalServicesPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'workoutValue',
-            'options' => array(
-                'label' => 'Valor',
-            ),
-            'attributes' => array(
-                'id' => 'workoutValue',
-                'required' => true,
-                'class' => 'form-control input-mask-money-milhoes',
-            ),
-        ));
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Text',
-            'name' => 'workoutPercentage',
-            'options' => array(
-                'label' => 'Porcentagem',
-            ),
-            'attributes' => array(
-                'id' => 'workoutPercentage',
-                'required' => true,
-                'class' => 'form-control input-mask-percentage',
-            ),
-        ));
-//</editor-fold>
     }
 
     public function getInputFilterSpecification()
@@ -402,7 +251,7 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
             ),
 //</editor-fold>
 
-//<editor-fold desc="Fields do item Ebtida">
+//<editor-fold desc="Filter do item Ebtida">
             'ebtidaTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -485,7 +334,7 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
             ),
 //</editor-fold>
 
-//<editor-fold desc="Fields do item Lucro liquído">
+//<editor-fold desc="Filter do item Lucro liquído">
             'netprofitTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -567,255 +416,6 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
                 )
             ),
 //</editor-fold>
-
-//<editor-fold desc="Filter do subitem Distribuição por Receita">
-            'luValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'luPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'lumValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'lumPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'implantationValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'implantationPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'smsValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'smsPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'medicalServicesValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'medicalServicesPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-
-            'workoutValue' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-            'workoutPercentage' => array(
-                'required' => true,
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim')
-                ),
-                'validators' => array(
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                    ),
-                    array(
-                        'name' => 'Float',
-                        'break_chain_on_failure' => true,
-                        'options' => array(
-                            'locale' => 'en_US'
-                        )
-                    )
-                )
-            ),
-//</editor-fold>
         );
     }
-
 }

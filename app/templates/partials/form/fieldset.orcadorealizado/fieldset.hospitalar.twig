@@ -1,0 +1,77 @@
+<fieldset>
+    <legend>Hospitalar</legend>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Faturamento</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesTarget').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesInitial').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesEnd').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesPercentage').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('revenuesPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Ebtida</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaTarget').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaInitial').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaEnd').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaPercentage').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('ebtidaPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Lucro Liquído</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitTarget').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitInitial').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitEnd').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitPercentage').setAttribute('name', 'fieldset_orcadorealizado_hospitalar[' ~ form.getFieldsets()['fieldset_orcadorealizado_hospitalar'].get('netprofitPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+    </div>
+</fieldset>

@@ -1,0 +1,75 @@
+<fieldset>
+    <legend>Grupo Benner</legend>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Faturamento</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesTarget').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesInitial').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesEnd').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesPercentage').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('revenuesPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <h5>Ebtida</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaTarget').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaInitial').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaEnd').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaPercentage').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('ebtidaPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <h5>Lucro Liquído</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitTarget').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitInitial').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitEnd').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitPercentage').setAttribute('name', 'fieldset_orcadorealizado_grupobenner[' ~ form.getFieldsets()['fieldset_orcadorealizado_grupobenner'].get('netprofitPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+    </div>
+</fieldset>

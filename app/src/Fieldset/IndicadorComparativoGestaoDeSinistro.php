@@ -11,6 +11,7 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
     {
         parent::__construct('fieldset_comparativo_gestaodesinistro');
 
+//<editor-fold desc="Fields do item Faturamento">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'revenuesTarget',
@@ -59,7 +60,9 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Ebtida">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'ebtidaTarget',
@@ -108,7 +111,9 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Lucro liquído">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'netprofitTarget',
@@ -157,7 +162,9 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do subitem Distribuição por Receita">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'servicesValue',
@@ -182,11 +189,13 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
     }
 
     public function getInputFilterSpecification()
     {
         return array(
+//<editor-fold desc="Filter do item Faturamento">
             'revenuesTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -267,7 +276,9 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Filter do item Ebtida">
             'ebtidaTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -348,7 +359,9 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Filter do item Lucro liquído">
             'netprofitTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -429,7 +442,9 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Filter do subitem Distribuição por Receita">
             'servicesValue' => array(
                 'required' => true,
                 'filters' => array(
@@ -470,6 +485,7 @@ class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilt
                     )
                 )
             ),
+//</editor-fold>
         );
     }
 

@@ -5,7 +5,7 @@ namespace App\Fieldset;
 use Zend\Form\Fieldset;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-class IndicadorInformacoesFieldset extends Fieldset implements InputFilterProviderInterface
+class IndicadorInformacoes extends Fieldset implements InputFilterProviderInterface
 {
     public function __construct()
     {

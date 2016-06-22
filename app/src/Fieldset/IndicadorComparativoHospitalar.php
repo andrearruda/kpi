@@ -11,6 +11,7 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
     {
         parent::__construct('fieldset_comparativo_hospitalar');
 
+//<editor-fold desc="Fields do item Faturamento">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'revenuesTarget',
@@ -59,7 +60,9 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Ebtida">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'ebtidaTarget',
@@ -108,7 +111,9 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Lucro liquído">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'netprofitTarget',
@@ -157,7 +162,9 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do subitem Distribuição por Receita">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'luValue',
@@ -210,33 +217,35 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'ImplantationValue',
+            'name' => 'implantationValue',
             'options' => array(
                 'label' => 'Valor',
             ),
             'attributes' => array(
-                'id' => 'ImplantationValue',
+                'id' => 'implantationValue',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'ImplantationPercentage',
+            'name' => 'implantationPercentage',
             'options' => array(
                 'label' => 'Porcentagem',
             ),
             'attributes' => array(
-                'id' => 'ImplantationPercentage',
+                'id' => 'implantationPercentage',
                 'required' => true,
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
     }
 
     public function getInputFilterSpecification()
     {
         return array(
+//<editor-fold desc="Filter do item Faturamento">
             'revenuesTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -317,7 +326,9 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Ebtida">
             'ebtidaTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -398,7 +409,9 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Lucro liquído">
             'netprofitTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -479,7 +492,9 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Filter do subitem Distribuição por Receita">
             'luValue' => array(
                 'required' => true,
                 'filters' => array(
@@ -562,7 +577,7 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                 )
             ),
 
-            'ImplantationValue' => array(
+            'implantationValue' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -582,7 +597,7 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                     )
                 )
             ),
-            'ImplantationPercentage' => array(
+            'implantationPercentage' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -602,6 +617,7 @@ class IndicadorComparativoHospitalar extends Fieldset implements InputFilterProv
                     )
                 )
             ),
+//</editor-fold>
         );
     }
 }

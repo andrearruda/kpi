@@ -11,6 +11,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
     {
         parent::__construct('fieldset_comparativo_grupobenner');
 
+//<editor-fold desc="Fields do item Faturamento">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'revenuesTarget',
@@ -59,7 +60,9 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Ebtida">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'ebtidaTarget',
@@ -108,7 +111,9 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
 
+//<editor-fold desc="Fields do item Lucro liquído">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'netprofitTarget',
@@ -157,11 +162,13 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                 'class' => 'form-control input-mask-percentage',
             ),
         ));
+//</editor-fold>
     }
 
     public function getInputFilterSpecification()
     {
         return array(
+//<editor-fold desc="Filter do item Faturamento">
             'revenuesTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -242,7 +249,9 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Filter do item Ebtida">
             'ebtidaTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -323,7 +332,9 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
+//</editor-fold>
 
+//<editor-fold desc="Filter do item Lucro liquído">
             'netprofitTarget' => array(
                 'required' => true,
                 'filters' => array(
@@ -404,6 +415,7 @@ class IndicadorComparativoGrupoBenner extends Fieldset implements InputFilterPro
                     )
                 )
             ),
+//</editor-fold>
         );
     }
 

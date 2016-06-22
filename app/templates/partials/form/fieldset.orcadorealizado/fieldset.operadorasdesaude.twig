@@ -1,0 +1,77 @@
+<fieldset>
+    <legend>Operadoras de Saúde</legend>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Faturamento</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesTarget').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesInitial').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesEnd').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesPercentage').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('revenuesPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Ebtida</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaTarget').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaInitial').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaEnd').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaPercentage').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('ebtidaPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Lucro Liquído</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitTarget').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitInitial').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitEnd').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitPercentage').setAttribute('name', 'fieldset_orcadorealizado_operadorasdesaude[' ~ form.getFieldsets()['fieldset_orcadorealizado_operadorasdesaude'].get('netprofitPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+    </div>
+</fieldset>

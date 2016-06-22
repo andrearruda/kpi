@@ -111,14 +111,14 @@
 
                 <div class="col-md-2">
                     <h4>Implatação</h4>
-                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue')) %} has-error{% endif %}">
-                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue')) }}
-                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationValue').getAttribute('name') ~ ']')) }}
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationValue').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationValue').getAttribute('name') ~ ']')) }}
                     </div>
 
-                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage')) %} has-error{% endif %}">
-                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage')) }}
-                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('ImplantationPercentage').getAttribute('name') ~ ']')) }}
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationPercentage').setAttribute('name', 'fieldset_comparativo_hospitalar[' ~ form.getFieldsets()['fieldset_comparativo_hospitalar'].get('implantationPercentage').getAttribute('name') ~ ']')) }}
                     </div>
                 </div>
             </div>

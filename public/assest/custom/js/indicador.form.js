@@ -6,7 +6,7 @@ $(function() {
     });
 
     $('#wizard_comparativo').bootstrapWizard();
-    $('#wizard_orcado_realizado').bootstrapWizard();
+    $('#wizard_orcadorealizado').bootstrapWizard();
     window.prettyPrint && prettyPrint();
 });
 
