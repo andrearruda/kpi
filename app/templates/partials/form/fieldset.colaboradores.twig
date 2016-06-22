@@ -1,0 +1,69 @@
+<fieldset>
+    <legend>COLABORADORES</legend>
+
+    <div class="row">
+        <div class="col-md-6">
+            <fieldset>
+                <legend>Número de colaboradores</legend>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>1º Ano</h4>
+                        <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearNumberOfEmployees')) %} has-error{% endif %}">
+                            {{ formLabel(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearNumberOfEmployees')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearNumberOfEmployees').setAttribute('name', 'fieldset_colaborador_numerocolaboradores[' ~ form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearNumberOfEmployees').getAttribute('name') ~ ']')) }}
+                            {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearNumberOfEmployees'))|raw }}
+                        </div>
+
+                        <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearIcons')) %} has-error{% endif %}">
+                            {{ formLabel(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearIcons')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearIcons').setAttribute('name', 'fieldset_colaborador_numerocolaboradores[' ~ form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearIcons').getAttribute('name') ~ ']')) }}
+                            {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('1YearIcons'))|raw }}
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h4>2º Ano</h4>
+                        <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearNumberOfEmployees')) %} has-error{% endif %}">
+                            {{ formLabel(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearNumberOfEmployees')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearNumberOfEmployees').setAttribute('name', 'fieldset_colaborador_numerocolaboradores[' ~ form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearNumberOfEmployees').getAttribute('name') ~ ']')) }}
+                            {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearNumberOfEmployees'))|raw }}
+                        </div>
+
+                        <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearIcons')) %} has-error{% endif %}">
+                            {{ formLabel(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearIcons')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearIcons').setAttribute('name', 'fieldset_colaborador_numerocolaboradores[' ~ form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearIcons').getAttribute('name') ~ ']')) }}
+                            {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_colaborador_numerocolaboradores'].get('2YearIcons'))|raw }}
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="col-md-6">
+            <fieldset>
+                <legend>Faturamento por colaborador</legend>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>1º Ano</h4>
+                        <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('1YearBillingByEmployees')) %} has-error{% endif %}">
+                            {{ formLabel(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('1YearBillingByEmployees')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('1YearBillingByEmployees').setAttribute('name', 'fieldset_colaborador_faturamentocolaboradores[' ~ form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('1YearBillingByEmployees').getAttribute('name') ~ ']')) }}
+                            {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('1YearBillingByEmployees'))|raw }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>2º Ano</h4>
+                        <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('2YearBillingByEmployees')) %} has-error{% endif %}">
+                            {{ formLabel(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('2YearBillingByEmployees')) }}
+                            {{ formElement(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('2YearBillingByEmployees').setAttribute('name', 'fieldset_colaborador_faturamentocolaboradores[' ~ form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('2YearBillingByEmployees').getAttribute('name') ~ ']')) }}
+                            {{ formElementErrors().setMessageOpenFormat('<span class="help-block">').setMessageSeparatorString('</span><span class="help-block">').setMessageCloseString('</span>').render(form.getFieldsets()['fieldset_colaborador_faturamentocolaboradores'].get('2YearBillingByEmployees'))|raw }}
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</fieldset>

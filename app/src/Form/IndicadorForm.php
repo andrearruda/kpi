@@ -62,6 +62,16 @@ class IndicadorForm extends Form implements InputFilterProviderInterface
             'type' => 'App\Fieldset\IndicadorOrcadoRealizadoSistemas'
         ));
 //</editor-fold>
+
+//<editor-fold desc="Fieldsets de Colaboradores">
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorColaboradorNumeroDeColaboradores'
+        ));
+
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorColaboradorFaturamentoPorColaborador'
+        ));
+//</editor-fold>
     }
 
     public function getInputFilterSpecification()

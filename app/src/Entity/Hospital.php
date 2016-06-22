@@ -26,126 +26,126 @@ class Hospital
     /**
      * @var float
      *
-     * @ORM\Column(name="revenues_initial", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="revenues_initial", type="float", precision=10, scale=0, nullable=true)
      */
     private $revenuesInitial;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="revenues_end", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="revenues_end", type="float", precision=10, scale=0, nullable=true)
      */
     private $revenuesEnd;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="revenues_target", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="revenues_target", type="float", precision=10, scale=0, nullable=true)
      */
     private $revenuesTarget;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="revenues_percentage", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="revenues_percentage", type="float", precision=10, scale=0, nullable=true)
      */
     private $revenuesPercentage;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="ebtida_initial", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="ebtida_initial", type="float", precision=10, scale=0, nullable=true)
      */
     private $ebtidaInitial;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="ebtida_end", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="ebtida_end", type="float", precision=10, scale=0, nullable=true)
      */
     private $ebtidaEnd;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="ebtida_target", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="ebtida_target", type="float", precision=10, scale=0, nullable=true)
      */
     private $ebtidaTarget;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="ebtida_percentage", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="ebtida_percentage", type="float", precision=10, scale=0, nullable=true)
      */
     private $ebtidaPercentage;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="net_profit_initial", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="net_profit_initial", type="float", precision=10, scale=0, nullable=true)
      */
     private $netProfitInitial;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="net_profit_end", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="net_profit_end", type="float", precision=10, scale=0, nullable=true)
      */
     private $netProfitEnd;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="net_profit_target", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="net_profit_target", type="float", precision=10, scale=0, nullable=true)
      */
     private $netProfitTarget;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="net_profit_percentage", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="net_profit_percentage", type="float", precision=10, scale=0, nullable=true)
      */
     private $netProfitPercentage;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="lu_value", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="lu_value", type="float", precision=10, scale=0, nullable=true)
      */
     private $luValue;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="lu_percentage", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="lu_percentage", type="float", precision=10, scale=0, nullable=true)
      */
     private $luPercentage;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="lum_value", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="lum_value", type="float", precision=10, scale=0, nullable=true)
      */
     private $lumValue;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="lum_percentage", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="lum_percentage", type="float", precision=10, scale=0, nullable=true)
      */
     private $lumPercentage;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="implantation_value", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="implantation_value", type="float", precision=10, scale=0, nullable=true)
      */
     private $implantationValue;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="implantation_percentage", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="implantation_percentage", type="float", precision=10, scale=0, nullable=true)
      */
     private $implantationPercentage;
 
