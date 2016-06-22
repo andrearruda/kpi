@@ -89,6 +89,8 @@ class IndicadorService
             $this->getEntityManager()->persist($systems_entity);
 //</editor-fold>
 
+
+
             $this->getEntityManager()->flush();
         }
 

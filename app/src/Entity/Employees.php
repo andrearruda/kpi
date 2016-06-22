@@ -26,44 +26,44 @@ class Employees
     /**
      * @var integer
      *
-     * @ORM\Column(name="contributors_1_year_number_of_employees", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="first_year_number_of_employees", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
-    private $contributors1YearNumberOfEmployees;
+    private $firstYearNumberOfEmployees;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="contributors_2_year_number_of_employees", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="first_year_icons", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
-    private $contributors2YearNumberOfEmployees;
+    private $firstYearIcons;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="contributors_1_year_icons", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="second_year_number_of_employees", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
-    private $contributors1YearIcons;
+    private $secondYearNumberOfEmployees;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="contributors_2_year_icons", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="second_year_icons", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
-    private $contributors2YearIcons;
+    private $secondYearIcons;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="contributors_1_year_billing_by_employees", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="first_year_billing_by_employees", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
-    private $contributors1YearBillingByEmployees;
+    private $firstYearBillingByEmployees;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="contributors_2_year_billing_by_employees", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="second_year_billing_by_employees", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
-    private $contributors2YearBillingByEmployees;
+    private $secondYearBillingByEmployees;
 
     /**
      * @var \DateTime
@@ -110,147 +110,147 @@ class Employees
     }
 
     /**
-     * Set contributors1YearNumberOfEmployees
+     * Set firstYearNumberOfEmployees
      *
-     * @param integer $contributors1YearNumberOfEmployees
+     * @param integer $firstYearNumberOfEmployees
      *
      * @return Employees
      */
-    public function setContributors1YearNumberOfEmployees($contributors1YearNumberOfEmployees)
+    public function setFirstYearNumberOfEmployees($firstYearNumberOfEmployees)
     {
-        $this->contributors1YearNumberOfEmployees = $contributors1YearNumberOfEmployees;
+        $this->firstYearNumberOfEmployees = $firstYearNumberOfEmployees;
 
         return $this;
     }
 
     /**
-     * Get contributors1YearNumberOfEmployees
+     * Get firstYearNumberOfEmployees
      *
      * @return integer
      */
-    public function getContributors1YearNumberOfEmployees()
+    public function getFirstYearNumberOfEmployees()
     {
-        return $this->contributors1YearNumberOfEmployees;
+        return $this->firstYearNumberOfEmployees;
     }
 
     /**
-     * Set contributors2YearNumberOfEmployees
+     * Set secondYearNumberOfEmployees
      *
-     * @param integer $contributors2YearNumberOfEmployees
+     * @param integer $secondYearNumberOfEmployees
      *
      * @return Employees
      */
-    public function setContributors2YearNumberOfEmployees($contributors2YearNumberOfEmployees)
+    public function setSecondYearNumberOfEmployees($secondYearNumberOfEmployees)
     {
-        $this->contributors2YearNumberOfEmployees = $contributors2YearNumberOfEmployees;
+        $this->secondYearNumberOfEmployees = $secondYearNumberOfEmployees;
 
         return $this;
     }
 
     /**
-     * Get contributors2YearNumberOfEmployees
+     * Get secondYearNumberOfEmployees
      *
      * @return integer
      */
-    public function getContributors2YearNumberOfEmployees()
+    public function getSecondYearNumberOfEmployees()
     {
-        return $this->contributors2YearNumberOfEmployees;
+        return $this->secondYearNumberOfEmployees;
     }
 
     /**
-     * Set contributors1YearIcons
+     * Set firstYearIcons
      *
-     * @param integer $contributors1YearIcons
+     * @param integer $firstYearIcons
      *
      * @return Employees
      */
-    public function setContributors1YearIcons($contributors1YearIcons)
+    public function setFirstYearIcons($firstYearIcons)
     {
-        $this->contributors1YearIcons = $contributors1YearIcons;
+        $this->firstYearIcons = $firstYearIcons;
 
         return $this;
     }
 
     /**
-     * Get contributors1YearIcons
+     * Get firstYearIcons
      *
      * @return integer
      */
-    public function getContributors1YearIcons()
+    public function getFirstYearIcons()
     {
-        return $this->contributors1YearIcons;
+        return $this->firstYearIcons;
     }
 
     /**
-     * Set contributors2YearIcons
+     * Set secondYearIcons
      *
-     * @param integer $contributors2YearIcons
+     * @param integer $secondYearIcons
      *
      * @return Employees
      */
-    public function setContributors2YearIcons($contributors2YearIcons)
+    public function setSecondYearIcons($secondYearIcons)
     {
-        $this->contributors2YearIcons = $contributors2YearIcons;
+        $this->secondYearIcons = $secondYearIcons;
 
         return $this;
     }
 
     /**
-     * Get contributors2YearIcons
+     * Get secondYearIcons
      *
      * @return integer
      */
-    public function getContributors2YearIcons()
+    public function getSecondYearIcons()
     {
-        return $this->contributors2YearIcons;
+        return $this->secondYearIcons;
     }
 
     /**
-     * Set contributors1YearBillingByEmployees
+     * Set firstYearBillingByEmployees
      *
-     * @param float $contributors1YearBillingByEmployees
+     * @param float $firstYearBillingByEmployees
      *
      * @return Employees
      */
-    public function setContributors1YearBillingByEmployees($contributors1YearBillingByEmployees)
+    public function setFirstYearBillingByEmployees($firstYearBillingByEmployees)
     {
-        $this->contributors1YearBillingByEmployees = $contributors1YearBillingByEmployees;
+        $this->firstYearBillingByEmployees = $firstYearBillingByEmployees;
 
         return $this;
     }
 
     /**
-     * Get contributors1YearBillingByEmployees
+     * Get firstYearBillingByEmployees
      *
      * @return float
      */
-    public function getContributors1YearBillingByEmployees()
+    public function getFirstYearBillingByEmployees()
     {
-        return $this->contributors1YearBillingByEmployees;
+        return $this->firstYearBillingByEmployees;
     }
 
     /**
-     * Set contributors2YearBillingByEmployees
+     * Set secondYearBillingByEmployees
      *
-     * @param float $contributors2YearBillingByEmployees
+     * @param float $secondYearBillingByEmployees
      *
      * @return Employees
      */
-    public function setContributors2YearBillingByEmployees($contributors2YearBillingByEmployees)
+    public function setSecondYearBillingByEmployees($secondYearBillingByEmployees)
     {
-        $this->contributors2YearBillingByEmployees = $contributors2YearBillingByEmployees;
+        $this->secondYearBillingByEmployees = $secondYearBillingByEmployees;
 
         return $this;
     }
 
     /**
-     * Get contributors2YearBillingByEmployees
+     * Get secondYearBillingByEmployees
      *
      * @return float
      */
-    public function getContributors2YearBillingByEmployees()
+    public function getSecondYearBillingByEmployees()
     {
-        return $this->contributors2YearBillingByEmployees;
+        return $this->secondYearBillingByEmployees;
     }
 
     /**

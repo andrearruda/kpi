@@ -13,24 +13,24 @@ class IndicadorColaboradorFaturamentoPorColaborador extends Fieldset implements 
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => '1YearBillingByEmployees',
+            'name' => 'firstYearBillingByEmployees',
             'options' => array(
                 'label' => 'Faturamento',
             ),
             'attributes' => array(
-                'id' => '1YearBillingByEmployees',
+                'id' => 'firstYearBillingByEmployees',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => '2YearBillingByEmployees',
+            'name' => 'secondYearBillingByEmployees',
             'options' => array(
                 'label' => 'Faturamento',
             ),
             'attributes' => array(
-                'id' => '2YearBillingByEmployees',
+                'id' => 'secondYearBillingByEmployees',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
@@ -40,7 +40,7 @@ class IndicadorColaboradorFaturamentoPorColaborador extends Fieldset implements 
     public function getInputFilterSpecification()
     {
         return array(
-            '1YearBillingByEmployees' => array(
+            'firstYearBillingByEmployees' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -52,7 +52,7 @@ class IndicadorColaboradorFaturamentoPorColaborador extends Fieldset implements 
                         'break_chain_on_failure' => true,
                     ),
                     array(
-                        'name' => 'Int',
+                        'name' => 'Float',
                         'break_chain_on_failure' => true,
                         'options' => array(
                             'locale' => 'en_US'
@@ -60,7 +60,7 @@ class IndicadorColaboradorFaturamentoPorColaborador extends Fieldset implements 
                     )
                 )
             ),
-            '2YearBillingByEmployees' => array(
+            'secondYearBillingByEmployees' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -72,7 +72,7 @@ class IndicadorColaboradorFaturamentoPorColaborador extends Fieldset implements 
                         'break_chain_on_failure' => true,
                     ),
                     array(
-                        'name' => 'Int',
+                        'name' => 'Float',
                         'break_chain_on_failure' => true,
                         'options' => array(
                             'locale' => 'en_US'

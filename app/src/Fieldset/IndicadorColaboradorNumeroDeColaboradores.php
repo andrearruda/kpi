@@ -14,12 +14,12 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
 //<editor-fold desc="Fields do item 1º Ano">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => '1YearNumberOfEmployees',
+            'name' => 'firstYearNumberOfEmployees',
             'options' => array(
                 'label' => 'Qtde de colaboradores',
             ),
             'attributes' => array(
-                'id' => '1YearNumberOfEmployees',
+                'id' => 'firstYearNumberOfEmployees',
                 'required' => true,
                 'class' => 'form-control input-mask-number-int',
             ),
@@ -27,12 +27,12 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => '1YearIcons',
+            'name' => 'firstYearIcons',
             'options' => array(
                 'label' => 'Qtde de icones',
             ),
             'attributes' => array(
-                'id' => '1YearIcons',
+                'id' => 'firstYearIcons',
                 'required' => true,
                 'class' => 'form-control input-mask-number-int',
             ),
@@ -42,12 +42,12 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
 //<editor-fold desc="Fields do item 2º Ano">
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => '2YearNumberOfEmployees',
+            'name' => 'secondYearNumberOfEmployees',
             'options' => array(
                 'label' => 'Qtde de colaboradores',
             ),
             'attributes' => array(
-                'id' => '2YearNumberOfEmployees',
+                'id' => 'secondYearNumberOfEmployees',
                 'required' => true,
                 'class' => 'form-control input-mask-number-int',
             ),
@@ -55,12 +55,12 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => '2YearIcons',
+            'name' => 'secondYearIcons',
             'options' => array(
                 'label' => 'Qtde de icones',
             ),
             'attributes' => array(
-                'id' => '2YearIcons',
+                'id' => 'secondYearIcons',
                 'required' => true,
                 'class' => 'form-control input-mask-number-int',
             ),
@@ -72,7 +72,7 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
     {
         return array(
 //<editor-fold desc="Filter do item 1º Ano">
-            '1YearNumberOfEmployees' => array(
+            'firstYearNumberOfEmployees' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -92,7 +92,7 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
                     )
                 )
             ),
-            '1YearIcons' => array(
+            'firstYearIcons' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -115,7 +115,7 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
 //</editor-fold>
 
 //<editor-fold desc="Filter do item 2º Ano">
-            '2YearNumberOfEmployees' => array(
+            'secondYearNumberOfEmployees' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -135,7 +135,7 @@ class IndicadorColaboradorNumeroDeColaboradores extends Fieldset implements Inpu
                     )
                 )
             ),
-            '2YearIcons' => array(
+            'secondYearIcons' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
