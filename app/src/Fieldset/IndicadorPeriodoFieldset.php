@@ -24,7 +24,6 @@ class IndicadorPeriodoFieldset extends Fieldset implements InputFilterProviderIn
                 'class' => 'form-control input-mask-period'
             ),
         ));
-
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'period_first_end',
@@ -52,7 +51,6 @@ class IndicadorPeriodoFieldset extends Fieldset implements InputFilterProviderIn
                 'class' => 'form-control input-mask-period'
             ),
         ));
-
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'period_second_end',
@@ -111,6 +109,7 @@ class IndicadorPeriodoFieldset extends Fieldset implements InputFilterProviderIn
                     )
                 )
             ),
+
             'period_second_initial' => array(
                 'required' => true,
                 'filters' => array(

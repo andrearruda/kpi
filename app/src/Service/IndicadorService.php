@@ -53,6 +53,11 @@ class IndicadorService
             (new ClassMethods())->hydrate($data_ominousManagement, $ominousManagement_entity);
             $this->getEntityManager()->persist($ominousManagement_entity);
 
+            $systems_entity = new \App\Entity\Systems();
+            $data_systems = array_merge(array('kpiType' => $kpiType_entity, 'kpi' => $kpi_entity), $data['fieldset_comparativo_sistemas']);
+            (new ClassMethods())->hydrate($data_systems, $systems_entity);
+            $this->getEntityManager()->persist($systems_entity);
+
             $this->getEntityManager()->flush();
         }
 
@@ -64,6 +69,7 @@ class IndicadorService
         var_dump($healthOperators_entity);
         var_dump($hospital_entity);
         var_dump($ominousManagement_entity);
+        var_dump($systems_entity);
         die;
     }
 

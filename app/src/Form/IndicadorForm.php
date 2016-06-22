@@ -34,6 +34,10 @@ class IndicadorForm extends Form implements InputFilterProviderInterface
         $this->add(array(
             'type' => 'App\Fieldset\IndicadorComparativoGestaoDeSinistro'
         ));
+
+        $this->add(array(
+            'type' => 'App\Fieldset\IndicadorComparativoSistemas'
+        ));
     }
 
     public function getInputFilterSpecification()

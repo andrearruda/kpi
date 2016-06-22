@@ -1,14 +1,15 @@
 <?php
+
 namespace App\Fieldset;
 
 use Zend\Form\Fieldset;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFilterProviderInterface
+class IndicadorComparativoSistemas extends Fieldset implements InputFilterProviderInterface
 {
     public function __construct()
     {
-        parent::__construct('fieldset_comparativo_operadorasdesaude');
+        parent::__construct('fieldset_comparativo_sistemas');
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
@@ -259,24 +260,24 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'medicalServicesValue',
+            'name' => 'royaltesValue',
             'options' => array(
                 'label' => 'Valor',
             ),
             'attributes' => array(
-                'id' => 'medicalServicesValue',
+                'id' => 'royaltesValue',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'medicalServicesPercentage',
+            'name' => 'royaltesPercentage',
             'options' => array(
                 'label' => 'Porcentagem',
             ),
             'attributes' => array(
-                'id' => 'medicalServicesPercentage',
+                'id' => 'royaltesPercentage',
                 'required' => true,
                 'class' => 'form-control input-mask-percentage',
             ),
@@ -284,24 +285,74 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'workoutValue',
+            'name' => 'maintenancePcValue',
             'options' => array(
                 'label' => 'Valor',
             ),
             'attributes' => array(
-                'id' => 'workoutValue',
+                'id' => 'maintenancePcValue',
                 'required' => true,
                 'class' => 'form-control input-mask-money-milhoes',
             ),
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
-            'name' => 'workoutPercentage',
+            'name' => 'maintenancePcPercentage',
             'options' => array(
                 'label' => 'Porcentagem',
             ),
             'attributes' => array(
-                'id' => 'workoutPercentage',
+                'id' => 'maintenancePcPercentage',
+                'required' => true,
+                'class' => 'form-control input-mask-percentage',
+            ),
+        ));
+
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'outsourcingValue',
+            'options' => array(
+                'label' => 'Valor',
+            ),
+            'attributes' => array(
+                'id' => 'outsourcingValue',
+                'required' => true,
+                'class' => 'form-control input-mask-money-milhoes',
+            ),
+        ));
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'outsourcingPercentage',
+            'options' => array(
+                'label' => 'Porcentagem',
+            ),
+            'attributes' => array(
+                'id' => 'outsourcingPercentage',
+                'required' => true,
+                'class' => 'form-control input-mask-percentage',
+            ),
+        ));
+
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'bpoValue',
+            'options' => array(
+                'label' => 'Valor',
+            ),
+            'attributes' => array(
+                'id' => 'bpoValue',
+                'required' => true,
+                'class' => 'form-control input-mask-money-milhoes',
+            ),
+        ));
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Text',
+            'name' => 'bpoPercentage',
+            'options' => array(
+                'label' => 'Porcentagem',
+            ),
+            'attributes' => array(
+                'id' => 'bpoPercentage',
                 'required' => true,
                 'class' => 'form-control input-mask-percentage',
             ),
@@ -718,7 +769,7 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
                 )
             ),
 
-            'medicalServicesValue' => array(
+            'royaltesValue' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -738,7 +789,7 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
                     )
                 )
             ),
-            'medicalServicesPercentage' => array(
+            'royaltesPercentage' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -759,7 +810,7 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
                 )
             ),
 
-            'workoutValue' => array(
+            'maintenancePcValue' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),
@@ -779,7 +830,89 @@ class IndicadorComparativoOperadorasDeSaude extends Fieldset implements InputFil
                     )
                 )
             ),
-            'workoutPercentage' => array(
+            'maintenancePcPercentage' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+
+            'outsourcingValue' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+            'outsourcingPercentage' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+
+            'bpoValue' => array(
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim')
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                    ),
+                    array(
+                        'name' => 'Float',
+                        'break_chain_on_failure' => true,
+                        'options' => array(
+                            'locale' => 'en_US'
+                        )
+                    )
+                )
+            ),
+            'bpoPercentage' => array(
                 'required' => true,
                 'filters' => array(
                     array('name' => 'StripTags'),

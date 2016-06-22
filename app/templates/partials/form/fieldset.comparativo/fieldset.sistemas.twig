@@ -1,0 +1,194 @@
+<fieldset>
+    <legend>Sistema</legend>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Faturamento</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesTarget').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesInitial').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesEnd').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('revenuesPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Ebtida</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaTarget').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaInitial').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaEnd').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('ebtidaPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h5>Lucro Liquído</h5>
+            <h4>Acumulado</h4>
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitTarget')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitTarget')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitTarget').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitTarget').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitInitial')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitInitial')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitInitial').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitInitial').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitEnd')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitEnd')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitEnd').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitEnd').getAttribute('name') ~ ']')) }}
+            </div>
+
+            <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitPercentage')) %} has-error{% endif %}">
+                {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitPercentage')) }}
+                {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('netprofitPercentage').getAttribute('name') ~ ']')) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <hr>
+            <h4>Distribuição por Receita</h4>
+            <hr>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>LU</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('luValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('luValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('luValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('luValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('luPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('luPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('luPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('luPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>LUM</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('lumPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>Implatação</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('implantationPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>SMS</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('smsPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>Royaltes</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('royaltesPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>Manutenção PC</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('maintenancePcPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Outsourcing</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('outsourcingPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h4>BPO</h4>
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoValue')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoValue')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoValue').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoValue').getAttribute('name') ~ ']')) }}
+                    </div>
+
+                    <div class="form-group{% if formElementErrors(form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoPercentage')) %} has-error{% endif %}">
+                        {{ formLabel(form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoPercentage')) }}
+                        {{ formElement(form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoPercentage').setAttribute('name', 'fieldset_comparativo_sistemas[' ~ form.getFieldsets()['fieldset_comparativo_sistemas'].get('bpoPercentage').getAttribute('name') ~ ']')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</fieldset>

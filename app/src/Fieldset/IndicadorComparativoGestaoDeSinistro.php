@@ -5,7 +5,6 @@ namespace App\Fieldset;
 use Zend\Form\Fieldset;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-
 class IndicadorComparativoGestaoDeSinistro extends Fieldset implements InputFilterProviderInterface
 {
     public function __construct()
