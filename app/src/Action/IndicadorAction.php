@@ -46,6 +46,7 @@ class IndicadorAction
             if($form->isValid())
             {
                 $this->getIndicadorService()->save($data_form);
+                return $response->withRedirect($this->router->pathFor('indicador'));
             }
             else
             {
@@ -54,6 +55,40 @@ class IndicadorAction
         }
 
         $this->view->render($response, 'indicador/add.twig', array(
+            'form' => $form
+        ));
+        return $response;
+    }
+
+    public function edit(Request $request, Response $response, $args)
+    {
+        $data_form = $this->getIndicadorService()->getById($args['id']);
+
+        $form = $this->getIndicadorForm();
+        $form->setData($data_form);
+
+        if($request->isPost())
+        {
+            $data_form = $request->getParsedBody();
+
+            foreach($data_form['fieldset_periodo'] as $key => $item)
+            {
+                $data_form['fieldset_periodo'][$key] = new \DateTime('01/' . $item);
+            }
+
+            $form->setData($data_form);
+            if($form->isValid())
+            {
+                $this->getIndicadorService()->save($data_form, $args['id']);
+                return $response->withRedirect($this->router->pathFor('indicador'));
+            }
+            else
+            {
+                $form->setData($request->getParsedBody());
+            }
+        }
+
+        $this->view->render($response, 'indicador/edit.twig', array(
             'form' => $form
         ));
         return $response;
