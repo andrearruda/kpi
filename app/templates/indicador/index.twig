@@ -42,10 +42,10 @@
                 </thead>
                 <tbody>
 {% for kpi in kpis %}
-                    <tr>
+                    <tr class="kpi_{{ kpi.getId() }}">
                         <td class="hidden-xs">{{ kpi.getCreatedAt()|date("d/m/Y H:i", false) }}</td>
                         <td>{{ kpi.getResponsible() }}</td>
-                        <td><input type="checkbox" name="my-checkbox-active" class="{% if kpi.getActive() == '1' %}actived{% else %}not_actived{% endif %}" data-size="mini" data-url="{{ path_for('indicador.active', {'id' : kpi.getId()}) }}"{% if kpi.getActive() == '1' %} checked{% endif %} value="{{ kpi.getId() }}"></td>
+                        <td><input type="checkbox" class="{% if kpi.getActive() == '1' %}actived{% else %}not_actived{% endif %}" data-size="mini" data-url="{{ path_for('indicador.active', {'id' : kpi.getId()}) }}"{% if kpi.getActive() == '1' %} checked{% endif %} value="{{ kpi.getId() }}"></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="...">
                                 <a href="{{ path_for('indicador.edit', {'id' : kpi.getId()}) }}" class="btn btn-default" data-kpi-id="{{ kpi.getId() }}">

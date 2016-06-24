@@ -1,27 +1,22 @@
 $(function() {
-    $('input[type=\'checkbox\']').bootstrapSwitch();
-
-    $('input[type=\'checkbox\']').on('switchChange.bootstrapSwitch', function(event,  state) {
-
-        $('input[type=\'checkbox\'].actived').addClass('not_actived').removeClass('actived');
-        $(this).addClass('actived').removeClass('not_actived');
+    $('input[type=\'checkbox\']').click(function(){
+        $('input[type=\'checkbox\']').attr('disabled', true);
+        $('input[type=\'checkbox\']').prop('checked', false);
 
         $.ajax({
             type: "POST",
-            data: ({active : this.checked}),
             url: $(this).data('url'),
             dataType: "json",
             beforeSend: function(){
-                $('input[type=\'checkbox\'].not_actived').bootstrapSwitch('state', false);
             },
             complete: function(){
             },
             success: function(json) {
-                $('input[type=\'checkbox\'].actived').bootstrapSwitch('state', true);
+                $('input[type=\'checkbox\']').attr('disabled', false);
+                $('.kpi_' + json.id + ' input').prop('checked', true);
             },
             error: function (xhr, ajaxOptions, thrownError) {
             }
         });
-
-    });
+    })
 });

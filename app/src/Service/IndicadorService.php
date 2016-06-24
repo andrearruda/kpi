@@ -50,10 +50,8 @@ class IndicadorService
         $ominousManagementOrcadoRealizado = $this->getEntityManager()->getRepository('App\Entity\OminousManagement')->matching($criteriaOrcadoRealizado)->first();
         $systemsOrcadoRealizado = $this->getEntityManager()->getRepository('App\Entity\Systems')->matching($criteriaOrcadoRealizado)->first();
 
-
         $fieldset_informacoes = (new ClassMethods())->extract($kpi);
         $fieldset_periodo = $fieldset_informacoes;
-
 
         $data = array(
             'fieldset_informacoes' => array(
