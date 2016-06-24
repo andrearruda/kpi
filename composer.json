@@ -30,6 +30,7 @@
         "zendframework/zend-filter": "~2.5",
         "zendframework/zend-paginator": "^2.7",
         "thapp/xmlbuilder": "^0.1.4",
-        "akrabat/rka-slim-zendform": "^1.0"
+        "akrabat/rka-slim-zendform": "^1.0",
+        "danielstjules/stringy": "~2.1"
     }
 }

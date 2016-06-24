@@ -62,9 +62,7 @@ $container['em'] = function ($c) {
     $softDeleteableListener->setAnnotationReader($cachedAnnotationReader);
     $evm->addEventSubscriber($softDeleteableListener);
 
-
     $settings = $c->get('settings');
-
 
     $config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(
         $settings['doctrine']['meta']['entity_path'],
@@ -92,7 +90,6 @@ $container['App\Action\HomeAction'] = function ($c) {
 };
 
 $container['App\Action\IndicadorAction'] = function ($c) {
-
     $indicador_service = new App\Service\IndicadorService($c->get('em'));
     $indicador_form = new App\Form\IndicadorForm();
 

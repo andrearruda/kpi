@@ -15,7 +15,7 @@ final class HomeAction
 
     public function __invoke(Request $request, Response $response, $args)
     {
-        return $response->withRedirect($this->getRoute()->pathFor('kpi'));
+        return $response->withRedirect($this->getRoute()->pathFor('indicador'));
     }
 
     /**
