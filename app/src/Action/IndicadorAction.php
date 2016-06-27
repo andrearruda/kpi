@@ -433,12 +433,12 @@ class IndicadorAction
                 'initial' => array(
                     'employees' => $kpi['fieldset_colaborador_numerocolaboradores']['firstYearNumberOfEmployees'],
                     'icons' => $kpi['fieldset_colaborador_numerocolaboradores']['firstYearIcons'],
-                    'billing' => $kpi['fieldset_colaborador_faturamentocolaboradores']['firstYearBillingByEmployees']
+                    'billing' => number_format($kpi['fieldset_colaborador_faturamentocolaboradores']['firstYearBillingByEmployees'], 1, '.', '')
                 ),
                 'end' => array(
                     'employees' => $kpi['fieldset_colaborador_numerocolaboradores']['secondYearNumberOfEmployees'],
                     'icons' => $kpi['fieldset_colaborador_numerocolaboradores']['secondYearIcons'],
-                    'billing' => $kpi['fieldset_colaborador_faturamentocolaboradores']['secondYearBillingByEmployees']
+                    'billing' => number_format($kpi['fieldset_colaborador_faturamentocolaboradores']['secondYearBillingByEmployees'], 1, '.', '')
                 )
             )
         );
